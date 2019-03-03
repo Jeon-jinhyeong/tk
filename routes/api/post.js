@@ -8,7 +8,7 @@ router.post("/", (req, res) => {
   Post.create(req.body, (err, post) => {
    if(err) return res.json(err);
  
-   res.redirect("post");
+   res.redirect("/post");
   });
  });
 

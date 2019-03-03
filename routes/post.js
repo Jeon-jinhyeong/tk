@@ -1,4 +1,6 @@
 const router = require("express").Router();
+const rootPath = "../";
+const { Post } = require(`${rootPath}/models`);
 
 
 // 게시물 리스트 - /post

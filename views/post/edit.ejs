@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <% include ../partials/head %>
+  <% include ../common/partials/head %>
  </head>
  <body>
-  <% include ../partials/nav %>
+  <% include ../common/partials/nav %>
 
   <div class="container post post-edit">
    <% include ./partials/header %>
 
    <div class="buttons">
-    <a class="btn btn-default" href="/posts">Back</a>
+    <a class="btn btn-default" href="/post">Back</a>
    </div>
 
-   <form class="post-form form-horizontal" action="/posts/<%= post._id %>?_method=put" method="post">
+   <form class="post-form form-horizontal" action="/post/<%= post._id %>?_method=put" method="post">
     <div class="contentBox">
      <h3 class="contentBoxTop">Edit Post</h3>
      <fieldset>

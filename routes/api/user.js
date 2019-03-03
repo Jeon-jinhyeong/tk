@@ -1,5 +1,7 @@
 const rootPath = "../..";
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
+const passport = require('passport');
 const { User } = require(`${rootPath}/models`);
 
 
@@ -46,12 +48,13 @@ router.post('/loginauth', loginChecker.isNotLoggedIn, (req, res, next) => {
           req.flash('loginError', info.message);
           return res.redirect('/');
       }
-
+      
       return req.login(user, (loginError) => {
           if (loginError) {
               console.error(loginError);
               return next(loginError);
           }
+
           return res.redirect('/');
       });
   })(req, res, next);

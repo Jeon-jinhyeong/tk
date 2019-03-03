@@ -12,14 +12,14 @@
       <ul class="nav navbar-nav">
        <li><a href="/">Home</a></li>
        <li><a href="/about">About</a></li>
-       <li><a href="/posts">게시판</a></li>
+       <li><a href="/post">게시판</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if(isAuthenticated){ %>
          <li><a href="/<%= currentUser.username %>">My Account</a></li>
          <li><a href="/logout">Logout</a></li>
         <% } else { %>
-         <li><a href="/join">Sign Up</a></li>
+         <li><a href="/user/join">Sign Up</a></li>
          <li><a href="/user/login">Login</a></li>
         <% } %>
        </ul>

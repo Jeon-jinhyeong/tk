@@ -20,15 +20,23 @@ router.get('/profile', loginChecker.isLoggedIn, (req, res) => {
 // isNotLoggedIn()가 ture여야 next()가 호출되어 res.render가 있는 미들웨어로 넘어갈수 있으며,
 // false면 메인 페이지로 이동한다.
 router.get('/join', loginChecker.isNotLoggedIn, (req, res) => {
-  res.render('home/join', {
+  res.render('main/join', {
     title    : lang.join_title, 
     user     : null,
     joinError: req.flash('joinError'),
   });
 });
 
+router.get('/sessioncheck', (req, res) => {
+    if (req.session) {
+        console.log(req.session)
+        msg = `${req.session.usernameField}`
+    }
+    res.send(msg);
+})
+
 router.get('/login', loginChecker.isNotLoggedIn, (req, res) => {
-  res.render('home/login', {
+  res.render('main/login', {
     title     : lang.login_title, 
     user      : null,
     joinError : req.flash('joinError'),
