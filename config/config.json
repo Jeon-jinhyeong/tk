@@ -1,6 +1,5 @@
 {
-  "db" : {
-    "dev": {
+    "development": {
       "username": "root",
       "password": "패스워드",
       "database": "board",
@@ -20,9 +19,9 @@
       "database": "database_production",
       "host": "127.0.0.1",
       "dialect": "mysql"
-    }
-  },
-  "env"           : "dev",
-  "PORT"          : 3000,
-  "COOKIE_SECRET" : "ABCD"
+    },
+
+    "env"           : "dev",
+    "PORT"          : 3000,
+    "COOKIE_SECRET" : "ABCD"
 }

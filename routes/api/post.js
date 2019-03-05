@@ -1,15 +1,17 @@
 const rootPath = "../..";
 const router = require('express').Router();
-const { Post } = require(`${rootPath}/models`);
+const { Xlsx } = require(`${rootPath}/models`);
 
 
 // 게시물 등록 - /post
-router.post("/", (req, res) => {
-  Post.create(req.body, (err, post) => {
-   if(err) return res.json(err);
- 
-   res.redirect("/post");
-  });
+router.post("/", async (req, res) => {
+    const { title, body } = req.body;
+    await Xlsx.create({
+        title,
+        path: body,
+        userId: req.session.passport.user,
+    });
+  res.redirect("/post");
  });
 
  // 게시물 수정 - /post/:id

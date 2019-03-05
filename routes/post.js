@@ -1,11 +1,13 @@
-const router = require("express").Router();
-const rootPath = "../";
-const { Post } = require(`${rootPath}/models`);
+const rootPath = "..";
+const router = require('express').Router();
+
+const loginChecker = require(`${rootPath}/lib/loginChecker`);
+const { Xlsx } = require(`${rootPath}/models`);
 
 
 // 게시물 리스트 - /post
-router.get("/", (req, res) => {
-    const posts = Post.find({});
+router.get("/", loginChecker.isLoggedIn, async (req, res) => {
+    const posts = await Xlsx.findAll({ where : req.session.passport.user });
     res.render("post/index", {posts : posts});
 });
 

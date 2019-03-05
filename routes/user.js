@@ -30,7 +30,7 @@ router.get('/join', loginChecker.isNotLoggedIn, (req, res) => {
 router.get('/sessioncheck', (req, res) => {
     if (req.session) {
         console.log(req.session)
-        msg = `${req.session.usernameField}`
+        msg = `${req.session.passport.user}`
     }
     res.send(msg);
 })
@@ -44,8 +44,9 @@ router.get('/login', loginChecker.isNotLoggedIn, (req, res) => {
 });
 
 router.get('/logout', loginChecker.isLoggedIn, (req, res) => {
-    req.logout();
+    
     req.session.destroy();
+    req.logout();
     res.redirect('/');
 });
 

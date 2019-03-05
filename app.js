@@ -51,6 +51,9 @@ app.use(flash()); // ?
 app.use(passport.initialize()); // ?
 app.use(passport.session()); // ?
 
+
+app.use('/api', apiRouter);
+
 // pre-setting : ?
 // route보다는 앞에 선언되어야 함
 app.use((req, res, next) => {  
@@ -59,8 +62,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api', apiRouter);
 app.use('/', pageRouter);
+
 
 app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번으로 서버 대기 중');

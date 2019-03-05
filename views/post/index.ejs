@@ -26,14 +26,16 @@
        <td class="noData" colspan=100> There is no data to show :( </td>
       </tr>
      <% } %>
+     <% posts.forEach(function(posts) { %>
       <tr>
        <td class="title">
         <a href="/post/<%= posts._id %>"><div><%= posts.title %></div></a>
        </td>
        <td class="date">
-        <%= posts.createdDate %>
+        <%= posts.createdAt %>
        </td>
       </tr>
+     <% }) %>
     </tbody>
    </table>
   </div> <!-- container end -->
