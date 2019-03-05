@@ -57,7 +57,7 @@ app.use((req, res, next) => {
   res.locals.isAuthenticated = req.isAuthenticated(); // ?
   res.locals.currentUser = req.user;
   next();
- });
+});
 
 app.use('/api', apiRouter);
 app.use('/', pageRouter);

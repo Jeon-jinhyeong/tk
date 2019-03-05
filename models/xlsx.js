@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => (
-    sequelize.define('xlsx', {
+    sequelize.define('xlsxes', {
         title : {
             type: DataTypes.STRING,
             allowNull: false,

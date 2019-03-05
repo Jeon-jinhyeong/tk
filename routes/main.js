@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
       user: req.user,
       loginError: req.flash('loginError'),
   });
-  console.log(req.session.user)
+  console.log(req.user)
 });
 
 router.get('/about', (req, res) => {

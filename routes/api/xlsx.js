@@ -7,6 +7,7 @@ const loginChecker = require(`${rootPath}/lib/loginChecker`);
 const XLSX = require("xlsx");
 const multer = require("multer");
 const path = require("path");
+const fs = require('fs');
 const moment = require('moment');
 moment.locale('ko');
 
@@ -34,18 +35,19 @@ const upload = multer({
 
 // 파일 업로드 처리
 router.post('/', upload.single("file"), async (req, res, next)  => {
-  const file = req.file;;
 
-  console.log(file);
+    const file = req.file;;
 
-  const xlsx = {
-    title : file.filename,
-    path : file.path
-  }
+    console.log(file);
 
-  await Xlsx.create(xlsx);
+    const xlsx = {
+        title : file.filename,
+        path : file.path
+    }
 
-  res.json(file);
+    await Xlsx.create(xlsx);
+
+    res.json(file);
 });
 
 module.exports = router;
