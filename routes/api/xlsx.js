@@ -42,12 +42,14 @@ router.post('/', upload.single("file"), async (req, res, next)  => {
 
     const xlsx = {
         title : file.filename,
-        path : file.path
+        path : file.path,
+        userId : req.session.passport.user,
     }
 
     await Xlsx.create(xlsx);
 
-    res.json(file);
+    const posts = await Xlsx.findAll({ where : { userId : req.session.passport.user } });
+    res.render("post/index", { posts : posts });
 });
 
 module.exports = router;

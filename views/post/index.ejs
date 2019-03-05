@@ -9,9 +9,18 @@
   <div class="container post post-index">
    <% include ./partials/header ﻿%>
 
-   <div class="buttons">
+   <form method="post" action="../api/xlsx" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td><input class="file" type="file" name="file" /></td>
+            <td><input class="upload" type="submit" value="upload" name="summit" /></td>
+        </tr>
+    </table>
+    
+   </form>
+   <!-- <div class="buttons">
     <a class="btn btn-default" href="/post/new">New</a>
-   </div>
+   </div> -->
 
    <table class="table table-striped posts">
     <thead>
@@ -29,7 +38,7 @@
      <% posts.forEach(function(posts) { %>
       <tr>
        <td class="title">
-        <a href="/post/<%= posts._id %>"><div><%= posts.title %></div></a>
+        <a href="/post/<%= posts.id %>"><div><%= posts.title %></div></a>
        </td>
        <td class="date">
         <%= posts.createdAt %>
