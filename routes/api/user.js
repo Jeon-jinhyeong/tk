@@ -1,11 +1,17 @@
 const rootPath = "../..";
+const lang = require(`${rootPath}/lib/lang/ko.json`);
+
 const router = require('express').Router();
-const bcrypt = require('bcrypt');
-const passport = require('passport');
+
+// Models
 const { User } = require(`${rootPath}/models`);
 
-
+// Lib - 
 const loginChecker = require(`${rootPath}/lib/loginChecker`);
+
+// Lib 
+const bcrypt = require('bcrypt');
+const passport = require('passport');
 
 //
 router.post('/join', loginChecker.isNotLoggedIn, async (req, res, next) => {

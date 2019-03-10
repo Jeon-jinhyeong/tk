@@ -1,19 +1,22 @@
 const rootPath = "../..";
-const router = require('express').Router();
-// const { ?? } = require(`${rootPath}/models`);
+const lang = require(`${rootPath}/lib/lang/ko.json`);
 
+const router = require('express').Router();
+
+// Models
+const {Xlsx} = require(`${rootPath}/models`);
+
+// Lib - 
 const loginChecker = require(`${rootPath}/lib/loginChecker`);
 
-const XLSX = require("xlsx");
+
+const xlsxRootPath = `${rootPath}/xlsx`;
+
 const multer = require("multer");
 const path = require("path");
 const fs = require('fs');
 const moment = require('moment');
 moment.locale('ko');
-
-const xlsxRootPath = `${rootPath}/xlsx`;
-
-const { Xlsx } = require(`${rootPath}/models`);
 
 const storage = multer.diskStorage({
   destination: (req, file ,callback) => {
@@ -31,25 +34,22 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage: storage
-})
+});
 
 // 파일 업로드 처리
 router.post('/', upload.single("file"), async (req, res, next)  => {
+  const file = req.file;;
+  const userId = req.session.passport.user;
 
-    const file = req.file;;
+  const xlsx = {
+      title: file.filename,
+      path: file.path,
+      userId: userId,
+  }
 
-    console.log(file);
+  await Xlsx.create(xlsx);
 
-    const xlsx = {
-        title : file.filename,
-        path : file.path,
-        userId : req.session.passport.user,
-    }
-
-    await Xlsx.create(xlsx);
-
-    const posts = await Xlsx.findAll({ where : { userId : req.session.passport.user } });
-    res.render("post/index", { posts : posts });
+  res.res(true);
 });
 
 module.exports = router;

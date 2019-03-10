@@ -1,7 +1,8 @@
 {
-  "main_title"    : "게시판",
-  "profile_title" : "내 정보",
-  "join_title" : "회원가입",
-  "login_title" : "로그인",
-  "already_exist_email" : "이미 가입된 이메일입니다."
+  "main_title": "게시판",
+  "profile_title": "내 정보",
+  "join_title": "회원가입",
+  "login_title": "로그인",
+  "already_exist_email": "이미 가입된 이메일입니다.",
+  "no_session": "세션이 연결되어 있지 않습니다."
 }

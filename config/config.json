@@ -21,7 +21,7 @@
       "dialect": "mysql"
     },
 
-    "env"           : "dev",
-    "PORT"          : 3000,
-    "COOKIE_SECRET" : "ABCD"
+    "env": "development",
+    "PORT": 3000,
+    "COOKIE_SECRET": "ABCD"
 }

@@ -1,37 +1,37 @@
 const rootPath = "../..";
+const lang = require(`${rootPath}/lib/lang/ko.json`);
+
 const router = require('express').Router();
-const { Xlsx } = require(`${rootPath}/models`);
 
+// Models
+const { Post } = require(`${rootPath}/models`);
 
-// 게시물 등록 - /post
+// 게시물 등록 처리
 router.post("/", async (req, res) => {
-    const { title, body } = req.body;
-    await Xlsx.create({
-        title,
-        path: body,
-        userId: req.session.passport.user,
-    });
+  const {title, body} = req.body;
+  
+  await Post.create({
+    title,
+    body: body,
+    userId: req.session.passport.user,
+  });
   res.redirect("/post");
  });
 
- // 게시물 수정 - /post/:id
-router.put("/:id", (req, res) => {
+ // 게시물 수정 처리
+router.put("/:id", async (req, res) => {
   req.body.updatedAt = Date.now();
  
-  Post.findOneAndUpdate({_id : req.params.id}, req.body, (err, post) => {
-   if(err) return res.json(err);
+  await Post.findOneAndUpdate({_id: req.params.id}, req.body);
+  
+  res.redirect("/post/" + req.params.id);
+});
  
-   res.redirect("/post/" + req.params.id);
-  });
- });
- 
- // 게시물 삭제 - /post/:id
- router.delete("/:id", (req, res) => {
-  Post.remove({_id : req.params.id}, (err) => {
-   if(err) return res.json(err);
- 
-   res.redirect("/post");
-  });
- });
+// 게시물 삭제 처리
+router.delete("/:id", async (req, res) => {
+  await Post.remove({_id: req.params.id});
 
- module.exports = router;
+  res.redirect("/post");
+});
+
+module.exports = router;

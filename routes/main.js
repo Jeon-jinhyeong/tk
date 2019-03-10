@@ -1,12 +1,11 @@
-const router = require('express').Router();
-session = require('express-session');
-const loginChecker = require('../lib/loginChecker'); 
+const rootPath = "..";
+const lang = require(`${rootPath}/lib/lang/ko.json`); 
 
-const lang = require('../lib/lang/ko.json'); 
+const router = require('express').Router();
 
 router.get('/', (req, res) => {
   res.render('main/welcome', {
-      title     : lang.main_title, 
+      title: lang.main_title, 
       user: req.user,
       loginError: req.flash('loginError'),
   });
