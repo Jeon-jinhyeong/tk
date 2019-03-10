@@ -11,6 +11,14 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/develop', (req, res) => {
+    res.render('main/develop', {
+        title: lang.main_title, 
+        user: req.user,
+        loginError: req.flash('loginError'),
+    });
+  });
+
 router.get('/about', (req, res) => {
     res.render('main/about');
 });
