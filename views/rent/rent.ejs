@@ -1,0 +1,152 @@
+<div class="left2">
+<section class="sel_date mb45">
+  <h3 class="mb20">기간 선택</h3>
+  <div class="rent_popWrap mt5 mb5 sm"> <!-- 20180320 sm클래스 추가 -->
+    <div class="innerBox rentBox on">
+      <input type="hidden" id="rent_date" name="rent_date" class="rent_date" value="2019/03/16">
+      <input type="hidden" id="rent_hour" name="rent_hour" class="rent_hour" value="">
+      <input type="hidden" id="rent_minute" name="rent_minute" class="rent_minute" value="">
+      <a href="#carSearchCal" class="carSearchCal btn_layer"><!-- Default class="noData" -->
+        <span class="tit">대여일시</span>
+        <span class="date" id="showDate"></span>
+        <span class="hour" id="showHour"></span>
+        <span class="minute" id="showMinute"></span>
+      </a>
+    </div>
+    <div class="innerBox returnBox on">
+      <input type="hidden" id="return_date" name="return_date" class="return_date" value="2019/03/17">
+      <input type="hidden" id="return_hour" name="return_hour" class="return_hour" value="">
+      <input type="hidden" id="return_minute" name="return_minute" class="return_minute" value="">
+      <a href="#carSearchCal" class="carSearchCal btn_layer"><!-- Default class="noData" -->
+        <span class="tit">반납일시</span>
+        <span class="date" id="showReDate"></span>
+        <span class="hour" id="showReHour"></span>
+        <span class="minute" id="showReMinute"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="mb40">
+  <h3 class="mb10">지점 선택</h3>
+  <div class="deliveryWrap">
+  
+    
+    <span>
+      <a href="layerEtcDv" class="layerEtcDv btn_tooltip btn_layer">툴팁</a>
+    </span>
+        
+        
+        <div class="inner ds_radio" id="hds_radio" style="display:none;">
+          <input type="radio" name="hdsType" id="s_selLocation1" value="3" checked="">
+          <label for="s_selLocation1" class="mr30"><span class="icon"></span>대여 + 반납</label>
+          <input type="radio" name="hdsType" id="s_selLocation2" value="2">
+          <label for="s_selLocation2" class="mr30"><span class="icon"></span>대여</label>
+          <input type="radio" name="hdsType" id="s_selLocation3" value="1">
+          <label for="s_selLocation3" class="mr30"><span class="icon"></span>반납</label>
+        </div>
+        
+      </div>
+    
+  
+
+  <div class="rent_popWrap areaBox sm"><!-- 20180320 sm클래스 추가 -->
+    <div class="innerBox rentBox on">
+      
+        
+        
+          <a href="#carlayerSelBranch" class="carlayerSelBranch btn_layer "><!-- Default class="noData" -->
+            <span class="tit">대여지점</span>
+            <span class="area" id="selBranch"></span>
+          </a>
+        
+      
+    </div>
+    <div class="innerBox returnBox on">
+      <!-- <input type="hidden" id="returnPlace"  name="rentPlace"  value="">반납장소 -->
+      
+        
+        
+          <a href="#carlayerSelBranch" class="carlayerSelBranch btn_layer">
+            <span class="tit">반납지점</span>
+            <span class="area" id="selReBranch"></span>
+          </a>
+        
+      
+    </div>
+  </div>
+
+  <ul class="txt_list mb30">
+    
+    <li class="red">대여지점과 반납지점이 다르면 별도의 수수료가 발생합니다.</li>
+    
+    
+
+  </ul>
+</section>
+
+
+<section>
+  <h3>차량 선택</h3>
+  <div class="sel_carWrap sm"><!-- 20180320 sm클래스 추가 -->
+    <div class="innerBox normal">
+      <div class="radio large">
+        <input type="radio" name="s_selCar" id="nomal" checked="" onclick="fnNomalChk();">
+        <label for="nomal"><span class="icon"></span>일반예약</label>
+      </div>
+      <div class="desc_box">
+        <ul class="txt_list mt10">
+          <li class="gray">회원/비회원 모두 예약 가능</li>
+          <li class="gray">특정 차종 지정 가능</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 20171010 제주알뜰카 재운영 -->
+    <div class="innerBox saving">
+      <div class="radio large">
+        <input type="radio" name="s_selCar" id="mystery" onclick="fnMysteryChk()">
+        <label for="mystery"><span class="icon"></span>알뜰카</label>
+      </div>
+      <div class="desc_box">
+        <ul class="txt_list mt10">
+          <li class="gray">회원(로그인)만 예약 가능</li>
+          <li class="gray">차급만 선택 가능, 저렴한 가격</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- //차량 선택 -->
+<section class="mt15" id="normalTab" style="display: block;">
+  <h3 class="mb20">차량 유형</h3>
+  <span class="select big" style="width:100%">
+    <select name="carSizeSel" id="carSizeSel" style="display: none;">
+      <option value="">선택</option>
+      <option value="11">소형(모닝, 레이, 아반떼, K3 등 준중형급 이하)</option>
+      <option value="12">중형(쏘나타, K5, SM6, 말리부 등 중형차급)</option>
+      <option value="13">대형(그랜저, K7, 제네시스 등 준대형급 이상)</option>
+      <option value="21">승합(카니발, 스타렉스 / 단체여행 강력추천!)</option>
+      <option value="31">SUV/RV(적재공간이 넉넉한 SUV차량)</option>
+      <option value="51">수입차(BMW, 벤츠 등 해외 브랜드 수입차)</option>
+      
+      <option value="71">전기차(아이오닉EV, 볼트EV / 친환경자동차)</option>
+      
+      
+      <option value="ALL">모든차량(조회가 오래걸릴 수 있습니다.)&#8203;</option>
+    </select><span tabindex="0" id="carSizeSel-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="carSizeSel-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">선택</span></span>
+  </span>
+ </section>
+ <section class="mt15" id="misteryTab" style="display:none">
+  <h3 class="mb20">알뜰카란?</h3>
+  <ul class="txt_list">
+    <li class="gray">예산에 맞춰 특정 모델이 아닌 대여료를 우선 선택하는 예약방법입니다.</li>
+    <li class="gray">빌리는 용도에 맞게 차량의 유형만 선택하고 저렴하게 이용해 보세요!</li>
+    <li class="gray">대여시간 기준 24시간 당 1일 요금 부과(ex. 30시간인 경우 총 2일 요금 부과)</li>
+  </ul>
+ </section>
+
+<div class="btn_wrap">
+  <button type="button" id="reSearch" class="btn_red btn_160" onclick="carReSearch();">재검색</button>
+</div>
+</div>
