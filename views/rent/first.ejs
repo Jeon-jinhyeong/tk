@@ -1,0 +1,129 @@
+<div class="wrap_reservation">
+
+	<div class="right3">
+		<section class="option_exemption">
+			<ul id="selLdwCode" class="radio_hr">
+				<li>
+					<input type="radio" id="rdoNoCDW" name="rdoCDW" onclick="cdwNoCheck(&quot;0&quot;)" checked="">
+					<label for="rdoNoCDW" class="mr15">
+						<span class="icon"></span>01 기본정보 선택</label>
+				</li>
+				<li>
+					<input type="radio" id="rdoCDW0" name="rdoCDW" onclick="cdwCheck(&quot;00&quot;,72000.00,&quot;고객부담금 면제&quot;);">
+					<label for="rdoCDW0" class="mr15">
+						<span class="icon"></span>02 결제하기</label>
+				</li>
+				<li>
+					<input type="radio" id="rdoCDW1" name="rdoCDW" onclick="cdwCheck(&quot;05&quot;,43200.00,&quot;5만원&quot;);">
+					<label for="rdoCDW1" class="mr15">
+						<span class="icon"></span>03 예약완료</label>
+				</li>
+			</ul>
+		</section>
+
+		<!-- 차종 -->
+		<section class="mt15" id="normalTab" style="display: block;">
+			<h3 class="mb20">차량 유형</h3>
+			<div class="rent_popWrap areaBox sm">
+				<div class="innerBox rentBox on">
+					<a href="#carlayerSelBranch" class="carlayerSelBranch btn_layer ">
+						<span class="tit">대여지점</span>
+						<span class="area" id="selBranch">강남</span>
+					</a>
+				</div>
+
+				<div class="innerBox rentBox on">
+					<a href="#carlayerSelBranch" class="carlayerSelBranch btn_layer ">
+						<span class="tit">대여지점</span>
+						<span class="area" id="selBranch">강남</span>
+					</a>
+				</div>
+
+				<div class="innerBox rentBox on">
+					<a href="#carlayerSelBranch" class="carlayerSelBranch btn_layer ">
+						<span class="tit">대여지점</span>
+						<span class="area" id="selBranch">강남</span>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- 지점 -->
+		<section class="mb40">
+			<h3 class="mb10">지점 선택</h3>
+
+			<div class="rent_popWrap areaBox sm">
+				<div class="innerBox rentBox on">
+					<a href="#carlayerSelBranch" class="carlayerSelBranch btn_layer ">
+						<span class="tit">대여지점</span>
+						<span class="area" id="selBranch">강남</span>
+					</a>
+				</div>
+			</div>
+
+			<input type="checkbox" name="hdsCheck" id="hdsCheck" value="" class="ds_check">
+			<label for="hdsCheck" class="mr5">
+				<span class="icon"></span>딜리버리 서비스(DS)</label>
+			<span>
+				<a href="layerEtcDv" class="layerEtcDv btn_tooltip btn_layer">툴팁</a>
+			</span>
+		</section>
+
+		<!-- 날짜 -->
+		<section class="sel_date mb45">
+			<h3 class="mb20">기간 선택</h3>
+			<div class="rent_popWrap mt5 mb5 sm">
+				<input type="text" id="rent_time" disabled>
+				<div id="rent_datetimepicker"></div>
+		
+				<input type="text" id="end_time" disabled>
+				<div id="end_datetimepicker"></div>
+			</div>
+			<!-- 
+				<ul class="txt_list mb30">
+					<li class="red">
+						대여시간이 24시간 이상인 경우에만 할인이 적용됩니다.
+					</li>
+				</ul>
+			-->
+		</section>
+		
+		<!-- 보험 -->
+		<section class="option_exemption">
+			<div class="titleBox mb20">
+				<h3>자차손해 면책 제도 (CDW)</h3>
+				<span>
+					<a href="#layerExemption" class="layerExemption btn_tooltip btn_layer">툴팁</a>
+				</span>
+			</div>
+
+			<ul id="selLdwCode" class="radio_hr">
+				<li>
+					<input type="radio" id="rdoNoCDW" name="rdoCDW" onclick="cdwNoCheck(&quot;0&quot;)" checked="">
+					<label for="rdoNoCDW" class="mr15">
+						<span class="icon"></span>보험 미적용 (0원)</label>
+				</li>
+				<li>
+					<input type="radio" id="rdoCDW0" name="rdoCDW" onclick="cdwCheck(&quot;00&quot;,72000.00,&quot;고객부담금 면제&quot;);">
+					<label for="rdoCDW0" class="mr15">
+						<span class="icon"></span>고객부담금 면제&nbsp;(72,000원)</label>
+				</li>
+				<li>
+					<input type="radio" id="rdoCDW1" name="rdoCDW" onclick="cdwCheck(&quot;05&quot;,43200.00,&quot;5만원&quot;);">
+					<label for="rdoCDW1" class="mr15">
+						<span class="icon"></span>5만원&nbsp;(43,200원)</label>
+				</li>
+				<li>
+					<input type="radio" id="rdoCDW2" name="rdoCDW" onclick="cdwCheck(&quot;30&quot;,36000.00,&quot;30만원&quot;);">
+					<label for="rdoCDW2" class="mr15">
+						<span class="icon"></span>30만원&nbsp;(36,000원)</label>
+				</li>
+			</ul>
+		</section>
+
+		
+		<div class="btn_wrap">
+			<button type="button" id="reSearch" class="btn_red btn_160" onclick="carReSearch();">선택완료</button>
+		</div>
+	</div>
+</div>

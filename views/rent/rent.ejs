@@ -3,9 +3,17 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/lib/jquery-ui-1.12.1/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/css/contents.css">
+    <link rel="stylesheet" type="text/css" href="/lib/jquery-ui-timepicker-addon/jquery-ui-timepicker-addon.css">
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="/lib/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="/lib/jquery-ui-timepicker-addon/jquery-ui-timepicker-addon.js"></script>
     <script>
     $( function() {
       var dateFormat = "mm/dd/yy",
@@ -40,110 +48,69 @@
         return date;
       }
     } );
+
     </script>
   </head>
   <body>
-    <form method="POST" action="/rent">
-      <section>
-        <h3>기간 선택</h3>
-        <div> <!-- 20180320 sm클래스 추가 -->
-          <label for="from">대여일</label>
-          <input type="text" id="from" name="from">
-          <label for="to">반납일</label>
-          <input type="text" id="to" name="to">
-        </div>
-      </section>
     
-      <section>
-        <h3>지점 선택</h3>
-        <div>
-          <select>
-            <option>서울지점 (02-1234-5678)</option>
-            <option>수원지점 (031-1234-5678)</option>
-            <option>인천지점 (031-1234-5678)</option>
-          </select>
-        </div>
-      </section>
-    
-      <section>
-        <h3>차량 유형</h3>
-        <span>
-          <select name="carSizeSel">
-            <option value="">선택</option>
-            <option value="11">소형(모닝, 레이, 아반떼, K3 등 준중형급 이하)</option>
-            <option value="12">중형(쏘나타, K5, SM6, 말리부 등 중형차급)</option>
-            <option value="13">대형(그랜저, K7, 제네시스 등 준대형급 이상)</option>
-            <option value="ALL">모든차량(조회가 오래걸릴 수 있습니다.)</option>
-          </select>
-        </span>
-      </section>
-    
-      <section>
-          <div>
-            <h3>자차손해 면책 제도 (CDW)</h3>
-          </div>
-          <ul id="selLdwCode">
-            <li>
-              <input type="radio" id="rdoNoCDW" name="rdoCDW" onclick="cdwNoCheck(&quot;0&quot;)" checked="">
-              <label for="rdoNoCDW"><span class="icon"></span>보험 미적용 (0원)</label></li>
-            <li>
-              <input type="radio" id="rdoCDW0" name="rdoCDW">
-              <label for="rdoCDW0"><span class="icon"></span>고객부담금 면제&nbsp;(162,000원)</label>
-            </li>
-          </ul> 
-      </section>
-    
-      <section class="option_etc"> 
-        <h3 class="mb20">기타 옵션</h3>
-        <div class="wrap_option">
-            <div class="left">
-              <h6>내비게이션(무료)</h6>
-              <ul class="radio_vt">
-                <li>
-                  <input type="checkbox" name="navi" id="1O101" class="ckEvent" price="0" ctavl="149">
-                  <label for="1O101"><span class="icon"></span>한글 내비게이션</label>
-                </li>
-                <li>
-                  <input type="checkbox" name="navi" id="1O107" class="ckEvent" price="0" ctavl="1">
-                  <label for="1O107"><span class="icon"></span>영문 내비게이션</label>
-                </li>
-              </ul>   
-            </div>
-        </div>     
-      </section>
-    
-      <hr>
-    
-      <section>
-        <div class="box_price">
-          <ul>
-            <li>
-              <span class="tit">대여금액</span><span class="price" id="rentalFee"><strong>995,000</strong><em>원</em></span>
-            </li>
-              
-            <li>
-              <span class="tit">할인금액</span><span class="price" id="totalDiscountFeeView"><strong>0</strong><em>원</em></span>
-            </li>
-              
-            <li>
-              <span class="tit">보험 및 기타 옵션</span><span class="price" id="totalOptionFeeView"><strong>0</strong><em>원</em></span>
-              <ul class="detail">
-                <li>
-                  <span class="tit" id="cdwNameShow">보험 미적용</span><span class="price" id="cdwFeeShow">0원</span>
-                </li>
-              </ul>
-            </li>
-              
-            <li class="total">
-              <span class="tit">금액</span>
-              <span class="price" id="totalRentalFeeView"><strong>995,000</strong><em>원</em></span>
-            </li>
-          </ul>
-        </div>
-      </section>
+    <%- include('./first.ejs') %>
+  
+    <script>
+      $(function() {
+        $("#rent_time, #end_time").datetimepicker();
+      });
 
-      <button type="submit">예약하기</button>
-    </form>
+      var startDateTextBox = $('#rent_datetimepicker');
+      var endDateTextBox = $('#end_datetimepicker');
+      
+      startDateTextBox.datetimepicker({ 
+        controlType: 'select',
+        oneLine: true,
+        timeFormat: 'hh:mm tt',
+
+        changeMonth: true,
+        changeYear: true,
+        minDate: 0,
+
+        onSelect: function (selectedDateTime){
+          endDateTextBox.datetimepicker('option', 'minDate', $(this).datetimepicker('getDate') );
+          $('#rent_time').datetimepicker("setDate", $(this).datetimepicker("getDate"));
+
+          if (endDateTextBox.val() != '') {
+            var testStartDate = startDateTextBox.datetimepicker('getDate');
+            var testEndDate = endDateTextBox.datetimepicker('getDate');
+            if (testStartDate > testEndDate) { 
+              endDateTextBox.datetimepicker('setDate', testStartDate);
+            }
+          } else {
+            endDateTextBox.val(selectedDateTime);
+          }
+        }
+      });
+
+      endDateTextBox.datetimepicker({ 
+        controlType: 'select',
+        oneLine: true,
+        timeFormat: 'hh:mm tt',
+
+        changeMonth: true,
+        changeYear: true,
+        minDate: 0,
+
+        onSelect: function (selectedDateTime){
+          $('#end_time').datetimepicker("setDate", $(this).datetimepicker("getDate"));
+          if (startDateTextBox.val() != '') {
+            var testStartDate = startDateTextBox.datetimepicker('getDate');
+            var testEndDate = endDateTextBox.datetimepicker('getDate');
+            if (testStartDate > testEndDate) {
+              startDateTextBox.datetimepicker('setDate', testEndDate);
+            }
+          } else {
+            startDateTextBox.val(selectedDateTime);
+          }
+        }
+      });
+    </script>
   </body>
 </html>
 
