@@ -3,10 +3,22 @@
  <head>
   <% include ../common/partials/head %>
  </head>
+ <script>
+
+    $(function() { $("#postcodify_search_button").postcodifyPopUp({
+        function(selectedEntry) {
+             window.opener.document.getElementById("postcode").value = $("#postcode").val();
+             window.opener.document.getElementById("address1").value = $("#address").val();
+             window.open("", "_self", "");
+             window.close();
+        }
+    }); });
+
+ </script>
  <body>
   <% include ../common/partials/nav %>
   <div class="container">    
-    <div id="signupbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+    <div id="signupbox" style="margin-top:2px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
         <div class="panel panel-info" >
                 <div class="panel-heading">
                     <div class="panel-title">Sign Up</div>
@@ -16,39 +28,74 @@
 
                     <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                         
-                        <form action="../api/user/join" method="POST" id="signupform" class="form-horizontal" role="form">
-                                    
+                        <form action="../api/trentUser/join" method="POST" id="signupform" class="form-horizontal" role="form">
+                            
                             <div class="form-group">
-                                <label for="email" class="col-md-3 control-label">Email</label>
+                                <label for="id" class="col-md-3 control-label">아이디</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" id="id" name="id" placeholder="ID" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-md-3 control-label">패스워드</label>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-md-3 control-label">이메일</label>
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" id="email" name="email" placeholder="Email Address" value="">
                                 </div>
                             </div>
-                                
                             <div class="form-group">
-                                <label for="firstname" class="col-md-3 control-label">First Name</label>
+                                <label for="firstname" class="col-md-3 control-label">성</label>
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" value="">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                                <label for="lastname" class="col-md-3 control-label">이름</label>
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="password" class="col-md-3 control-label">Password</label>
+                                <label for="phone" class="col-md-3 control-label">전화번호</label>
                                 <div class="col-md-9">
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="">
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="phone number" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                    <label for="ex2_input0" class="col-md-3 control-label">우편번호</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="postcode" id="postcode" class="form-control postcodify_postcode5" value="">
+                                    </div>
+                            </div>
+                            <div class="form-group"> 
+                                <label for="ex2_input1"class="col-md-3 control-label">도로명주소</label>
+                                <div class="col-md-9">
+                                    <input type="text" name="address" id="address" class="form-control postcodify_address" value="">
+                                </div>
+                             </div>
+                            <div class="form-group">
+                                <label for="ex2_input2" class="col-md-3 control-label">상세주소</label>
+                                <div class="col-md-9">
+                                   <input type="text" name="details" id="details" class="form-control postcodify_details" value="">
                                 </div>
                             </div>
                             
                             <!-- Button -->                                        
                             <div class="col-md-offset-3 col-md-9">
-                                <button id="btn-signup" class="btn btn-info" type="submit">Sign Up</button> 
+                                <button id="btn-signup" class="btn btn-info" type="submit">Sign Up</button>
                             </div>
-                        </form>  
+                        </form>
+                        <div class="form-group">
+                            <label for="address" class="col-md-3 control-label"></label>
+                            <div class="col-md-9">
+                                <button id="postcodify_search_button" class="btn btn-info">주소검색</button>    
+                            </div>
+                        </div>  
                     </div>                     
                 </div>  
     </div>

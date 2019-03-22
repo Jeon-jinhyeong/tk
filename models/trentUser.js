@@ -3,30 +3,42 @@ module.exports = (sequelize, DataTypes) => (
 		userID: {
 			type: DataTypes.STRING(40),
 			allowNull: false,
-			unique: true,
+			primaryKey: true,
 		},
 		password: {
 			type: DataTypes.STRING(100),
 			allowNull: false,
+		},
+		firstname: {
+			type: DataTypes.STRING(40),
+			allowNull: true,
+		},
+		lastname: {
+			type: DataTypes.STRING(40),
+			allowNull: true,
 		},
 		email: {
 			type: DataTypes.STRING(40),
 			allowNull: true,
 		},
 		phone: {
-			type: DataTypes.INTEGER,
+			type: DataTypes.STRING,
 			allowNull: false,
         },
-        lisence: {
-            type: DataTypes.INTEGER,
-            allownull: false,
+        postcode: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         address: {
             type: DataTypes.STRING,
-            allownull: false,
+            allowNull: false,
+        },
+        details: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         kakaoID: {
-			type: DataTypes.INTEGER,
+			type: DataTypes.STRING,
 			allowNull: true,
 		},
 		provider: {
@@ -35,6 +47,8 @@ module.exports = (sequelize, DataTypes) => (
 			defaultValue: 'local',
 		},
 	}, {
-		timestamps: true,
+        timestamps: true,
+        charset: 'utf8',
+        collate:'utf8_general_ci'
 	})
 );

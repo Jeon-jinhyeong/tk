@@ -1,22 +1,30 @@
 module.exports = (sequelize, DataTypes) => (
-	sequelize.define('address', {
-		ID: {
+	sequelize.define('license', {
+		licenseID: {
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
             type: DataTypes.INTEGER
         },
-		postcode: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        address: {
+		classification: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        details: {
-            type: DataTypes.STRING,
+        numberArea: {
             allowNull: false,
+            type: DataTypes.STRING
+        },
+        number: {
+            allowNull: false,
+            type: DataTypes.INTEGER
+        },
+        issueDate: {
+            allowNull: false,
+            type: DataTypes.STRING
+        },
+        dueDate: {
+            allowNull: false,
+            type: DataTypes.STRING
         },
         createdAt: {
             allowNull: false,

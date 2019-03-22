@@ -1,10 +1,12 @@
 const router = require('express').Router();
 
-const userRouter = require('./user'),
+const trentUserRouter = require('./trentUser'),
+      userRouter = require('./user'),
       xlsxRouter = require('./xlsx'),
       postRouter = require('./post'),
       rentRouter = require('./rent');
 
+router.use('/trentUser', trentUserRouter);
 router.use('/user', userRouter);
 router.use("/post", postRouter);
 router.use("/xlsx", xlsxRouter);

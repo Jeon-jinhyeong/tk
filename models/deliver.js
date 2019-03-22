@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => (
 	sequelize.define('deliver', {
-		ID: {
+		deliverID: {
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
@@ -19,6 +19,8 @@ module.exports = (sequelize, DataTypes) => (
             type: DataTypes.DATE
         },
 	}, {
-		timestamps: true,
+        timestamps: true,
+        charset: 'utf8',
+        collate:'utf8_general_ci'
 	})
 );

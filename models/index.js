@@ -24,6 +24,7 @@ db.rent = require('./rent')(sequelize, Sequelize);
 db.truck = require('./truck')(sequelize, Sequelize);
 db.deliver = require('./deliver')(sequelize, Sequelize);
 db.insurance = require('./insurance')(sequelize, Sequelize);
+db.license = require('./license')(sequelize, Sequelize);
 
 
 // 자동으로 외래키 등록
@@ -34,6 +35,16 @@ db.Xlsx.belongsTo(db.User);
 //trent 외래키
 db.trentUser.hasMany(db.rent, { foreignKey: 'userID', sourceKey: 'userID' });
 db.rent.belongsTo(db.trentUser, { foreignKey: 'userID', sourceKey: 'userID' });
+
+db.trentUser.hasMany(db.address, { foreignKey: 'userID', sourceKey: 'userID' });
+db.address.belongsTo(db.trentUser, { foreignKey: 'userID', sourceKey: 'userID' });
+
+db.trentUser.hasMany(db.license, { foreignKey: 'userID', sourceKey: 'userID' });
+db.license.belongsTo(db.trentUser, { foreignKey: 'userID', sourceKey: 'userID' });
+
+db.trentUser.hasMany(db.address, { foreignKey: 'userID', sourceKey: 'userID' });
+db.address.belongsTo(db.trentUser, { foreignKey: 'userID', sourceKey: 'userID' });
+
 db.trentUser.hasMany(db.deliver, { foreignKey: 'userID', sourceKey: 'userID' });
 db.deliver.belongsTo(db.trentUser, { foreignKey: 'userID', sourceKey: 'userID' });
 
@@ -43,8 +54,8 @@ db.rent.belongsTo(db.truck, { foreignKey: 'truckID', sourceKey: 'truckID' });
 db.insurance.hasMany(db.rent, { foreignKey: 'insurID', sourceKey: 'insurID' });
 db.rent.belongsTo(db.insurance, { foreignKey: 'insurID', sourceKey: 'insurID' });
 
-db.rent.hasMany(db.deliver, { foreignKey: 'rentID', sourceKey: 'rentID' });
-db.deliver.belongsTo(db.rent, { foreignKey: 'rentID', sourceKey: 'rentID' });
+db.deliver.hasMany(db.rent, { foreignKey: 'deliverID', sourceKey: 'deliverID' });
+db.rent.belongsTo(db.deliver, { foreignKey: 'deliverID', sourceKey: 'deliverID' });
 
 
 module.exports = db;

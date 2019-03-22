@@ -5,6 +5,7 @@ const router = require('express').Router();
 
 // Models
 const { User } = require(`${rootPath}/models`);
+const { Address } = require(`${rootPath}/models`);
 
 // Lib - 
 const loginChecker = require(`${rootPath}/lib/loginChecker`);
@@ -15,7 +16,7 @@ const passport = require('passport');
 
 //
 router.post('/join', loginChecker.isNotLoggedIn, async (req, res, next) => {
-  const { email, firstName, lastName, password } = req.body;
+  const { id, password, email, firstName, lastName, phone, postcode, address, details } = req.body;
 
   try {
       const user = await User.find({ where: { email } });
@@ -33,6 +34,13 @@ router.post('/join', loginChecker.isNotLoggedIn, async (req, res, next) => {
           password: hash,
           firstName,
           lastName,
+          phone,
+      });
+      
+      await Address.create({
+          postcode,
+          address,
+          details,
       });
 
       return res.redirect('/');
