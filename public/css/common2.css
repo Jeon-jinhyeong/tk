@@ -1,3 +1,15 @@
 .hidden {
     display: none;
 }
+
+.car-selection {
+    width: 100px;
+}
+
+.car-selection img{
+    width: 100px;
+}
+
+#result_car_img {
+    width:  100px;
+}

@@ -13,9 +13,9 @@ const loginChecker = require(`${rootPath}/lib/loginChecker`);
   false면 메인 페이지로 이동한다.
 */
 router.get('/profile', loginChecker.isLoggedIn, (req, res) => {
-  res.render('profile', { 
-    title: lang.profile_title, 
-    user: req.user 
+  res.render('profile', {
+    title: lang.profile_title,
+    user: req.user
   });
 });
 
@@ -27,7 +27,7 @@ router.get('/profile', loginChecker.isLoggedIn, (req, res) => {
 */
 router.get('/join', loginChecker.isNotLoggedIn, (req, res) => {
   res.render('main/join', {
-    title: lang.join_title, 
+    title: lang.join_title,
     user: null,
     joinError: req.flash('joinError'),
   });
@@ -35,16 +35,16 @@ router.get('/join', loginChecker.isNotLoggedIn, (req, res) => {
 
 // 사용자 세션 확인 페이지
 router.get('/check_session', (req, res) => {
-    if (req.session) {
-      return res.send(req.session.passport.user)
-    } 
-    return res.send(lang.no_session)
+  if (req.session) {
+    return res.send(req.session.passport.user)
+  }
+  return res.send(lang.no_session)
 });
 
 // 사용자 로그인 페이지
 router.get('/login', loginChecker.isNotLoggedIn, (req, res) => {
   res.render('main/login', {
-    title: lang.login_title, 
+    title: lang.login_title,
     user: null,
     joinError: req.flash('joinError'),
   });
@@ -52,9 +52,15 @@ router.get('/login', loginChecker.isNotLoggedIn, (req, res) => {
 
 // 사용자 로그아웃 페이지
 router.get('/logout', loginChecker.isLoggedIn, (req, res) => {
+<<<<<<< HEAD
     req.session.destroy();
     req.logout();
     res.redirect('/develop');
+=======
+  req.session.destroy();
+  req.logout();
+  res.redirect('/');
+>>>>>>> d1aec61f7e73902ff3ef0abd6f5be7cd70d42104
 });
 
 module.exports = router;
