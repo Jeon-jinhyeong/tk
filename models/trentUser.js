@@ -37,6 +37,54 @@ module.exports = (sequelize, DataTypes) => (
             type: DataTypes.STRING,
             allowNull: false,
         },
+        classification: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        numberArea: {
+            allowNull: false,
+            type: DataTypes.STRING
+        },
+        number_1: {
+            allowNull: false,
+            type: DataTypes.STRING
+        },
+        number_2: {
+            allowNull: false,
+            type: DataTypes.STRING
+        },
+        number_3: {
+            allowNull: false,
+            type: DataTypes.STRING
+        },
+        number_4: {
+            allowNull: false,
+            type: DataTypes.STRING
+        },
+        issueyear: {
+            allowNull: false,
+            type: DataTypes.INTEGER
+        },
+        issuemonth: {
+            allowNull: false,
+            type: DataTypes.INTEGER
+        },
+        issueday: {
+            allowNull: false,
+            type: DataTypes.INTEGER
+        },
+        dueyear: {
+            allowNull: false,
+            type: DataTypes.INTEGER
+        },
+        duemonth: {
+            allowNull: false,
+            type: DataTypes.INTEGER
+        },
+        dueday: {
+            allowNull: false,
+            type: DataTypes.INTEGER
+        },
         kakaoID: {
 			type: DataTypes.STRING,
 			allowNull: true,

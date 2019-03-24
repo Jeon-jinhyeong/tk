@@ -10,7 +10,9 @@ const loginChecker = require(`${rootPath}/lib/loginChecker`);
 
 //
 router.post('/join', loginChecker.isNotLoggedIn, async (req, res, next) => {
-    const { id, password, email, firstname, lastname, phone, postcode, address, details } = req.body;
+    const { id, password, email, firstname, lastname, phone, postcode, address, details,
+            classification, numberArea, number_1, number_2, number_3, number_4,
+            issueyear, issuemonth, issueday, dueyear, duemonth, dueday } = req.body;
 
   try {
         const user = await trentUser.find({ where: { userID : id } });
@@ -32,6 +34,18 @@ router.post('/join', loginChecker.isNotLoggedIn, async (req, res, next) => {
             postcode,
             address,
             details,
+            classification,
+            numberArea,
+            number_1,
+            number_2,
+            number_3,
+            number_4,
+            issueyear,
+            issuemonth,
+            issueday,
+            dueyear,
+            duemonth,
+            dueday,
         });
 
         return res.redirect('/develop');
