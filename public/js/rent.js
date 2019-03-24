@@ -1,29 +1,54 @@
+const price = [10000, 20000, 30000];
+
 $(document).ready(function() {
+  var startDateTextBox = $('#rent_datetimepicker');
+  var endDateTextBox = $('#end_datetimepicker');
+
+  function calCost() {
+    const diff = endDateTextBox.datetimepicker("getDate") - startDateTextBox.datetimepicker("getDate");
+    const type = $('[name="carType"]:checked').val();
+    return (diff / 1000 / 60) * price[type];
+  };
+
+  function numberWithCommas(x) {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  
+  function renderCost() {
+    const rentCost = calCost();
+    const insuranceCost = 10000;
+    $('#result_rent_cost').text(numberWithCommas(rentCost));
+    $('#result_insurance_cost').text(numberWithCommas(insuranceCost));
+    $('#result_total_cost').text(numberWithCommas(rentCost + insuranceCost));
+  }
+
   $('#show_select_car_section, #show_pay_section').on('click', function () {
     $('#pay_section, #select_car_section').toggleClass('hidden');
   });
 
   //TODO: 차량유형 따른 달력정보를 나타내야함
   $('[name="carType"]').on('change', function () {
-    console.log('차량유형 따른 달력정보를 나타내야함');
-    $('#result_car_name').text("차량명");
-    $('#result_car_img').attr('src', '차량 사진'); // 변경해야함
+    debugger;
+    $('#result_car_name').text($(this).attr('data-car-name'));
+    $('#result_car_img').attr('src', `/img/car/${$(this).val()}.jpeg`);
+    renderCost();
   });
 
   //TODO: 지점 따른 달력정보를 나타내야함
   $('[name="region"]').on('change', function () {
     $('#result_rent_region, #result_return_region').text("차량 장소");
-    console.log('지점 따른 달력정보를 나타내야함');
   });
   
   //TODO: 날짜에 따른 총합 계산 해야함
-  $('#rent_datetimepicker').on('change', function () {
-    $('#result_rent_date').text("대여일");
+  $('#rent_time').on('change', function () {
+    $('#result_rent_date').text($(this).val());
+    renderCost();
     console.log('날짜에 따른 총합 계산 해야함');
   });
 
-  $('#end_datetimepicker').on('change', function () {
-    $('#result_return_rent_date').text("반납일");
+  $('#end_time').on('change', function () {
+    $('#result_return_rent_date').text($(this).val());
+    renderCost();
     console.log('날짜에 따른 총합 계산 해야함');
   });
 
