@@ -54,7 +54,7 @@ router.get('/login', loginChecker.isNotLoggedIn, (req, res) => {
 router.get('/logout', loginChecker.isLoggedIn, (req, res) => {
     req.session.destroy();
     req.logout();
-    res.redirect('/');
+    res.redirect('/develop');
 });
 
 module.exports = router;
