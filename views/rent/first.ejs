@@ -2,19 +2,40 @@
 	<!-- 차종 -->
 	<section>
 		<h3>차량 유형</h3>
-		<label><input type="radio" name="carType" value="0" data-car-name="다마스"  checked>다마스<br></label>
-		<label><input type="radio" name="carType" value="1" data-car-name="라보" >라보<br></label>
-		<label><input type="radio" name="carType" value="2" data-car-name="포터2" >포터2<br></label>
+		<div>
+			<span class="car-selection">
+				<label>
+					<img src="/img/car/0.jpeg">
+					<input type="radio" name="carType" value="0" data-car-name="다마스" checked>다마스
+				</label>
+			</span>
+			<span class="car-selection">
+				<label>
+					<img src="/img/car/1.jpeg">
+					<input type="radio" name="carType" value="1" data-car-name="라보">라보
+				</label>
+			</span>
+			<span class="car-selection">
+				<label>
+					<img src="/img/car/2.jpeg">
+					<input type="radio" name="carType" value="2" data-car-name="포터2">포터2
+				</label>
+			</span>
+		</div>
 	</section>
 
 	<!-- 지점 -->
 	<section>
 		<h3>지점 선택</h3>
 		<div>
-			<label><input type="radio" name="region" value="0" checked>사당<br></label>
+			<label>
+				<input type="radio" name="region" value="0" checked>사당
+				<br>
+			</label>
 		</div>
 		<div>
-			<label><input type="checkbox" name="isDelivery" value="">딜리버리 서비스(DS)</label>
+			<label>
+				<input type="checkbox" name="isDelivery" value="">딜리버리 서비스(DS)</label>
 		</div>
 	</section>
 
@@ -24,12 +45,12 @@
 		<div>
 			<input type="text" id="rent_time" disabled>
 			<div id="rent_datetimepicker"></div>
-	
+
 			<input type="text" id="end_time" disabled>
 			<div id="end_datetimepicker"></div>
 		</div>
 	</section>
-	
+
 	<!-- 보험 -->
 	<!--
 	<section>
@@ -52,12 +73,11 @@
 	-->
 
 	<!-- 약관 정보 -->
-  <section>
+	<section>
 		<h3>예약완료를 위한 이용자 동의 사항</h3>
 		<div>
 			<label>
-				<input type="checkbox" name="">
-				예약완료를 위한 이용 동의(필수), 차량 대여를 위한 개인정보 수집/이용 동의(필수), 개인정보 취급 위탁 동의(필수)에 모두 동의합니다. 
+				<input type="checkbox" name=""> 예약완료를 위한 이용 동의(필수), 차량 대여를 위한 개인정보 수집/이용 동의(필수), 개인정보 취급 위탁 동의(필수)에 모두 동의합니다.
 			</label>
 		</div>
 	</section>

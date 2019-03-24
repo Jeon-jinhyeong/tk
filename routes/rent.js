@@ -10,8 +10,7 @@ const router = require('express').Router();
 const loginChecker = require(`${rootPath}/lib/loginChecker`);
 
 // Lib 
-
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
   res.render('rent/rent');
 });
 
