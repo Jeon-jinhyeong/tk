@@ -2,15 +2,13 @@ const router = require('express').Router();
 
 const createError = require('http-errors');
 
-const trentUserRouter = require('./trentUser'),
-      mainRouter = require('./main'),
+const mainRouter = require('./main'),
       userRouter = require('./user'),
       xlsxRouter = require('./xlsx'),
       postRouter = require('./post'),
       rentRouter = require('./rent');
 
 router.use('/', mainRouter);
-router.use('/trentUser', trentUserRouter)
 router.use('/user', userRouter);
 router.use("/post", postRouter);
 router.use("/xlsx", xlsxRouter);
