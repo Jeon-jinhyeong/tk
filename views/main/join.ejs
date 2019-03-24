@@ -15,6 +15,92 @@
         }
     }); });
 
+    $().ready(function () {
+        $("#signupform").validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                password: {
+                    required: true,
+                    minlength: 8
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true,
+                    minlength: 11,
+                },
+                postcode: {
+                    required: true,
+                    minlength: 5
+                },
+                address: {
+                    required: true
+                },
+                details: {
+                    required: true
+                },
+                classification: {
+                    required: true
+                },
+                numberArea: {
+                    required: true
+                },
+                number_1: {
+                    required: true,
+                    minlength: 2
+                },
+                number_2: {
+                    required: true,
+                    minlength: 2
+                },
+                number_3: {
+                    required: true,
+                    minlength: 6
+                },
+                number_4: {
+                    required: true,
+                    minlength: 2
+                },
+                issueyear: {
+                    required: true,
+                },
+                issuemonth: {
+                    required: true
+                },
+                issueday: {
+                    required: true
+                },
+                dueyear: {
+                    required: true
+                },
+                duemonth: {
+                    required: true
+                },
+                dueday: {
+                    required: true
+                },
+                messages: {
+                    name: {
+                        required: "이름을 입력해주세요",
+                        minlength: "최소 2글자 이상 입력해주세요"
+                    },
+                    password: {
+                        required: "비밀번호를 입력해주세요",
+                        minlength: "최소 8자 이상 입력해주세요"
+                    },
+                    email: {
+                        required: "이메일을 입력해주세요."
+                    }
+                }
+            }
+        });
+    })
+
  </script>
  <body>
   <% include ../common/partials/nav %>
@@ -50,15 +136,9 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="firstname" class="col-md-3 control-label">성</label>
+                                <label for="name" class="col-md-3 control-label">이름</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastname" class="col-md-3 control-label">이름</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -91,13 +171,20 @@
                             <div class="form-group">
                                 <label for="ex2_input2" class="col-md-3 control-label">면허구분</label>
                                 <div class="col-md-9">
-                                   <input type="text" name="classification" id="classification" class="form-control" placeholder="국내/국외" value="">
+                                    <select name="classification" id="classification" class="form-control">
+                                        <option value='국내'>국내</option>
+                                        <option value='국외'>국외</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="license" class="col-md-3 control-label">면허종류</label>
                                 <div class="col-md-9">
-                                   <input type="text" name="numberArea" id="numberArea" class="form-control" placeholder="1종보통" value="">
+                                    <select name="numberArea" id="numberArea" class="form-control">
+                                        <option value='1종보통'>1종보통</option>
+                                        <option value='2종보통'>2종보통</option>
+                                        <option value='2종자동'>2종자동</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
