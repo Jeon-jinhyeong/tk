@@ -19,7 +19,6 @@ db.Xlsx = require('./xlsx')(sequelize, Sequelize);
 
 //trent DB
 db.address = require('./address')(sequelize, Sequelize);
-db.trentUser = require('./trentUser')(sequelize, Sequelize);
 db.rent = require('./rent')(sequelize, Sequelize);
 db.truck = require('./truck')(sequelize, Sequelize);
 db.deliver = require('./deliver')(sequelize, Sequelize);
@@ -33,20 +32,20 @@ db.Post.belongsTo(db.User);
 db.Xlsx.belongsTo(db.User);
 
 //trent 외래키
-db.trentUser.hasMany(db.rent, { foreignKey: 'userID', sourceKey: 'userID' });
-db.rent.belongsTo(db.trentUser, { foreignKey: 'userID', sourceKey: 'userID' });
+db.User.hasMany(db.rent, { foreignKey: 'userID', sourceKey: 'userID' });
+db.rent.belongsTo(db.User, { foreignKey: 'userID', sourceKey: 'userID' });
 
-db.trentUser.hasMany(db.address, { foreignKey: 'userID', sourceKey: 'userID' });
-db.address.belongsTo(db.trentUser, { foreignKey: 'userID', sourceKey: 'userID' });
+db.User.hasMany(db.address, { foreignKey: 'userID', sourceKey: 'userID' });
+db.address.belongsTo(db.User, { foreignKey: 'userID', sourceKey: 'userID' });
 
-db.trentUser.hasMany(db.license, { foreignKey: 'userID', sourceKey: 'userID' });
-db.license.belongsTo(db.trentUser, { foreignKey: 'userID', sourceKey: 'userID' });
+db.User.hasMany(db.license, { foreignKey: 'userID', sourceKey: 'userID' });
+db.license.belongsTo(db.User, { foreignKey: 'userID', sourceKey: 'userID' });
 
-db.trentUser.hasMany(db.address, { foreignKey: 'userID', sourceKey: 'userID' });
-db.address.belongsTo(db.trentUser, { foreignKey: 'userID', sourceKey: 'userID' });
+db.User.hasMany(db.address, { foreignKey: 'userID', sourceKey: 'userID' });
+db.address.belongsTo(db.User, { foreignKey: 'userID', sourceKey: 'userID' });
 
-db.trentUser.hasMany(db.deliver, { foreignKey: 'userID', sourceKey: 'userID' });
-db.deliver.belongsTo(db.trentUser, { foreignKey: 'userID', sourceKey: 'userID' });
+db.User.hasMany(db.deliver, { foreignKey: 'userID', sourceKey: 'userID' });
+db.deliver.belongsTo(db.User, { foreignKey: 'userID', sourceKey: 'userID' });
 
 db.truck.hasMany(db.rent, { foreignKey: 'truckID', sourceKey: 'truckID' });
 db.rent.belongsTo(db.truck, { foreignKey: 'truckID', sourceKey: 'truckID' });

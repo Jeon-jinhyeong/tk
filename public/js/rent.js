@@ -1,13 +1,11 @@
-const price = [10000, 20000, 30000];
-
 $(document).ready(function() {
   var startDateTextBox = $('#rent_datetimepicker');
   var endDateTextBox = $('#end_datetimepicker');
 
-  function calCost() {
+  function calCost(pricePerMinute) {
     const diff = endDateTextBox.datetimepicker("getDate") - startDateTextBox.datetimepicker("getDate");
-    const type = $('[name="carType"]:checked').val();
-    return (diff / 1000 / 60) * price[type];
+
+    return (diff / 1000 / 60) * pricePerMinute;
   };
 
   function numberWithCommas(x) {
@@ -15,11 +13,22 @@ $(document).ready(function() {
   }
   
   function renderCost() {
-    const rentCost = calCost();
-    const insuranceCost = 10000;
-    $('#result_rent_cost').text(numberWithCommas(rentCost));
-    $('#result_insurance_cost').text(numberWithCommas(insuranceCost));
-    $('#result_total_cost').text(numberWithCommas(rentCost + insuranceCost));
+    $.ajax({
+      url: `/truck/getMinutePrice/${$('[name="truckType"]:checked').val()}`,
+      type: 'GET',
+    })
+    .done((data, textStatus, jqXHR) => {
+      const pricePerMinute = data.pricePerMinute;
+      
+      const rentCost = calCost(pricePerMinute);
+      const insuranceCost = 10000;
+      $('#result_rent_cost').text(numberWithCommas(rentCost));
+      $('#result_insurance_cost').text(numberWithCommas(insuranceCost));
+      $('#result_total_cost').text(numberWithCommas(rentCost + insuranceCost));
+    })
+    .fail((jqXHR, textStatus, errorThrown) => {
+      console.log('bbb');
+    });
   }
 
   $('#show_select_car_section, #show_pay_section').on('click', function () {
@@ -27,11 +36,9 @@ $(document).ready(function() {
   });
 
   //TODO: 차량유형 따른 달력정보를 나타내야함
-  $('[name="carType"]').on('change', function () {
-    debugger;
+  $('[name="truckType"]').on('change', function () {
     $('#result_car_name').text($(this).attr('data-car-name'));
     $('#result_car_img').attr('src', `/img/car/${$(this).val()}.jpeg`);
-    renderCost();
   });
 
   //TODO: 지점 따른 달력정보를 나타내야함

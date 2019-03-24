@@ -52,15 +52,9 @@ router.get('/login', loginChecker.isNotLoggedIn, (req, res) => {
 
 // 사용자 로그아웃 페이지
 router.get('/logout', loginChecker.isLoggedIn, (req, res) => {
-<<<<<<< HEAD
     req.session.destroy();
     req.logout();
     res.redirect('/develop');
-=======
-  req.session.destroy();
-  req.logout();
-  res.redirect('/');
->>>>>>> d1aec61f7e73902ff3ef0abd6f5be7cd70d42104
 });
 
 module.exports = router;

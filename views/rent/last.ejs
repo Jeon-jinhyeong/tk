@@ -1,9 +1,10 @@
+
 <section id="pay_section" class="hidden">
   <!-- 계인 정보 -->
   <section>
     <h3>개인 정보</h3>
     <table>
-      <caption>개인 정보 상세 정보</caption>
+      <!-- <caption>개인 정보 상세 정보</caption> -->
       <colgroup>
         <col style="width:110px">
         <col style="width:auto">
@@ -12,24 +13,79 @@
         <tr>
           <th scope="row"><label for="userName">이름</label></th>
           <td>
-            <input type="text" value="" name="userName" title="성명" placeholder="이름을 입력하세요.">
+            <input type="text" name="userName" title="성명" placeholder="이름을 입력하세요." value="<%= user.name %>">
           </td>
         </tr>
         <tr>
           <th scope="row"><label for="usrEmail">이메일</label></th>
           <td>
-            <input type="text" name="usrEmail" maxlength="80" value="" title="이메일" placeholder="이메일을 입력하세요.">
+            <input type="text" name="usrEmail" maxlength="80" title="이메일" placeholder="이메일을 입력하세요." value="<%= user.email %>">
           </td>
         </tr>
         <tr>
           <th scope="row"><label for="phone1">휴대전화</label></th>
           <td>
-            <input name="phone1" title="휴대폰 첫번째 숫자" type="text" value="" maxlength="4" onkeydown="" onkeypress="" onkeyup="">
+            <input name="phone1" title="휴대폰 첫번째 숫자" type="text" value="<%= user.phone %>" maxlength="4" onkeydown="" onkeypress="" onkeyup="">
             <span>-</span>
-            <input name="phone2" title="휴대폰 가운데 숫자" type="text" value="" maxlength="4" onkeydown="" onkeypress="" onkeyup="">
+            <input name="phone2" title="휴대폰 가운데 숫자" type="text" value="<%= user.phone %>" maxlength="4" onkeydown="" onkeypress="" onkeyup="">
             <span>-</span>
 
-            <input name="phone3" title="휴대폰 마지막 숫자" type="text" value="" maxlength="4" onkeydown="" onkeypress="" onkeyup="">
+            <input name="phone3" title="휴대폰 마지막 숫자" type="text" value="<%= user.phone %>" maxlength="4" onkeydown="" onkeypress="" onkeyup="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h3>운전면허 정보</h3>
+    <table>
+      <colgroup>
+        <col style="width:110px">
+        <col style="width:auto">
+      </colgroup>
+      <tbody>
+        <tr>
+          <th scope="row"><label for="userName">면허구분</label></th>
+          <td>
+            <input type="text" value="<%= user.classification %>" name="userName" title="성명" placeholder="국내/국외">
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="usrEmail">면허종류</label></th>
+          <td>
+            <input type="text" name="usrEmail" maxlength="80" value="<%= user.numberArea %>" title="이메일" placeholder="1종보통">
+          </td>
+        </tr>
+          <tr>
+          <th scope="row"><label for="usrEmail">면허증번호</label></th>
+          <td>
+            <input type="text" name="number_1" id="number_1" class="form-control" placeholder="지역" value="<%= user.number_1 %>">
+            <input type="text" name="number_2" id="number_2" class="form-control" value="<%= user.number_2 %>">
+            <input type="passwd" name="number_3" id="number_3" class="form-control" value="<%= user.number_3 %>">
+            <input type="text" name="number_4" id="number_4" class="form-control" value="<%= user.number_4 %>">
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="usrEmail">발급일</label></th>
+          <td>
+          <input type="text" name="issueyear" id="issueyear" class="form-control" value="<%= user.issueyear %>">
+          <label class="col-md-1 control-label">년</label>
+          <input type="text" name="issuemonth" id="issuemonth" class="form-control" value="<%= user.issuemonth %>">
+          <label class="col-md-1 control-label">월</label>
+          <input type="text" name="issueday" id="issueday" class="form-control" value="<%= user.issueday %>">
+          <label class="col-md-1 control-label">일</label>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="usrEmail">만료일</label></th>
+          <td>
+          <input type="text" name="issueyear" id="issueyear" class="form-control" value="<%= user.dueyear %>">
+          <label class="col-md-1 control-label">년</label>
+          <input type="text" name="issuemonth" id="issuemonth" class="form-control" value="<%= user.duemonth %>">
+          <label class="col-md-1 control-label">월</label>
+          <input type="text" name="issueday" id="issueday" class="form-control" value="<%= user.dueday %>">
+          <label class="col-md-1 control-label">일</label>
           </td>
         </tr>
       </tbody>
