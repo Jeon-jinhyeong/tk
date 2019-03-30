@@ -46,7 +46,7 @@ router.get('/login', loginChecker.isNotLoggedIn, (req, res) => {
   res.render('main/login', {
     title: lang.login_title,
     user: null,
-    joinError: req.flash('joinError'),
+    loginError: req.flash('loginError'),
   });
 });
 

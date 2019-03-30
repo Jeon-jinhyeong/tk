@@ -24,7 +24,7 @@ router.get("/", loginChecker.isLoggedIn, async (req, res) => {
 		}
 	});
 	res.render("post/index", {
-		posts: postsㄴ
+		posts: posts
 	});
 });
 
