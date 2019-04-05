@@ -1,0 +1,150 @@
+<style>
+  .final-result {
+    padding: 30px;
+    margin-top: 0;
+  }
+
+  .final-result>li {
+    margin: 0;
+    width: 100%;
+  }
+
+  .result-text-title,
+  .result-text-unit {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.5;
+
+    color: #ffffff;
+  }
+
+  .result-text-title {
+    display: inline-block;
+    text-align: left;
+    width: 138px;
+  }
+
+  .result-text-unit {
+    text-align: right;
+    display: inline-block;
+    float: right;
+  }
+
+  .result-price {
+    display: inline-block;
+    width: 125px;
+    font-size: 25px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.1;
+    text-align: right;
+    color: #ffffff;
+  }
+
+  .result-text-total-unit,
+  .result-total-price {
+    color: #ff4949;
+  }
+
+  .result-total-price {
+    font-size: 45px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.11;
+    text-align: left;
+    color: #ff4949;
+  }
+
+  .result-text-total-unit {
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.11;
+    text-align: left;
+    color: #ff4949;
+  }
+
+  .total-result {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+</style>
+
+<div class="result-section">
+  <h3>선택 및 결제 정보</h3>
+  <div style="text-align: center; border: 1px solid #d2d2d2">
+    <img src="/img/test.png" style="width: 300px; height: 226px; margin-top: 72px;">
+    <div style="text-align :  left; margin-left: 29px;">
+      <div>
+        <span class="result-label">차종</span>
+        <span class="result-label">다마스</span>
+      </div>
+
+      <div>
+        <span class="result-label">대여</span>
+        <span class="result-label">강남 2019.03.23일 12시00분</span>
+      </div>
+
+      <div>
+        <span class="result-label">반납</span>
+        <span class="result-label">강남 2019.03.23일 12시00분</span>
+      </div>
+
+      <div>
+        <span class="result-label">보험</span>
+        <span class="result-label">보험 미적용</span>
+      </div>
+    </div>
+  </div>
+  <div style="background: #25333e; height: 442px; color: white;">
+    <ul class="final-result">
+      <li>
+        <span class="result-text-title">대여금액</span>
+        <span>
+          <strong id="result_rent_cost" class="result-price">0</strong>
+          <em class="result-text-unit">원</em>
+        </span>
+      </li>
+      <li>
+        <span class="result-text-title">할인금액</span>
+        <span>
+          <strong id="result_insurance_cost" class="result-price">0</strong>
+          <em class="result-text-unit">원</em>
+        </span>
+      </li>
+      <li>
+        <span class="result-text-title">포인트 차감</span>
+        <span>
+          <strong id="result_insurance_cost" class="result-price">0</strong>
+          <em class="result-text-unit">원</em>
+        </span>
+      </li>
+
+      <li>
+        <span class="result-text-title">보험 및 기타옵션</span>
+        <span>
+          <strong id="result_insurance_cost" class="result-price">0</strong>
+          <em class="result-text-unit">원</em>
+        </span>
+      </li>
+      <li>
+        <br>
+        <hr>
+        <br>
+      </li>
+      <li>
+        <span class="result-text-title">총 결제 금액</span>
+        <span class="total-result">
+          <strong id="result_total_cost" class="result-total-price">0</strong>
+          <em class="result-text-total-unit">원</em>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
