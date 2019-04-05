@@ -1,16 +1,770 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <% include ../common/partials/head %>
- </head>
- <body>
-  <% include ../common/partials/nav %>
-  <div class="container home home-welcome">
-   <div class="jumbotron">
-    <h1>MEN - 게시판</h1>
-    <P>이 사이트는 <a href="http://a-mean-blog.com/ko/blog/MEAN/MEN-게시판">http://a-mean-blog.com/ko/blog/MEAN/MEN-게시판</a>
-﻿에서 작성되었습니다! </p>
-   </div>
-  </div>
- </body>
+  <head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+
+  <style>
+    body {
+      font-family: 'NanumSquare', sans-serif;
+    }
+    body, p, h1, h2, h3, h4, h5, 
+    h6, ul, ol, li, dl, dt, dd, 
+    table, th, td, form, fieldset, legend, input, 
+    textarea, button, select {
+      margin: 0;
+      padding: 0;
+    }
+
+    a { text-decoration:none }
+    a:hover { text-decoration:none !important }
+  </style>
+  </head>
+  <body>
+    <% include ../common/partials/nav %>
+  </body>
 </html>
+
+<style>
+.container-full {
+  padding-top: 100px;
+  padding-left: 260px;
+  padding-right: 260px;
+
+  /*background : url(./img/test2.png);
+background-size: 1920px;*/
+}
+
+.section-title {
+  font-family: NanumSquareEB;
+  font-size: 50px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.1;
+  text-align: center;
+  color: #00a8ff;
+}
+
+.join-form-container {
+  padding: 57px 0px;
+  width: 1000px;
+  float: left;
+  margin-right: 50px;
+}
+
+.panel-heading {
+  font-family: NanumSquareEB;
+  font-size: 36px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.47;
+  letter-spacing: -0.9px;
+  text-align: left;
+  color: #333333;
+  font-weight: bold;
+}
+
+input {
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 58px;
+  border: solid 1px #bfbfbf;
+  background-color: #ffffff;
+  font-size: 28px;
+  color: #333333;
+
+  font-family: NanumSquareR;
+  font-size: 28px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: -0.7px;
+  text-align: left;
+  color: #333333;
+
+  width: 100%;
+}
+
+.label-section {
+  width: 48px;
+  font-family: NanumSquareR;
+  font-size: 28px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 60px;
+  letter-spacing: -0.7px;
+  text-align: left;
+  color: #333333;
+  width: 209px;
+  margin-top: 21px;
+  float: left;
+}
+
+.input-section {
+  display: inline-block;
+  margin-top: 18px;
+}
+
+.panel-item {
+  clear: both;
+}
+
+.panel {
+  margin-bottom: 60px;
+}
+
+.warnning {
+  font-family: NanumSquareR;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.35;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #dd0202;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+
+  padding-left: 20px;
+  padding-right: 20px;
+  border: solid 1px #bfbfbf;
+  background-color: #ffffff;
+  font-size: 28px;
+  color: #333333;
+
+  height: 60px;
+  border: solid 1px #bfbfbf;
+
+
+  border-radius: 0;
+}
+
+.signup {
+  width: 329px;
+  height: 90px;
+  background-color: #00a8ff;
+  font-family: NanumSquareEB;
+  font-size: 34px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.47;
+  letter-spacing: -0.9px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.form-ctl-section {
+  text-align: center;
+}
+
+.search-address {
+  display: inline-block;
+  width: 246px;
+  height: 60px;
+  background-color: #00a8ff;
+  font-family: NanumSquareR;
+  font-size: 28px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: -0.7px;
+  line-height: 2.175;
+  text-align: center;
+  color: #ffffff;
+}
+
+.full-input {
+  width: 749px;
+}
+
+.full-select {
+  width: 791px;
+}
+
+.forth-input,
+.forth-input-last {
+  width: 137.5px;
+}
+
+.forth-input {
+  margin-right: 20px;
+}
+
+.third-input,
+.third-input-last {
+  width: 205px;
+}
+
+.third-input {
+  margin-right: 20px;
+}
+
+.date-section,
+.date-section-last {
+  display: inline;
+  margin-right: 26px;
+}
+
+.date-section-last {
+  margin-right: 0px;
+}
+
+.date-section>input,
+.date-section-last>input {
+  margin-right: -33px;
+
+  padding-right: 60px;
+  padding-left: 20px;
+  text-align: end;
+}
+
+.date-section>.third-input,
+.date-section-last>.third-input-last {
+  width: 164px;
+}
+
+.date-section>input.third-input-last {
+  margin-right: 0px;
+}
+
+.float-label {
+  position: relative;
+  right: 20px;
+  font-family: NanumSquareR;
+  font-size: 28px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.79;
+  letter-spacing: -0.7px;
+  text-align: left;
+  color: #333333;
+}
+
+.result-section {
+  float: left;
+  width: 350px;
+  margin-top: 57px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  /* line-height: 2.08; */
+  letter-spacing: -0.6px;
+  text-align: left;
+  color: #ffffff;
+  background: #6b879e;
+  padding: 22px 24px;
+}
+
+.result-label {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.78;
+  letter-spacing: -0.5px;
+  text-align: left;
+  color: #666666;
+  margin-right: 15px;
+}
+
+.process {
+  width: 466px;
+  height: 88px;
+  display: inline-block;
+  background-color: #d2d2d2;
+  font-size: 30px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3;
+  letter-spacing: -0.8px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.process.active {
+  background-color: #00a8ff !important;
+}
+
+.payment-type {
+  display: inline-block;
+  width: 498px;
+  height: 110px;
+  text-align: center;
+  border: 1px solid #bfbfbf;
+
+  font-size: 30px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3.8;
+  letter-spacing: -0.8px;
+  text-align: center;
+  
+  color: #666666;
+}
+.payment-type.active {
+  background-color: #00a8ff !important;
+  color: #ffffff;
+}
+
+.payment-select-section {
+  background-color: #f9f9f9;
+  padding: 40px;
+}
+
+.payment-select-section .label-section{
+  width: 184px;
+  font-size: 28px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.79;
+  letter-spacing: -0.7px;
+  text-align: left;
+  color: #333333;
+}
+
+.payment-select-section .full-select {
+  width: 736px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-left: 17px;
+  padding-right: 17px;
+  border: solid 1px #bfbfbf;
+  background-color: #ffffff;
+  font-size: 28px;
+  color: #333333;
+  height: 60px;
+  border: solid 1px #bfbfbf;
+  border-radius: 0;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.78;
+  letter-spacing: -0.5px;
+  text-align: left;
+  color: #333333;
+}
+
+.spend-all {
+  font-size: 28px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.79;
+  letter-spacing: -0.7px;
+  text-align: left;
+  color: #333333;
+}
+</style>
+<section class="container-full">
+  <div>
+    <span class="process ">01 기본정보 선택
+    </span><span class="process active">02 결제하기
+    </span><span class="process ">03 예약완료</span>
+  </div>
+  <form action="../api/user/join" method="POST" id="signupform" class="join-form-container" role="form">
+    <div class="panel">
+      <div class="panel-heading">개인정보</div>
+
+      <div class="panel-body">
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="name">이름</label>
+          </div>
+          <div class="input-section">
+            <input type="text" class="full-input" id="name" name="name" placeholder="Name" value="">
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="email">이메일</label>
+          </div>
+          <div class="input-section">
+            <input type="text" class="full-input" id="email" name="email" placeholder="Email Address" value="">
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="phone">휴대전화</label>
+          </div>
+          <div class="input-section">
+            <input type="text" class="third-input" id="phone" name="phone" placeholder="phone number" value="">
+            <input type="text" class="third-input" id="phone" name="phone" placeholder="phone number" value="">
+            <input type="text" class="third-input-last" id="phone" name="phone" placeholder="phone number" value="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">운전면허 정보</div>
+
+      <div class="panel-body">
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="ex2_input2">면허구분</label>
+          </div>
+          <div class="input-section">
+            <select name="classification" id="classification" class="full-select">
+              <option value='국내'>국내</option>
+              <option value='국외'>국외</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="license">면허종류</label>
+          </div>
+          <div class="input-section">
+            <select name="numberArea" id="numberArea" class="full-select">
+              <option value='1종보통'>1종보통</option>
+              <option value='2종보통'>2종보통</option>
+              <option value='2종자동'>2종자동</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="license">면허증번호</label>
+          </div>
+          <div class="input-section">
+            <input type="text" name="number_1" id="number_1" class="forth-input" placeholder="지역" value="">
+            <input type="text" name="number_2" id="number_2" class="forth-input" value="">
+            <input type="text" name="number_3" id="number_3" class="forth-input" value="">
+            <input type="text" name="number_4" id="number_4" class="forth-input-last" value="">
+            <div>
+              <span class="warnning"> 2014년 07월 02일 이후 발급 면허는 숫자 코드로 지역 입력합니다.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="license">발급일</label>
+          </div>
+          <div class="input-section">
+            <div class="date-section">
+              <input type="text" class="third-input" name="issueyear" id="issueyear" value="">
+              <label class="float-label">년</label>
+            </div>
+            <div class="date-section">
+              <input type="text" class="third-input" name="issuemonth" id="issuemonth" value="">
+              <label class="float-label">월</label>
+            </div>
+            <div class="date-section-last">
+              <input type="text" class="third-input-last" name="issueday" id="issueday" value="">
+              <label class="float-label">일</label>
+            </div>
+            <div>
+              <span class="warnning"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="license">만료일</label>
+          </div>
+          <div class="input-section">
+            <div class="date-section">
+              <input type="text" class="third-input" name="dueyear" id="dueyear" value="">
+              <label class="float-label">년</label>
+            </div>
+            <div class="date-section">
+              <input type="text" class="third-input" name="duemonth" id="duemonth" value="">
+              <label class="float-label">월</label>
+            </div>
+            <div class="date-section-last">
+              <input type="text" class="third-input-last" name="dueday" id="dueday" value="">
+              <label class="float-label">일</label>
+            </div>
+            <div>
+              <span class="warnning">개인정보가 지점 대여 시 상이할 경우, 예약이 취소되거나 추가 확인이 필요할 수 있습니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">할인쿠폰 선택</div>
+
+      <div class="panel-body">
+        <div class="payment-select-section">
+          <div class="panel-item">
+            <div class="label-section">
+              <label for="ex2_input2">보유쿠폰</label>
+            </div>
+            <div class="input-section">
+              <select name="classification" id="classification" class="full-select">
+                <option value='국내'>국내</option>
+                <option value='국외'>국외</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="panel-item">
+            <div class="label-section">
+              <label for="ex2_input2">포인트 사용</label>
+            </div>
+            <div class="input-section">
+              <div class="date-section">
+                <input type="text" class="third-input" name="issueyear" id="issueyear" value="">
+                <label class="float-label">원</label>
+                
+                <span class="spend-all">전액사용 (20,000원)</span>
+              </div>
+              <div>
+                <span class="description">
+                  포인트는 1000단위부터 사용 가능합니다.
+                </span>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">결제 방식</div>
+      
+      <div class="panel-body">
+        <div>
+          <span class="payment-type ">
+            휴대폰 결제
+          </span><span class="payment-type active">
+            카드 결제
+        </div>
+
+        <div class="payment-select-section">
+          <div class="panel-item">
+            <div class="label-section">
+              <label for="ex2_input2">통신사 선택</label>
+            </div>
+            <div class="input-section">
+              <select name="classification" id="classification" class="full-select">
+                <option value='국내'>국내</option>
+                <option value='국외'>국외</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="payment-select-section">
+          <div class="panel-item">
+            <div class="label-section">
+              <label for="ex2_input2">카드사 선택</label>
+            </div>
+            <div class="input-section">
+              <select name="classification" id="classification" class="full-select">
+                <option value='국내'>국내</option>
+                <option value='국외'>국외</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="panel-item">
+            <div class="label-section">
+              <label for="ex2_input2">할부 선택</label>
+            </div>
+            <div class="input-section">
+              <div>
+                <select name="classification" id="classification" class="full-select">
+                  <option value='국내'>일시불</option>
+                  <option value='국외'>국외</option>
+                </select>
+              </div>
+              <div>
+                <span class="description">
+                  법인 / 기업카드는 신용카드 무이자 할부 적용이 되지 않습니다.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </div>
+
+    <div class="form-ctl-section">
+      <button id="btn-signup" class="signup" type="submit">다음단계</button>
+    </div>
+  </form>
+
+  <style>
+    .final-result {
+      padding: 30px;
+      margin-top: 0;
+    }
+    .final-result > li {
+      margin: 0;
+      width: 100%; 
+    }
+
+    .result-text-title, .result-text-unit {
+      font-size: 20px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 2.5;
+      letter-spacing: -0.5px;
+      
+      color: #ffffff;
+    }
+
+    .result-text-title {
+      display: inline-block;
+      text-align: left;
+      width: 133px;
+    }
+
+    .result-text-unit {
+      text-align: right;
+      display: inline-block;
+      float: right;
+    }
+
+    .result-price {
+      display: inline-block;
+      width: 125px;
+      font-size: 25px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 2.1;
+      letter-spacing: -2.3px;
+      text-align: right;
+      color: #ffffff;
+    }
+
+    .result-text-total-unit, .result-total-price {
+      color: #ff4949;
+    }
+    .result-total-price {
+      font-size: 45px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.11;
+      letter-spacing: -3.4px;
+      text-align: left;
+      color: #ff4949;
+    }
+
+    .result-text-total-unit {
+      font-size: 30px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.11;
+      letter-spacing: -3.4px;
+      text-align: left;
+      color: #ff4949;
+    }
+    
+    .total-result {
+      display: block;
+      width: 100%;
+      text-align: right;
+    }
+    
+    
+  </style>
+  <div class="result-section">
+    <h3>선택 및 결제 정보</h3>
+    <div style="text-align: center; border: 1px solid #d2d2d2">
+      <img src="/img/test.png" style="width: 300px; height: 226px; margin-top: 72px;">
+      <div style="text-align :  left; margin-left: 29px;">
+        <div>
+          <span class="result-label">차종</span>
+          <span class="result-label">다마스</span>
+        </div>
+
+        <div>
+          <span class="result-label">대여</span>
+          <span class="result-label">강남 2019.03.23일 12시00분</span>
+        </div>
+
+        <div>
+          <span class="result-label">반납</span>
+          <span class="result-label">강남 2019.03.23일 12시00분</span>
+        </div>
+
+        <div>
+          <span class="result-label">보험</span>
+          <span class="result-label">보험 미적용</span>
+        </div>
+      </div>
+    </div>
+    <div style="background: #25333e; height: 442px; color: white;">
+      <ul class="final-result" >
+        <li>
+          <span class="result-text-title">대여금액</span>
+          <span>
+            <strong id="result_rent_cost" class="result-price">0</strong>
+            <em class="result-text-unit">원</em>
+          </span>
+        </li>
+        <li>
+          <span class="result-text-title">할인금액</span>
+          <span>
+            <strong id="result_insurance_cost" class="result-price">0</strong>
+            <em class="result-text-unit">원</em>
+          </span>
+        </li>
+        <li>
+          <span class="result-text-title">포인트 차감</span>
+          <span>
+            <strong id="result_insurance_cost" class="result-price">0</strong>
+            <em class="result-text-unit">원</em>
+          </span>
+        </li>
+
+        <li>
+          <span class="result-text-title">보험 및 기타옵션</span>
+          <span>
+            <strong id="result_insurance_cost" class="result-price">0</strong>
+            <em class="result-text-unit">원</em>
+          </span>
+        </li>
+        <li>
+          <br><hr><br>
+        </li>
+        <li>
+          <span class="result-text-title">총 결제 금액</span>
+          <span class="total-result">
+            <strong id="result_total_cost" class="result-total-price">0</strong>
+            <em class="result-text-total-unit">원</em>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</section>

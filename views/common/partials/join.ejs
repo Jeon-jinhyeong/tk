@@ -1,0 +1,403 @@
+<style>
+  .container-full {
+    padding-top: 100px;
+    padding-left: 260px;
+    padding-right: 260px;
+
+    /*background : url(./img/test2.png);
+  background-size: 1920px;*/
+  }
+
+  .section-title {
+    font-family: NanumSquareEB;
+    font-size: 50px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.1;
+    text-align: center;
+    color: #00a8ff;
+  }
+
+  .join-form-container {
+    padding: 57px 200px;
+  }
+
+  .panel-heading {
+    font-family: NanumSquareEB;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.47;
+    letter-spacing: -0.9px;
+    text-align: left;
+    color: #333333;
+    font-weight: bold;
+  }
+
+  input {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 58px;
+    border: solid 1px #bfbfbf;
+    background-color: #ffffff;
+    font-size: 28px;
+    color: #333333;
+
+    font-family: NanumSquareR;
+    font-size: 28px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.7px;
+    text-align: left;
+    color: #333333;
+
+    width: 100%;
+  }
+
+  .label-section {
+    width: 48px;
+    font-family: NanumSquareR;
+    font-size: 28px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 60px;
+    letter-spacing: -0.7px;
+    text-align: left;
+    color: #333333;
+    width: 209px;
+    margin-top: 21px;
+    float: left;
+  }
+
+  .input-section {
+    display: inline-block;
+    margin-top: 18px;
+  }
+
+  .panel-item {
+    clear: both;
+  }
+
+  .panel {
+    margin-bottom: 60px;
+  }
+
+  .warnning {
+    font-family: NanumSquareR;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.35;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #dd0202;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+
+    padding-left: 20px;
+    padding-right: 20px;
+    border: solid 1px #bfbfbf;
+    background-color: #ffffff;
+    font-size: 28px;
+    color: #333333;
+
+    height: 60px;
+    border: solid 1px #bfbfbf;
+
+
+    border-radius: 0;
+  }
+
+  .signup {
+    width: 329px;
+    height: 90px;
+    background-color: #00a8ff;
+    font-family: NanumSquareEB;
+    font-size: 34px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.47;
+    letter-spacing: -0.9px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .form-ctl-section {
+    text-align: center;
+  }
+
+  .search-address {
+    display: inline-block;
+    width: 246px;
+    height: 60px;
+    background-color: #00a8ff;
+    font-family: NanumSquareR;
+    font-size: 28px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.7px;
+    line-height: 2.175;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .full-input {
+    width: 749px;
+  }
+
+  .full-select {
+    width: 791px;
+  }
+
+  .forth-input,
+  .forth-input-last {
+    width: 137.5px;
+  }
+
+  .forth-input {
+    margin-right: 20px;
+  }
+
+  .third-input,
+  .third-input-last {
+    width: 205px;
+  }
+
+  .third-input {
+    margin-right: 20px;
+  }
+
+  .date-section,
+  .date-section-last {
+    display: inline;
+    margin-right: 26px;
+  }
+
+  .date-section-last {
+    margin-right: 0px;
+  }
+
+  .date-section>input,
+  .date-section-last>input {
+    margin-right: -33px;
+
+    padding-right: 60px;
+    padding-left: 20px;
+    text-align: end;
+  }
+
+  .date-section>.third-input,
+  .date-section-last>.third-input-last {
+    width: 164px;
+  }
+
+  .date-section>input.third-input-last {
+    margin-right: 0px;
+  }
+
+  .float-label {
+    position: relative;
+    right: 20px;
+    font-family: NanumSquareR;
+    font-size: 28px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.79;
+    letter-spacing: -0.7px;
+    text-align: left;
+    color: #333333;
+  }
+</style>
+<section class="container-full">
+  <h2 class="section-title">회원가입</h2>
+  <form action="../api/user/join" method="POST" id="signupform" class="join-form-container" role="form">
+    <div class="panel">
+      <div class="panel-heading">개인정보</div>
+
+      <div class="panel-body">
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="id">ID</label>
+          </div>
+          <div class="input-section">
+            <input type="text" class="full-input" id="id" name="id" placeholder="ID" value="">
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="password">패스워드</label>
+          </div>
+          <div class="input-section">
+            <input type="password" class="full-input" id="password" name="password" placeholder="Password" value="">
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="name">이름</label>
+          </div>
+          <div class="input-section">
+            <input type="text" class="full-input" id="name" name="name" placeholder="Name" value="">
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="email">이메일</label>
+          </div>
+          <div class="input-section">
+            <input type="text" class="full-input" id="email" name="email" placeholder="Email Address" value="">
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="phone">휴대전화</label>
+          </div>
+          <div class="input-section">
+            <input type="text" class="third-input" id="phone" name="phone" placeholder="phone number" value="">
+            <input type="text" class="third-input" id="phone" name="phone" placeholder="phone number" value="">
+            <input type="text" class="third-input-last" id="phone" name="phone" placeholder="phone number" value="">
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="ex2_input0">주소</label>
+          </div>
+          <div class="input-section">
+            <input type="text" name="postcode" id="postcode" class="third-input" value="">
+            <span id="postcodify_search_button" class="search-address">우편번호 검색</span>
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+          </div>
+          <div class="input-section">
+            <input type="text" name="address" id="address" class="full-input" value="">
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+
+          </div>
+          <div class="input-section">
+            <input type="text" name="details" id="details" class="full-input" value="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">운전면허 정보</div>
+
+      <div class="panel-body">
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="ex2_input2">면허구분</label>
+          </div>
+          <div class="input-section">
+            <select name="classification" id="classification" class="full-select">
+              <option value='국내'>국내</option>
+              <option value='국외'>국외</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="license">면허종류</label>
+          </div>
+          <div class="input-section">
+            <select name="numberArea" id="numberArea" class="full-select">
+              <option value='1종보통'>1종보통</option>
+              <option value='2종보통'>2종보통</option>
+              <option value='2종자동'>2종자동</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="license">면허증번호</label>
+          </div>
+          <div class="input-section">
+            <input type="text" name="number_1" id="number_1" class="forth-input" placeholder="지역" value="">
+            <input type="text" name="number_2" id="number_2" class="forth-input" value="">
+            <input type="text" name="number_3" id="number_3" class="forth-input" value="">
+            <input type="text" name="number_4" id="number_4" class="forth-input-last" value="">
+            <div>
+              <span class="warnning"> 2014년 07월 02일 이후 발급 면허는 숫자 코드로 지역 입력합니다.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="license">발급일</label>
+          </div>
+          <div class="input-section">
+            <div class="date-section">
+              <input type="text" class="third-input" name="issueyear" id="issueyear" value="">
+              <label class="float-label">년</label>
+            </div>
+            <div class="date-section">
+              <input type="text" class="third-input" name="issuemonth" id="issuemonth" value="">
+              <label class="float-label">월</label>
+            </div>
+            <div class="date-section-last">
+              <input type="text" class="third-input-last" name="issueday" id="issueday" value="">
+              <label class="float-label">일</label>
+            </div>
+            <div>
+              <span class="warnning"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="license">만료일</label>
+          </div>
+          <div class="input-section">
+            <div class="date-section">
+              <input type="text" class="third-input" name="dueyear" id="dueyear" value="">
+              <label class="float-label">년</label>
+            </div>
+            <div class="date-section">
+              <input type="text" class="third-input" name="duemonth" id="duemonth" value="">
+              <label class="float-label">월</label>
+            </div>
+            <div class="date-section-last">
+              <input type="text" class="third-input-last" name="dueday" id="dueday" value="">
+              <label class="float-label">일</label>
+            </div>
+            <div>
+              <span class="warnning">개인정보가 지점 대여 시 상이할 경우, 예약이 취소되거나 추가 확인이 필요할 수 있습니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-ctl-section">
+      <button id="btn-signup" class="signup" type="submit">회원가입</button>
+    </div>
+  </form>
+</section>
