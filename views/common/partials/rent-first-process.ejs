@@ -1,227 +1,35 @@
 <div>
   <div class="panel">
-    <div class="panel-heading">개인정보</div>
+  <div class="panel-heading">차량선택</div>
 
-    <div class="panel-body">
-      <div class="panel-item">
-        <div class="label-section">
-          <label for="name">이름</label>
-        </div>
-        <div class="input-section">
-          <input type="text" class="full-input" id="name" name="name" placeholder="Name" value="">
-        </div>
-      </div>
-
-      <div class="panel-item">
-        <div class="label-section">
-          <label for="email">이메일</label>
-        </div>
-        <div class="input-section">
-          <input type="text" class="full-input" id="email" name="email" placeholder="Email Address" value="">
-        </div>
-      </div>
-
-      <div class="panel-item">
-        <div class="label-section">
-          <label for="phone">휴대전화</label>
-        </div>
-        <div class="input-section">
-          <input type="text" class="third-input" id="phone" name="phone" placeholder="phone number" value="">
-          <input type="text" class="third-input" id="phone" name="phone" placeholder="phone number" value="">
-          <input type="text" class="third-input-last" id="phone" name="phone" placeholder="phone number" value="">
-        </div>
-      </div>
-    </div>
+  <div class="panel-body">
+    <img class="selection-truck active" src="/img/selection-truck/damas-on.png">
+    <img class="selection-truck" src="/img/selection-truck/labo-off.png">
+    <img class="selection-truck last" src="/img/selection-truck/porter-off.png">
+  </div>
   </div>
 
   <div class="panel">
-    <div class="panel-heading">운전면허 정보</div>
-
-    <div class="panel-body">
-      <div class="panel-item">
-        <div class="label-section">
-          <label for="ex2_input2">면허구분</label>
-        </div>
-        <div class="input-section">
-          <select name="classification" id="classification" class="full-select">
-            <option value='국내'>국내</option>
-            <option value='국외'>국외</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="panel-item">
-        <div class="label-section">
-          <label for="license">면허종류</label>
-        </div>
-        <div class="input-section">
-          <select name="numberArea" id="numberArea" class="full-select">
-            <option value='1종보통'>1종보통</option>
-            <option value='2종보통'>2종보통</option>
-            <option value='2종자동'>2종자동</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="panel-item">
-        <div class="label-section">
-          <label for="license">면허증번호</label>
-        </div>
-        <div class="input-section">
-          <input type="text" name="number_1" id="number_1" class="forth-input" placeholder="지역" value="">
-          <input type="text" name="number_2" id="number_2" class="forth-input" value="">
-          <input type="text" name="number_3" id="number_3" class="forth-input" value="">
-          <input type="text" name="number_4" id="number_4" class="forth-input-last" value="">
-          <div>
-            <span class="warnning"> 2014년 07월 02일 이후 발급 면허는 숫자 코드로 지역 입력합니다.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel-item">
-        <div class="label-section">
-          <label for="license">발급일</label>
-        </div>
-        <div class="input-section">
-          <div class="date-section">
-            <input type="text" class="third-input" name="issueyear" id="issueyear" value="">
-            <label class="float-label">년</label>
-          </div>
-          <div class="date-section">
-            <input type="text" class="third-input" name="issuemonth" id="issuemonth" value="">
-            <label class="float-label">월</label>
-          </div>
-          <div class="date-section-last">
-            <input type="text" class="third-input-last" name="issueday" id="issueday" value="">
-            <label class="float-label">일</label>
-          </div>
-          <div>
-            <span class="warnning"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel-item">
-        <div class="label-section">
-          <label for="license">만료일</label>
-        </div>
-        <div class="input-section">
-          <div class="date-section">
-            <input type="text" class="third-input" name="dueyear" id="dueyear" value="">
-            <label class="float-label">년</label>
-          </div>
-          <div class="date-section">
-            <input type="text" class="third-input" name="duemonth" id="duemonth" value="">
-            <label class="float-label">월</label>
-          </div>
-          <div class="date-section-last">
-            <input type="text" class="third-input-last" name="dueday" id="dueday" value="">
-            <label class="float-label">일</label>
-          </div>
-          <div>
-            <span class="warnning">개인정보가 지점 대여 시 상이할 경우, 예약이 취소되거나 추가 확인이 필요할 수 있습니다.</span>
-          </div>
-        </div>
-      </div>
+  <div class="panel-heading">지점 선택</div>
+  <div class="panel-body">
+    <div>
+      <span class="payment-type active">
+        사당점
+      </span><span class="payment-type ">
+        딜리버리 서비스
     </div>
+  </div>
   </div>
 
   <div class="panel">
-    <div class="panel-heading">할인쿠폰 선택</div>
+  <div class="panel-heading">날짜 선택</div>
+  <div class="panel-body">
+  </div>
+  </div>
 
-    <div class="panel-body">
-      <div class="payment-select-section">
-        <div class="panel-item">
-          <div class="label-section">
-            <label for="ex2_input2">보유쿠폰</label>
-          </div>
-          <div class="input-section">
-            <select name="classification" id="classification" class="full-select">
-              <option value='국내'>설문조사 10% 할인 쿠폰</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="panel-item">
-          <div class="label-section">
-            <label for="ex2_input2">포인트 사용</label>
-          </div>
-          <div class="input-section">
-            <div class="date-section">
-              <input type="text" class="third-input" name="issueyear" id="issueyear" value="">
-              <label class="float-label">원</label>
-
-              <span class="spend-all">전액사용 (20,000원)</span>
-            </div>
-            <div>
-              <span class="description">
-                포인트는 1000단위부터 사용 가능합니다.
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="panel-heading">결제 방식</div>
-
-      <div class="panel-body">
-        <div>
-          <span class="payment-type ">
-            휴대폰 결제
-          </span>
-          <span class="payment-type active">
-            카드 결제
-        </div>
-
-        <div class="payment-select-section">
-          <div class="panel-item">
-            <div class="label-section">
-              <label for="ex2_input2">통신사 선택</label>
-            </div>
-            <div class="input-section">
-              <select name="classification" id="classification" class="full-select">
-                <option value='국내'>국내</option>
-                <option value='국외'>국외</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="payment-select-section">
-          <div class="panel-item">
-            <div class="label-section">
-              <label for="ex2_input2">카드사 선택</label>
-            </div>
-            <div class="input-section">
-              <select name="classification" id="classification" class="full-select">
-                <option value='국내'>국내</option>
-                <option value='국외'>국외</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="panel-item">
-            <div class="label-section">
-              <label for="ex2_input2">할부 선택</label>
-            </div>
-            <div class="input-section">
-              <div>
-                <select name="classification" id="classification" class="full-select">
-                  <option value='국내'>일시불</option>
-                  <option value='국외'>국외</option>
-                </select>
-              </div>
-              <div>
-                <span class="description">
-                  법인 / 기업카드는 신용카드 무이자 할부 적용이 되지 않습니다.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="panel">
+  <div class="panel-heading">보험약관 동의</div>
+  <div class="panel-body">
+  </div>
   </div>
 </div>

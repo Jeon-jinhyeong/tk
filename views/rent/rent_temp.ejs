@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/lib/jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="/css/common2.css">
+
+    <link rel="stylesheet" type="text/css" href="/lib/jquery-ui-timepicker-addon/jquery-ui-timepicker-addon.css">
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="/lib/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="/lib/jquery-ui-timepicker-addon/jquery-ui-timepicker-addon.js"></script>
+    
+    
+  </head>
+  <body>
+    <form method="POST" action="/rent">
+      <%- include('./reservation_info.ejs') %>
+      <%- include('./first.ejs') %>
+      <%- include('./last.ejs') %>
+    </form>
+    
+    <script src="/js/rent.js"></script>
+    <script src="/js/calendar.js"></script>
+    
+  </body>
+</html>
+
+

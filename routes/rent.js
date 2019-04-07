@@ -10,8 +10,8 @@ const router = require('express').Router();
 const loginChecker = require(`${rootPath}/lib/loginChecker`);
 
 // Lib 
-router.get('/', loginChecker.isLoggedIn, function (req, res) {
-  console.log(res.locals.currentUser.dataValues);
+router.get('/', /*loginChecker.isLoggedIn, */function (req, res) {
+  // console.log(res.locals.currentUser.dataValues);
 
   res.render('rent/rent', {user: res.locals.currentUser});
 });
