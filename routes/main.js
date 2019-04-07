@@ -19,6 +19,14 @@ router.get('/develop', (req, res) => {
 	});
 });
 
+router.get('/oh', (req, res) => {
+	res.render('main/oh');
+});
+
+router.get('/oh2', (req, res) => {
+	res.render('main/oh2');
+});
+
 router.get('/about', (req, res) => {
 	res.render('main/about');
 });

@@ -1,5 +1,5 @@
 // Express 관련
-const express = 'require'('express'),
+const express = require('express'),
       app = express();
 
 // Cookie & Session
