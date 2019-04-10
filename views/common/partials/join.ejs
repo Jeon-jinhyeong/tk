@@ -221,6 +221,107 @@
     color: #333333;
   }
 </style>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+<script>
+
+  $(function() { $("#postcodify_search_button").postcodifyPopUp({
+      function(selectedEntry) {
+           window.opener.document.getElementById("postcode").value = $("#postcode").val();
+           window.opener.document.getElementById("address1").value = $("#address").val();
+           window.open("", "_self", "");
+           window.close();
+      }
+  }); });
+
+  $().ready(function () {
+      $("#signupform").validate({
+          rules: {
+              name: {
+                  required: true,
+                  minlength: 2
+              },
+              password: {
+                  required: true,
+                  minlength: 8
+              },
+              email: {
+                  required: true,
+                  email: true
+              },
+              phone: {
+                  required: true,
+                  minlength: 11,
+              },
+              postcode: {
+                  required: true,
+                  minlength: 5
+              },
+              address: {
+                  required: true
+              },
+              details: {
+                  required: true
+              },
+              classification: {
+                  required: true
+              },
+              numberArea: {
+                  required: true
+              },
+              number_1: {
+                  required: true,
+                  minlength: 2
+              },
+              number_2: {
+                  required: true,
+                  minlength: 2
+              },
+              number_3: {
+                  required: true,
+                  minlength: 6
+              },
+              number_4: {
+                  required: true,
+                  minlength: 2
+              },
+              issueyear: {
+                  required: true,
+              },
+              issuemonth: {
+                  required: true
+              },
+              issueday: {
+                  required: true
+              },
+              dueyear: {
+                  required: true
+              },
+              duemonth: {
+                  required: true
+              },
+              dueday: {
+                  required: true
+              },
+              messages: {
+                  name: {
+                      required: "이름을 입력해주세요",
+                      minlength: "최소 2글자 이상 입력해주세요"
+                  },
+                  password: {
+                      required: "비밀번호를 입력해주세요",
+                      minlength: "최소 8자 이상 입력해주세요"
+                  },
+                  email: {
+                      required: "이메일을 입력해주세요."
+                  }
+              }
+          }
+      });
+  })
+
+</script>
 <section class="container-full">
   <h2 class="section-title">회원가입</h2>
   <form action="../api/user/join" method="POST" id="signupform" class="join-form-container" role="form">
@@ -281,7 +382,7 @@
           </div>
           <div class="input-section">
             <input type="text" name="postcode" id="postcode" class="third-input" value="">
-            <span id="postcodify_search_button" class="search-address">우편번호 검색</span>
+            <button id="postcodify_search_button" class="search-address" type="button">우편번호 검색</button>
           </div>
         </div>
 
