@@ -19,13 +19,41 @@ router.get('/develop', (req, res) => {
 	});
 });
 
-router.get('/oh', (req, res) => {
-	res.render('main/oh');
+//--------------------------------------------------------------------------------
+
+router.get('/d/main', (req, res) => {
+	res.render('main/main');
 });
 
-router.get('/oh2', (req, res) => {
-	res.render('main/oh2');
+router.get('/d/question', (req, res) => {
+	res.render('main/question');
 });
+
+router.get('/d/join', (req, res) => {
+	res.render('user/join');
+});
+
+router.get('/d/login', (req, res) => {
+	res.render('user/login');
+});
+
+router.get('/d/rent/first', (req, res) => {
+	res.render('rent/rent_first');
+});
+
+router.get('/d/rent/second', (req, res) => {
+	res.render('rent/rent_second');
+});
+
+router.get('/d/rent/last', (req, res) => {
+	res.render('rent/rent_last');
+});
+
+router.get('/d/my', (req, res) => {
+	res.render('user/my');
+});
+
+//--------------------------------------------------------------------------------
 
 router.get('/about', (req, res) => {
 	res.render('main/about');

@@ -22,6 +22,6 @@
     },
 
     "env": "development",
-    "PORT": 80,
+    "PORT": 3000,
     "COOKIE_SECRET": "ABCD"
 }
