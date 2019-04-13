@@ -1,82 +1,18 @@
-
-<style>
-  nav.nav {
-    height: 100px;
-    width: 1400px;
-    background-color: #00a8ff;
-    padding-left: 260px;
-    padding-right: 260px;
-    padding-bottom : 10px /* padding-bttom 추가*/
-  }
-
-  .title {
-    float: left;
-    padding-top: 0px; /* 29px -> 0px*/
-    width: 122px;
-    height: 30px;
-    font-size: 39px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.25;
-    text-align: center;
-    color: #ffffff;
-    font-weight: bold;
-  }
-
-  .side-menu {
-    float: right;
-  }
-
-  ul > li > a {
-    font-size: 28px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.79;
-    letter-spacing: -0.4px;
-    text-align: center;
-    color: #ffffff;
-  }
-
-  ul > li.space {
-    font-size: 28px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.79;
-    text-align: center;
-    color: #ffffff;
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    height: 26px;
-    margin-top: 27.6px;
-  }
-
-li {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    border : 0;
-    float: left;
-    margin-left: 37px;
-}
-</style>
 <nav class="nav" style="">
-  <h1 class="title">TRENT</h1>
+  <h1 class="title"><a href="/d/main">TRENT</a></h1>
   <div class="side-menu">
     <ul>
       <% if(isAuthenticated){ %>
         <li><a href="/<%= currentUser.username %>">My Account</a></li>
+        <li class="space">|</li>
         <li><a href="/user/logout">Logout</a></li>
       <% } else { %>
-        <li><a href="/user/login">로그인</a></li>
+        <li><a href="/d/login">로그인</a></li>
         <li class="space">|</li>
-        <li><a href="/user/join">회원가입</a></li>
+        <li><a href="/d/join">회원가입</a></li>
       <% } %>
     </ul>
   </div>
 </nav>
+
+<link rel="stylesheet" type="text/css" href="/css/nav.css">

@@ -1,202 +1,122 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
 
-  <style>
-    body {
-      font-family: 'NanumSquare', sans-serif;
-    }
-    body, p, h1, h2, h3, h4, h5, 
-    h6, ul, ol, li, dl, dt, dd, 
-    table, th, td, form, fieldset, legend, input, 
-    textarea, button, select {
-      margin: 0;
-      padding: 0;
-    }
+<head>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+	<link rel="stylesheet" type="text/css" href="/css/trent_common.css">
 
-    a { text-decoration:none }
-    a:hover { text-decoration:none !important }
-  </style>
+	<style>
+		.title {
+			font-size: 100px;
+			font-weight: normal;
+			font-style: normal;
+			font-stretch: normal;
+			line-height: 0.5;
+			letter-spacing: -2.5px;
+			text-align: center;
+			color: #ffffff;
+		}
 
+		.rent {
+			background-color: black;
+			width: 1920px;
+			height: 1080px;
+		}
 
-<style>
-.title {
-        font-family: NanumSquareB;
-  font-size: 100px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 0.5;
-  letter-spacing: -2.5px;
-  text-align: center;
-  color: #ffffff;
-    }
-.rent {
-    background-color : black;
-    width : 1920px;
-    height : 1080px;
-}
+		.icon {
+			padding-top: 273px;
+			margin-left: 486px;
+		}
 
-.icon {
-    padding-top : 273px;
-    margin-left : 486px;
-}
+		img {
+			width: 105px;
+			height: 65px;
+		}
 
-img {
-    width : 105px;
-    height : 65px;
-}
+		.sub-title {
+			width: 950px;
+			height: 94px;
+			margin-left: 541px;
+			margin-top: 29px;
 
-.sub_title {
-     width : 950px;
-    height : 94px;
-    margin-left : 541px;
-    margin-top : 29px;
+			font-size: 100px;
+			text-align: center;
+			line-height: 50px;
+			letter-spacing: -2.5px;
+			color: white;
+		}
 
 
-    font-size : 100px;
-    text-align : center;
-    line-height : 50px;
-    letter-spacing : -2.5px;
-    color : white;
-}
+		.call {
+			width: 657px;
+			height: 47px;
+			margin-left: 682px;
+			margin-top: 48px;
+			font-size: 50px;
+			text-align: center;
+			line-height: 50px;
+			color: white;
+
+			height: 47px;
+			font-size: 50px;
+			line-height: 1;
+			text-align: center;
+		}
 
 
-.call {
-    width : 657px;
-    height : 47px;
-    margin-left : 682px;
-    margin-top : 48px;
-    font-size : 50px;
-    text-align : center;
-    line-height : 50px;
-    color : white;
+		.service_btn {
+			margin-left: 573px;
+			margin-top: 74px;
+			margin-bottom: 254px;
+		}
 
+		.inquire, .rental {
+			width: 130px;
+			height: 32px;
+			display: inline-block;
+			margin-left: 30px;
+			padding-top: 32px;
+			padding-left: 128px;
+			padding-right: 128px;
+			padding-bottom: 32px;
+			
+			font-size: 34px;
+			font-weight: normal;
+			font-style: normal;
+			font-stretch: normal;
+			line-height: 0.9;
+			text-align: center;
+		}
 
-  height: 47px;
-  font-size: 50px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1;
-  text-align: center;
-}
+		.inquire {
+			color: #ffffff;
+			border: solid 3px #ffffff;
+		}
 
+		.rental {
+			color: #ffffff;
+			border: solid 3px #00a8ff;
+			background-color: #00a8ff;
+		}
+	</style>
 
-.service_btn {
-    margin-left : 573px;
-    margin-top : 74px;
-    margin-bottom : 254px;
-}
+</head>
 
-.inquire {
-    width: 130px; 
-    height: 32px;
-    border: solid 3px #ffffff;
-    padding-left : 128px;
-    padding-right : 127px;
-    padding-top : 32px;
-    padding-bottom : 32px;
-    display : inline-block;
+<body>
+	<% include ../common/partials/nav %>
 
-    font-size : 34px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 0.9;
-    text-align: center;
-    color: #ffffff;
-}
-
-.rental {
-    width: 130px; 
-    height: 32px;
-    display : inline-block;
-    background-color: #00a8ff;
-    margin-left : 30px;
-    padding-top : 32px;
-    padding-left : 128px;
-    padding-right : 128px;
-    padding-bottom : 32px;
-
-    font-size: 34px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 0.9;
-    text-align: center;
-    color: #ffffff;
-}
-
-.footer {
-    width : 1920px;
-    height : 333px;
-    background-color :#585858;
-}
-
-.trent {
-    width : 1920px;
-    height : 60px;
-    padding-top : 72px;
-    background-color :#585858;
-}
-
-.trent-left{
-    width : 122px;
-    height : 60px;
-    padding-top : 72px;
-    padding-bottom : 231px;
-    margin-left : 249px;
-    font-size : 40px;
-    color : #00a8ff;
-    text-align : center;
-    line-height : 50px;
-}
-
-.trent-right{
-    width : 122px;
-    height : 60px;
-    padding-top : 72px;
-    margin-left : 955px;
-    font-size : 18px;
-    color : #ffffff;
-    text-align : center;
-    line-height : 50px;
-}
-
-.line{
-    width : 1400px;
-    margin-top : 11px;
-    margin-left : 279px;
-    margin-right : 260px;
-    border: solid 1px #ffffff;
-}
-
-</style>
-
-  </head>
-  <body>
-    <% include ../common/partials/nav %>
-    <section class="rent">
-        <div class = "icon">
-            <img src="/img/test.png" alt="이미지가 없오" />
-        </div>
-        <div class = "sub_title">화물트럭 렌탈 서비스</div>
-        <div class = "call">전화문의 : 010-9472-4141</div>
-        <div class = "service_btn">
-            <span class = "inquire">문의하기</span>
-            <span class = "rental">렌탈하기</span>
-        </div>
-        <div class="footer">
-            <div class="trent">
-                <span class="trent-left">TRENT</span>
-                <span class="trent-right">Copyright © 2019 Trent All rights reserved.
-                </span>
-            </div>
-            <div class = "line"></div>
-        </div>
-    </section>
-    
+	<section class="rent">
+		<div class = "icon">
+			<img src="/img/test.png" alt="이미지가 없오" />
+		</div>
+		<div class = "sub-title">화물트럭 렌탈 서비스</div>
+		<div class = "call">전화문의 : 010-9472-4141</div>
+		<div class = "service_btn">
+			<a href="/d/question"><span class = "inquire">문의하기</span></a>
+			<a href="/d/rent/first"><span class = "rental">렌탈하기</span></a>
+		</div>
+	</section>
+	
+	<% include ../common/partials/footer %>
   </body>
 </html>
