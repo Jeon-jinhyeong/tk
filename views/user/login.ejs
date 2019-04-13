@@ -1,10 +1,222 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+.section-title {
+    margin-left : 895px;
+    margin-top : 101px;
+    width : 150px;
+    height : 47px;
+    text-align: center;
+    font-family: NanumSquareEB;
+    font-size: 50px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    color : #00a8ff;
+}
+.login {
+    margin-left : 644px;
+    margin-top : 70px;
+    width: 129px;
+    height: 47px;
+    font-family: NanumSquareEB;
+    font-size: 50px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    text-align: center;
+    color: #00a8ff;
+}
+#id {
+    width: 632px;
+    height: 26px;
+    padding-left : 20px;
+    padding-top : 18px;
+    padding-bottom : 16px;
+
+    font-size : 28px;
+    font-family: NanumSquareR;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: left;
+
+    border: solid 1px #bfbfbf;
+    background-color: #ffffff;
+
+}
+#password {
+    margin-top : 30px;
+    width: 632px;
+    height: 26px;
+    padding-left : 21px;
+    padding-top : 17px;
+    padding-bottom : 17px;
+
+    font-size : 28px;
+    font-family: NanumSquareR;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: left;
+
+    border: solid 1px #bfbfbf;
+    background-color: #ffffff;
+}
+.sub-menu {
+    margin-left : 706px;
+    margin-top : 137px;
+}
+.find-id-btn{
+    width : 108px;
+    height : 23px;
+    font-family: NanumSquareR;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.08;
+    letter-spacing: -1.0px;
+    text-align: center;
+    color: #666666;
+}
+.find-password-btn {
+    width : 129px;
+    height : 23px;
+    font-family: NanumSquareR;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.08;
+    letter-spacing: -1.0px;
+    text-align: center;
+    color: #666666;
+}
+.split {
+    margin-left : 21px;
+    margin-right : 19px;
+    margin-top : 4px;
+    margin-bottom : 3px;
+    width: 0.5px;
+    height : 16px;
+    color : #bfbfbf;
+    background-color: #bfbfbf;
+}
+.join-btn{
+    width : 129px;
+    height : 23px;
+    font-family: NanumSquareR;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.08;
+    letter-spacing: -1.0px;
+    text-align: center;
+    color: #666666;
+}
+.login-btn {
+    margin-left : 805px;
+    margin-top : 49px;
+    margin-bottom : 70px;
+    width : 329px;
+    height : 90px;
+    background-color: #00a8ff;
+}
+.login-btn > .content{
+    padding-left : 121px;
+    padding-top : 29px;
+    width: 87px;
+    height: 32px;
+    font-family: NanumSquareEB;
+    font-size: 34px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.47;
+    letter-spacing: -0.9px;
+    text-align: center;
+    color: #ffffff;
+}
+.footer {
+    padding-top : 72px;
+    width : 1920px;
+    height : 297px;
+    background-color : #0B3861;
+}
+.footer-content {
+    margin-left : 259px;
+}
+.footer-brand-name {
+    width: 101px;
+    height: 30px;
+    font-family: NanumSquareEB;
+    font-size: 40px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: -1px;
+    text-align: center;
+    color: #00a8ff;
+}
+.footer-copyright {
+    margin-left : 966px;
+    width: 334px;
+    height: 19px;
+    font-family: NanumSquareR;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.78;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #ffffff;
+}
+.footer-bar {
+    margin-top : 30px;
+    width: 1400px;
+    height: 1px;
+    opacity: 0.3;
+    border: solid 1px #ffffff;
+    background-color: #ffffff;
+}
+</style>
+</head>
  <body>
   <% include ../common/partials/nav %>
-
-  <% include ../common/partials/login %>
-
-
+    <section class="login-container">
+        <div class = "section-title">로그인</div>
+        <form action="/" method="POST" class="loginForm" id="loginForm">
+            <div class="login">
+                <div class="id">
+                    <input type="text" id="id" name="id" placeholder="아이디" value="">
+                </div>
+                <div class="password">
+                    <input type="password" id="password" name="password" placeholder="비밀번호" value="">
+                </div>
+            </div>
+        </form>
+        <div class = "sub-menu">
+            <span class="find-id-btn">아이디 찾기</span><span class="split">|</span>
+            <span class="find-password-btn">비밀번호 찾기</span><span class="split">|</span>
+            <span class="join-btn">회원가입 하기</span>
+        </div>
+        <div class="login-btn">
+            <span class="content">로그인</span>
+        </div>
+        <div class="footer">
+            <div class = "footer-content">
+                <span class = "footer-brand-name">Trent</span>
+                <span class = "footer-copyright">Copyright © 2019 Trent All rights reserved.</span>
+                <div class = "footer-bar"></div>
+            </div>
+        </div>
+    </section>
  </body>
 </html>
