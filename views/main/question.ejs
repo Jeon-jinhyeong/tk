@@ -4,9 +4,134 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
   <link rel="stylesheet" type="text/css" href="/css/trent_common.css">
  </head>
- <body style="background : url('https://cdn.zeplin.io/5c022850b6aa8378fa9f6b2a/screens/52DE81D7-2DBF-477A-B669-6F249F425CF7.png');
- background-size: 1920px; height: 1413px;">
+ 
+  <style>
+    .inquiry-container {
+         width: 1920px;
+        height: 930px;
+        background-color: #ffffff;
+    }
+    .inquiry-section {
+        margin-top : 119px;
+        margin-left : 260px;
+    }
+    .inquiry-title {
+        width: 138px;
+        height: 38px;
+        font-family: NanumSquareEB;
+        font-size: 40px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 50px;
+        letter-spacing: -1px;
+        text-align: center;
+        color: #00a8ff;
+    }
+    .inquriy-sub {       
+        width: 411px;
+        height: 20px;
+        font-size: 20px;
+        font-family: NanumSquareR;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2.5;
+        letter-spacing: -2.5px; 
+        text-align: center;
+        color: #999999;
+    }
+    .inquiry-form {
+        margin-top : 10px;
+        margin-left : 260px;
+        margin-bottom : 99px;
+    }
+
+    .contact-input {
+        width: 1400px;
+        height: 80px;
+        border: solid 1px #00a8ff;
+        background-color: #ffffff;
+    }
+    .contact {
+        margin-top : 18px;
+        margin-left : 43px;
+        
+        display: inline-block;
+        width: 80px;
+        height: 23px;
+        font-family: NanumSquareR;
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2.08;
+        letter-spacing: -0.6px;
+        text-align: center;
+        color: #999999;
+    }
+    .inquiry-content-input {
+        margin-top : 19px;
+
+        width: 1400px;
+        height: 476px;
+        border: solid 1px #00a8ff;
+        background-color: #ffffff;
+    }
+    .inquiry-content {
+        margin-top : 14px;
+        margin-left : 10px;
+
+        display: inline-block;
+        width: 330px;
+        height: 23px;
+        font-family: NanumSquareR;
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2.08;
+        letter-spacing: -1.5px;
+        text-align: center;
+        color: #999999;
+    }
+    .inquiry-button {
+        margin-top : 30px;
+        margin-left : 536px;
+        width: 329px;
+        height: 90px;
+        background-color: #00a8ff;
+    }
+    .inquiry-btn {
+        margin-top : 17px;
+        margin-left : 95px;
+
+        display : inline-block;
+        width: 140px;
+        height: 32px;
+        font-family: NanumSquareEB;
+        font-size: 34px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.47;
+        letter-spacing: -0.9px;
+        text-align: center;
+        color: #ffffff;
+    }
+ </style>
   <% include ../common/partials/nav %>
+  <section class = "inquiry-container">
+    <div class="inquiry-section">
+        <span class="inquiry-title">문의하기</span>
+        <span class="inquriy-sub">궁금한 사항을 문의해주세요 친절히 답변해드립니다.</span>
+    </div>
+    <div class = "inquiry-form">
+        <div class = "contact-input"><span class="contact">연락처</span></div>
+        <div class = "inquiry-content-input"><span class="inquiry-content">문의 내용을 입력해주세요</span></div>
+        <div class = "inquiry-button"><span class = "inquiry-btn">문의하기</span></div>
+    </div>
+  </section>
   <% include ../common/partials/footer %>
  </body>
 </html>
