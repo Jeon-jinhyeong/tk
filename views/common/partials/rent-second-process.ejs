@@ -1,3 +1,12 @@
+<style>
+  .panel.coupon {
+    margin-bottom: 30px;
+  }
+
+  .payment .panel-body {
+    margin-top: 16px;
+  }
+</style>
 <div>
   <div class="panel">
     <div class="panel-heading">개인정보</div>
@@ -126,11 +135,12 @@
     </div>
   </div>
 
-  <div class="panel">
+  <div class="panel coupon">
     <div class="panel-heading">할인쿠폰 선택</div>
 
     <div class="panel-body">
       <div class="payment-select-section">
+        
         <div class="panel-item">
           <div class="label-section">
             <label for="ex2_input2">보유쿠폰</label>
@@ -162,66 +172,66 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="panel">
-      <div class="panel-heading">결제 방식</div>
+  <div class="panel payment">
+    <div class="panel-heading">결제 방식</div>
+    <div class="panel-body">
+      <div class="payment-type-section">
+        <span class="payment-type ">
+          휴대폰 결제
+        </span>
+        <span class="payment-type active">
+          카드 결제
+      </div>
 
-      <div class="panel-body">
-        <div>
-          <span class="payment-type ">
-            휴대폰 결제
-          </span>
-          <span class="payment-type active">
-            카드 결제
+      <div class="payment-select-section">
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="ex2_input2">통신사 선택</label>
+          </div>
+          <div class="input-section">
+            <select name="classification" id="classification" class="full-select">
+              <option value='국내'>국내</option>
+              <option value='국외'>국외</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="payment-select-section">
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="ex2_input2">카드사 선택</label>
+          </div>
+          <div class="input-section">
+            <select name="classification" id="classification" class="full-select">
+              <option value='국내'>국내</option>
+              <option value='국외'>국외</option>
+            </select>
+          </div>
         </div>
 
-        <div class="payment-select-section">
-          <div class="panel-item">
-            <div class="label-section">
-              <label for="ex2_input2">통신사 선택</label>
-            </div>
-            <div class="input-section">
+        <div class="panel-item">
+          <div class="label-section">
+            <label for="ex2_input2">할부 선택</label>
+          </div>
+          <div class="input-section">
+            <div>
               <select name="classification" id="classification" class="full-select">
-                <option value='국내'>국내</option>
+                <option value='국내'>일시불</option>
                 <option value='국외'>국외</option>
               </select>
             </div>
-          </div>
-        </div>
-        <hr>
-        <div class="payment-select-section">
-          <div class="panel-item">
-            <div class="label-section">
-              <label for="ex2_input2">카드사 선택</label>
-            </div>
-            <div class="input-section">
-              <select name="classification" id="classification" class="full-select">
-                <option value='국내'>국내</option>
-                <option value='국외'>국외</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="panel-item">
-            <div class="label-section">
-              <label for="ex2_input2">할부 선택</label>
-            </div>
-            <div class="input-section">
-              <div>
-                <select name="classification" id="classification" class="full-select">
-                  <option value='국내'>일시불</option>
-                  <option value='국외'>국외</option>
-                </select>
-              </div>
-              <div>
-                <span class="description">
-                  법인 / 기업카드는 신용카드 무이자 할부 적용이 되지 않습니다.
-                </span>
-              </div>
+            <div>
+              <span class="description">
+                법인 / 기업카드는 신용카드 무이자 할부 적용이 되지 않습니다.
+              </span>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
