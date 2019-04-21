@@ -37,6 +37,14 @@ router.get('/d/login', (req, res) => { // 완성
 	res.render('user/login');
 });
 
+router.get('/d/findId', (req,res) => { // login -> 아이디 찾기
+	res.render('user/find_id');
+});
+
+router.get('/d/findPassword', (req,res) => { // login -> 비밀번호 찾기
+	res.render('user/find_password');
+});
+
 router.get('/d/rent/first', (req, res) => { // 제작 필요
 	res.render('rent/rent_first');
 	// res.render('rent/rent_temp');
