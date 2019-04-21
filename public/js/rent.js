@@ -37,6 +37,25 @@ $(document).ready(function() {
 
   //TODO: 차량유형 따른 달력정보를 나타내야함
   $('[name="truckType"]').on('change', function () {
+    const carName = $(this).attr('data-car-name');
+    
+    switch(carName) {
+      case '다마스':
+      $('#damas_img').attr("src", "/img/selection-truck/damas-on.png")
+      $('#labbo_img').attr("src", "/img/selection-truck/labo-off.png")
+      $('#porter_img').attr("src", "/img/selection-truck/porter-off.png")
+      break;
+      case '라보':
+      $('#damas_img').attr("src", "/img/selection-truck/damas-off.png")
+      $('#labbo_img').attr("src", "/img/selection-truck/labo-on.png")
+      $('#porter_img').attr("src", "/img/selection-truck/porter-off.png")
+      break;
+      case '포터2':
+      $('#damas_img').attr("src", "/img/selection-truck/damas-off.png")
+      $('#labbo_img').attr("src", "/img/selection-truck/labo-off.png")
+      $('#porter_img').attr("src", "/img/selection-truck/porter-on.png")
+      break;
+    }
     $('#result_car_name').text($(this).attr('data-car-name'));
     $('#result_car_img').attr('src', `/img/car/${$(this).val()}.jpeg`);
   });
