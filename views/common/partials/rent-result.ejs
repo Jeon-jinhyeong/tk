@@ -2,19 +2,19 @@
   .final-result {
     padding: 30px;
     margin-top: 0;
+        list-style: none;
   }
 
   .final-result>li {
     margin: 0;
     width: 100%;
+    margin-top: 5px;
   }
 
   .result-text-title,
   .result-text-unit {
     font-size: 20px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
+    
     line-height: 2.5;
 
     color: #ffffff;
@@ -36,9 +36,7 @@
     display: inline-block;
     width: 125px;
     font-size: 25px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
+    
     line-height: 2.1;
     text-align: right;
     color: #ffffff;
@@ -51,9 +49,7 @@
 
   .result-total-price {
     font-size: 45px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
+    
     line-height: 1.11;
     text-align: left;
     color: #ff4949;
@@ -61,9 +57,7 @@
 
   .result-text-total-unit {
     font-size: 30px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
+    
     line-height: 1.11;
     text-align: left;
     color: #ff4949;
@@ -76,35 +70,69 @@
   }
 </style>
 
+<style>
+  .summary-section {
+    text-align :  left; 
+    margin-left: 29px;
+    margin-bottom: 30px;
+  }
+
+  .summary-section > div {
+    height: 36px;
+  }
+
+  .result-label {
+      font-size: 18px;
+      line-height: 2.65;
+      text-align: left;
+      color: #666666;
+      margin-right: 9px;
+    }
+
+  .result-content {
+    font-size: 18px;
+    line-height: 2.65;
+    text-align: left;
+    color: #666666;
+  }
+
+  .result-price-section {
+    background: #25333e;
+    height: 442px;
+    color: white;
+  }
+
+    
+</style>
 <div class="result-section">
   <h3>선택 및 결제 정보</h3>
   <div style="text-align: center; border: 1px solid #d2d2d2">
-    <img id="result_car_img" src="/img/test.png" style="width: 300px; height: 226px; margin-top: 72px;">
-    <div style="text-align :  left; margin-left: 29px;">
+    <img id="result_car_img" src="/img/test.png" style="width: 300px; height: 226px; margin-top: 72px; margin-bottom: 34px;">
+    <div class="summary-section">
       <div>
         <span class="result-label">차종</span>
-        <span id="result_car_name" class="result-label">다마스</span>
+        <span id="result_car_name" class="result-content">다마스</span>
       </div>
 
       <div>
         <span class="result-label">대여</span>
-        <span id="result_rent_region">사당</span> 
-        <span id="result_rent_date">2019/03/22 01시 20분</span>
+        <span id="result_rent_region" class="result-content">사당</span> 
+        <span id="result_rent_date" class="result-content">2019/03/22 01시 20분</span>
       </div>
 
       <div>
         <span class="result-label">반납</span>
-        <span id="result_return_region">사당</span> 
-        <span id="result_return_rent_date">2019/03/26 01시 10분</span>
+        <span id="result_return_region" class="result-content">사당</span> 
+        <span id="result_return_rent_date" class="result-content">2019/03/26 01시 10분</span>
       </div>
 
       <div>
         <span class="result-label">보험</span>
-        <span id="result_insurance_type" class="result-label">보험 미적용</span>
+        <span id="result_insurance_type" class="result-content">보험 미적용</span>
       </div>
     </div>
   </div>
-  <div style="background: #25333e; height: 442px; color: white;">
+  <div class="result-price-section">
     <ul class="final-result">
       <li>
         <span class="result-text-title">대여금액</span>

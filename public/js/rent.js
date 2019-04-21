@@ -38,7 +38,7 @@ $(document).ready(function() {
   //TODO: 차량유형 따른 달력정보를 나타내야함
   $('[name="truckType"]').on('change', function () {
     const carName = $(this).attr('data-car-name');
-    
+
     switch(carName) {
       case '다마스':
       $('#damas_img').attr("src", "/img/selection-truck/damas-on.png")
@@ -87,5 +87,13 @@ $(document).ready(function() {
   //TODO: 보험금액에 따른 총합 계산 해야함
   $('[name="payType"]').on('change', function () {
     $('#pay_by_mobile, #pay_by_card').toggleClass('hidden');
+  });
+
+  $(".open-selection").on('click', function() {
+    $(this).next().toggleClass('none');
+  });
+
+  $('.region-selection').on('click', function() {
+    $('.region-selection').toggleClass('active');
   });
 })

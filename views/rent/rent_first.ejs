@@ -16,11 +16,8 @@
     }
 
     .section-title {
-      font-family: NanumSquareEB;
       font-size: 50px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       line-height: 1.1;
       text-align: center;
       color: #00a8ff;
@@ -41,7 +38,7 @@
       font-weight: bold;
     }
 
-    input {
+    input[type="text"] {
       padding-left: 20px;
       padding-right: 20px;
       height: 58px;
@@ -50,11 +47,9 @@
       font-size: 28px;
       color: #333333;
 
-      font-family: NanumSquareR;
+
       font-size: 28px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       text-align: left;
       color: #333333;
 
@@ -87,11 +82,9 @@
     }
 
     .warnning {
-      font-family: NanumSquareR;
+
       font-size: 18px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       line-height: 2.35;
       text-align: left;
       color: #dd0202;
@@ -118,10 +111,9 @@
     }
 
     .next {
-      width: 329px;
+      width: 300px;
       height: 80px;
       background-color: #00a8ff;
-      font-family: NanumSquareEB;
       font-size: 28px;
       font-weight: bold;
       line-height: 1.47;
@@ -138,11 +130,9 @@
       width: 246px;
       height: 60px;
       background-color: #00a8ff;
-      font-family: NanumSquareR;
+
       font-size: 28px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       line-height: 2.175;
       text-align: center;
       color: #ffffff;
@@ -205,11 +195,9 @@
     .float-label {
       position: relative;
       right: 20px;
-      font-family: NanumSquareR;
+
       font-size: 28px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       line-height: 1.79;
       text-align: left;
       color: #333333;
@@ -223,9 +211,7 @@
 
     h3 {
       font-size: 24px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       /* line-height: 2.08; */
       text-align: left;
       color: #ffffff;
@@ -233,16 +219,7 @@
       padding: 22px 24px;
     }
 
-    .result-label {
-      font-size: 18px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 2.78;
-      text-align: left;
-      color: #666666;
-      margin-right: 15px;
-    }
+    
 
     .process {
       width: 466px;
@@ -250,9 +227,7 @@
       display: inline-block;
       background-color: #d2d2d2;
       font-size: 30px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       line-height: 3;
       text-align: center;
       color: #ffffff;
@@ -270,9 +245,7 @@
       border: 1px solid #bfbfbf;
 
       font-size: 30px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       line-height: 3.8;
       text-align: center;
       
@@ -292,9 +265,7 @@
     .payment-select-section .label-section{
       width: 184px;
       font-size: 28px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       line-height: 1.79;
       text-align: left;
       color: #333333;
@@ -319,9 +290,7 @@
 
     .description {
       font-size: 18px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       line-height: 2.78;
       text-align: left;
       color: #333333;
@@ -329,9 +298,7 @@
 
     .spend-all {
       font-size: 28px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       line-height: 1.79;
       text-align: left;
       color: #333333;
@@ -367,9 +334,7 @@
     .truck-type > .title-section {
       height: 30px;
       font-size: 30px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
+      
       /* line-height: 0.67; */
       letter-spacing: -0.8px;
       text-align: left;
@@ -405,30 +370,115 @@
     }
 
     .panel.region {
-      margin-bottom: 60px;
+      margin-bottom: 186px;
     }
 
     .region-selection {
-          border: 1px solid #bcb5b9;
-    width: 498px;
-    height: 107px;
-    display: inline-block;
-    font-size: 30px;
-    /* line-height: 109px; */
-    text-align: center;
-    background: #00a8ff;
-    color: white;
+      border: 1px solid #bcb5b9;
+      width: 498px;
+      height: 107px;
+      display: inline-block;
+      font-size: 30px;
+      float: left;
+      text-align: center;
+      
+      color: white;
+    }
+
+    .region-selection.active {
+      background: #00a8ff;
+    }
+
+    .region-selection label {
+      display: inline-block;
+      margin-top: 38px;
     }
 
     .region .panel-body {
       margin-top: 17px;
     }
+
+    .date .panel-body {
+      margin-top: 16px;
+    }
   </style>
 
   <style>
     .ui-datepicker {
-      width: 500px !important;
-      height: 543px !important;
+      width: 490px !important;
+      height: 537px !important;
+    }
+
+    #rent_datetimepicker, #end_datetimepicker {
+      display: inline-block !important;
+    }
+
+    #rent_time, #end_time{
+      display: none;
+    }
+
+    .select-terms {
+      font-size: 20px;
+    }
+
+    .term-summary {
+      border: 1px solid #a0a0a0;
+      height: 45px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333333;
+      padding-left: 27px;
+      padding-top: 23px;
+      display: inline-block;
+      width: 90.2%;
+    }
+
+    .term-selection {
+      float: right;
+    }
+
+    .term-selection.no {
+      margin-right: 66px;
+    }
+
+    .term-selection.yes {
+      margin-right: 45px;
+    }
+    .next-section {
+      text-align: center;
+    }
+
+    .open-selection {
+      display: inline-block;
+      border-right: 1px solid #a0a0a0;
+      width: 40px;
+      height: 45px;
+      float: right;
+      padding-top: 23px;
+      font-size: 20px;
+      padding-left: 28px;
+      border-top: 1px solid #a0a0a0;
+      border-bottom: 1px solid #a0a0a0;
+    }
+
+    .term-content {
+      height: 223px;
+      border: 1px solid #a0a0a0;
+      padding-left: 32px;
+      font-size: 20px;
+      padding-top: 33px;
+    }
+
+    .term-content.none {
+      display: none;
+    }
+
+    .panel.insurance {
+      margin-bottom: 46px;
+    }
+
+    .insurance .panel-body {
+      margin-top: 16px;
     }
   </style>
 
@@ -480,7 +530,7 @@ background-size: 1920px; height: 2726px;">
           <section class="panel region">
             <div class="panel-heading">지점선택</div>
             <div class="panel-body">
-              <div class="region-selection">
+              <div class="region-selection active">
                 <label>
                   <span>사당</span>
                   <input type="radio" name="region" value="0" checked>
@@ -497,29 +547,144 @@ background-size: 1920px; height: 2726px;">
           </section>
 
           <!-- 날짜 -->
-          <section class="panel">
+          <section class="panel date">
             <div class="panel-heading">날짜선택</div>
             <div class="panel-body">
-
               <input type="text" id="rent_time" disabled>
-              <div id="rent_datetimepicker"></div>
-
               <input type="text" id="end_time" disabled>
-              <div id="end_datetimepicker"></div>
+              <div id="rent_datetimepicker"></div><!--
+              --><div id="end_datetimepicker"></div>
             </div>
           </section>
 
           <!-- 약관 정보 -->
-          <section>
-            <h3>예약완료를 위한 이용자 동의 사항</h3>
-            <div>
-              <label>
-                <input type="checkbox" name=""> 예약완료를 위한 이용 동의(필수), 차량 대여를 위한 개인정보 수집/이용 동의(필수), 개인정보 취급 위탁 동의(필수)에 모두 동의합니다.
-              </label>
+          <section class="panel insurance">
+            <div class="panel-heading">보험약관동의</div>
+            <div class="panel-body">
+              <div>
+                <div class="term-summary">
+                  <span>[필수] 일반규정</span>
+                  <label class="term-selection yes">
+                    <input type="radio" name="term-1" value="y" checked> 
+                    <span class="select-terms">동의합니다.</span>
+                  </label>
+
+                  <label class="term-selection no">
+                    <input type="radio" name="term-1" value="n" checked> 
+                    <span class="select-terms">동의하지 않습니다.</span>
+                  </label>
+                </div><!--
+                --><div class="open-selection">
+                  <span> v </span>
+                </div>
+
+                <div class="term-content">
+                  <span >
+                    1. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세무궁화 삼천리 화려 강산대한 사람 대한으로 길이 보전하세
+                    2. 남산 위에 저 소나무 철갑을 두른 듯 바람 서리 불변함은 우리 기상일세무궁화 삼천리 화려 강산 대한 사람 대한으로 길이 보전하세
+                    3. 가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세무궁화 삼천리 화려 강산 대한 사람 대한으로 
+                    길이 보전하세
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <div class="term-summary">
+                  <span>[필수] 일반규정</span>
+                  <label class="term-selection yes">
+                    <input type="radio" name="term-1" value="y" checked> 
+                    <span class="select-terms">동의합니다.</span>
+                  </label>
+
+                  <label class="term-selection no">
+                    <input type="radio" name="term-1" value="n" checked> 
+                    <span class="select-terms">동의하지 않습니다.</span>
+                  </label>
+                </div><!--
+                --><div class="open-selection">
+                  <span> v </span>
+                </div>
+
+                <div class="term-content none">
+                  <span >
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <div class="term-summary">
+                  <span>[필수] 일반규정</span>
+                  <label class="term-selection yes">
+                    <input type="radio" name="term-1" value="y" checked> 
+                    <span class="select-terms">동의합니다.</span>
+                  </label>
+
+                  <label class="term-selection no">
+                    <input type="radio" name="term-1" value="n" checked> 
+                    <span class="select-terms">동의하지 않습니다.</span>
+                  </label>
+                </div><!--
+                --><div class="open-selection">
+                  <span> v </span>
+                </div>
+
+                <div class="term-content none">
+                  <span >
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <div class="term-summary">
+                  <span>[필수] 일반규정</span>
+                  <label class="term-selection yes">
+                    <input type="radio" name="term-1" value="y" checked> 
+                    <span class="select-terms">동의합니다.</span>
+                  </label>
+
+                  <label class="term-selection no">
+                    <input type="radio" name="term-1" value="n" checked> 
+                    <span class="select-terms">동의하지 않습니다.</span>
+                  </label>
+                </div><!--
+                --><div class="open-selection">
+                  <span> v </span>
+                </div>
+
+                <div class="term-content none">
+                  <span >
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <div class="term-summary">
+                  <span>[필수] 일반규정</span>
+                  <label class="term-selection yes">
+                    <input type="radio" name="term-1" value="y" checked> 
+                    <span class="select-terms">동의합니다.</span>
+                  </label>
+
+                  <label class="term-selection no">
+                    <input type="radio" name="term-1" value="n" checked> 
+                    <span class="select-terms">동의하지 않습니다.</span>
+                  </label>
+                </div><!--
+                --><div class="open-selection">
+                  <span> v </span>
+                </div>
+
+                <div class="term-content none">
+                  <span >
+                  </span>
+                </div>
+              </div>
             </div>
           </section>
           
-          <button id="btn-signup" class="next" type="submit">다음단계</button>
+          <section class="next-section">
+            <button id="btn-signup" class="next" type="submit">다음단계</button>
+          </section>
         </div>
       </form>
     
