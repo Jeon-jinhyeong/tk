@@ -1,7 +1,245 @@
 <!DOCTYPE html>
 <html>
- <body>
+    <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+              
+    <style>
+        body {
+            font-family: 'NanumSquare', sans-serif;
+        }
+        body, p, h1, h2, h3, h4, h5, 
+        h6, ul, ol, li, dl, dt, dd, 
+        table, th, td, form, fieldset, legend, input, 
+        textarea, button, select {
+            margin: 0;
+            padding: 0;
+        }
+        a { text-decoration:none }
+        a:hover { text-decoration:none !important }
+    </style>
+    <style>
+        .container-full {
+            padding-top: 90px;
+            padding-bottom: 100px;
+            padding-left: 260px;
+            padding-right: 260px;
+            width: 1400px;
+
+            /*background : url(./img/test2.png);
+            background-size: 1920px;*/
+        }
+        .process {
+            width: 466px;
+            height: 88px;
+            display: inline-block;
+            background-color: #d2d2d2;
+            font-size: 30px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 3;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .process.last {
+            background-color: #00a8ff !important;
+        }
+
+        .Rectangle-11-copy {
+            margin-top: 70px;
+            width: 1400px;
+            height: 3px;
+            border-radius: 1.5px;
+            border-style: none;
+            background-color: #00a8ff;
+        }
+
+        .Rectangle-11-copy-2 {
+            margin-top: 79px;
+            width: 1400px;
+            height: 1px;
+            border-radius: 0.5px;
+            background-color: #d2d2d2;
+        }
+
+        .Rectangle-11-copy-3 {
+            margin-top: 55px;
+            width: 1400px;
+            height: 1px;
+            border-radius: 0.5px;
+            background-color: #d2d2d2;
+        }
+
+        .Rectangle-14 {
+            margin-top: 20px;
+            margin-bottom: 0px;
+            margin-right: 0px;
+            width: 1400px;
+            height: 2px;
+            background-color: #d6d6d6;
+        }
+
+        .result-message {
+            padding-left: 490px;
+            padding-right: 498px;
+            padding-top: 53px;
+            width: 460px;
+            height: 34px;
+            font-family: NanumSquareR;
+            font-size: 36px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.39;
+            letter-spacing: -0.9px;
+            text-align: center;
+            color: #333333;
+            
+        }
+
+        .result-message2 {
+            color: #00a8ff;
+        }
+
+        .table {
+        display: table;
+        width: 100%;
+        }
+        .table-row-group {
+            display: table-row-group;
+        }
+        .table-row {
+            display: table-row;
+            height: 40px;
+        }
+
+        .result.truck {
+            padding: 0 80px;
+        }
+
+        table {
+          margin: 20px 0px;
+          border-top: 3px solid #d6d6d6;
+          border-collapse: collapse;
+        }
+        
+        .picture {
+          width: 563px;
+          height: 460px;
+          border-bottom: 3px solid #d6d6d6;
+        }
+        td.list {
+            padding: 20px 42px;
+            height: 26px;
+            width: 93px;
+            font-family: NanumSquareR;
+            font-size: 26px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: -0.7px;
+            text-align: center;
+            color: #333333;
+            background-color: #eeeeee;
+            border-bottom: 3px solid #d6d6d6;
+        }
+        
+        td.list2 {
+          padding: 0px 30px;
+          width: 650px;
+          height: 25px;
+          font-family: NanumSquareR;
+          font-size: 26px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.92;
+          letter-spacing: -0.7px;
+          text-align: left;
+          color: #333333;
+          border-bottom: 3px solid #d6d6d6;
+        }
+
+
+        .result-price {
+            padding: 13px 0px;
+            width: 1366px;
+            height: 26px;
+            font-family: NanumSquareR;
+            font-size: 26px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.92;
+            letter-spacing: -0.7px;
+            text-align: end;
+            color: #333333;
+        }
+        .price {
+            width: 300px;
+            height: 43px;
+            font-family: NanumSquareB;
+            font-size: 48px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.04;
+            letter-spacing: -2.4px;
+            text-align: left;
+            color: #f04040;
+        }
+
+        .table-cell {
+            display: table-cell;
+            border-bottom : 1px solid #000;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table-cell.content{
+            display: table-cell;
+            width: 70px;
+            height: 25px;
+            font-family: NanumSquareR;
+            font-size: 26px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.92;
+            letter-spacing: -0.7px;
+            text-align: left;
+            color: #333333;
+        }
+
+        .next {
+          width: 329px;
+          height: 80px;
+          background-color: #00a8ff;
+          font-family: NanumSquareEB;
+          font-size: 28px;
+          font-weight: bold;
+          line-height: 1.47;
+          text-align: center;
+          color: #ffffff;
+        }
+        
+        .btn-result {
+          padding: 50px;
+          text-align: center;
+        }
+
+    </style>
+ <body style="background : url('https://cdn.zeplin.io/5c022850b6aa8378fa9f6b2a/screens/9CB8EB9D-A745-4CC2-B2BF-4302B1789C00.png');
+ background-size: 1920px; height: 2726px;">
   <% include ../common/partials/nav %>
+  
+  <section class="container-full">
+    <% include ../common/partials/my %>
+    <div class="btn-result">
+        <button id="btn-signup" class="next" type="submit">확인</button>
+    </div>
+  </section>
 
 
  </body>
