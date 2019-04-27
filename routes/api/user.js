@@ -18,7 +18,7 @@ router.post('/join', loginChecker.isNotLoggedIn, async (req, res, next) => {
         const user = await User.find({ where: { userID : id } });
         if (user) {
             req.flash('joinError', lang.already_exist_id);
-            return res.redirect('/join');
+            return res.redirect('/d/join');
         }
       
         // 비밀번호를 12자리로 해시
@@ -48,7 +48,7 @@ router.post('/join', loginChecker.isNotLoggedIn, async (req, res, next) => {
             dueday,
         });
 
-        return res.redirect('/develop');
+        return res.redirect('/d/main');
   } catch (error) {
       console.error(error);
       return next(error);
