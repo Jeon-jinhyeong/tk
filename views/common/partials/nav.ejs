@@ -3,9 +3,9 @@
   <div class="side-menu">
     <ul>
       <% if(isAuthenticated){ %>
-        <li><a href="/<%= currentUser.username %>">My Account</a></li>
+        <li><a href="/<%= currentUser.username %>">My</a></li>
         <li class="space">|</li>
-        <li><a href="/user/logout">Logout</a></li>
+        <li><a href="/user/logout">로그아웃</a></li>
       <% } else { %>
         <li><a href="/d/login">로그인</a></li>
         <li class="space">|</li>

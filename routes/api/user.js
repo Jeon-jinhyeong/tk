@@ -66,7 +66,7 @@ router.post('/loginauth', loginChecker.isNotLoggedIn, (req, res, next) => {
 
       if (!user) {
           req.flash('loginError', info.message);
-          return res.redirect('/user/login');
+          return res.redirect('/d/login');
       }
       
       return req.login(user, (loginError) => {
@@ -75,7 +75,7 @@ router.post('/loginauth', loginChecker.isNotLoggedIn, (req, res, next) => {
               return next(loginError);
           }
 
-          return res.redirect('/develop');
+          return res.redirect('/d/rent/first');
       });
   })(req, res, next);
 });
