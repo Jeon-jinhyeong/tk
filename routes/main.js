@@ -46,7 +46,7 @@ router.get('/d/findPassword', (req,res) => { // login -> 비밀번호 찾기
 });
 
 router.get('/d/rent/first', (req, res) => { // 제작 필요
-	res.render('rent/rent_first');
+	res.render('rent/rent_first_temp');
 	// res.render('rent/rent_temp');
 });
 
