@@ -1,35 +1,198 @@
-<div>
-  <div class="panel">
-  <div class="panel-heading">차량선택</div>
-
-  <div class="panel-body">
-    <img class="selection-truck active" src="/img/selection-truck/damas-on.png">
-    <img class="selection-truck" src="/img/selection-truck/labo-off.png">
-    <img class="selection-truck last" src="/img/selection-truck/porter-off.png">
-  </div>
-  </div>
-
-  <div class="panel">
-  <div class="panel-heading">지점 선택</div>
-  <div class="panel-body">
-    <div>
-      <span class="payment-type active">
-        사당점
-      </span><span class="payment-type ">
-        딜리버리 서비스
+<section id="select_car_section">
+  <!-- 차종 -->
+  <section class="panel car">
+    <div class="panel-heading">차량선택</div>
+    <div class="panel-body">
+      <span class="car-selection">
+        <label>
+          <img id="damas_img" src="/img/selection-truck/damas-on.png">
+          <input type="radio" name="truckType" value="0" data-car-name="다마스" checked>
+        </label>
+      </span>
+      <span class="car-selection">
+        <label>
+          <img id="labbo_img" src="/img/selection-truck/labo-off.png">
+          <input type="radio" name="truckType" value="1" data-car-name="라보">
+        </label>
+      </span>
+      <span class="car-selection last">
+        <label>
+          <img id="porter_img" src="/img/selection-truck/porter-off.png">
+          <input type="radio" name="truckType" value="2" data-car-name="포터2">
+        </label>
+      </span>
     </div>
-  </div>
-  </div>
+  </section>
 
-  <div class="panel">
-  <div class="panel-heading">날짜 선택</div>
-  <div class="panel-body">
-  </div>
-  </div>
+  <!-- 지점 -->
+  <section class="panel region">
+    <div class="panel-heading">지점선택</div>
+    <div class="panel-body">
+      <div class="region-selection active">
+        <label>
+          <span>사당</span>
+          <input type="radio" name="region" value="0" checked>
+        </label>
+      </div>
+      <!--
+                -->
+      <div class="region-selection">
+        <label>
+          <span>딜리버리 서비스</span>
+          <input type="radio" name="region" value="1">
+        </label>
+      </div>
+    </div>
 
-  <div class="panel">
-  <div class="panel-heading">보험약관 동의</div>
-  <div class="panel-body">
-  </div>
-  </div>
-</div>
+  </section>
+
+  <!-- 날짜 -->
+  <section class="panel date">
+    <div class="panel-heading">날짜선택</div>
+    <div class="panel-body">
+      <input type="text" id="rent_time" disabled>
+      <input type="text" id="end_time" disabled>
+      <div id="rent_datetimepicker"></div>
+      <!--
+                -->
+      <div id="end_datetimepicker"></div>
+    </div>
+  </section>
+
+  <!-- 약관 정보 -->
+  <section class="panel insurance">
+    <div class="panel-heading">보험약관동의</div>
+    <div class="panel-body">
+      <div>
+        <div class="term-summary">
+          <span>[필수] 일반규정</span>
+          <label class="term-selection yes">
+            <input type="radio" name="term-1" value="y" checked>
+            <span class="select-terms">동의합니다.</span>
+          </label>
+
+          <label class="term-selection no">
+            <input type="radio" name="term-1" value="n" checked>
+            <span class="select-terms">동의하지 않습니다.</span>
+          </label>
+        </div>
+        <!--
+                  -->
+        <div class="open-selection">
+          <span> v </span>
+        </div>
+
+        <div class="term-content">
+          <span>
+            1. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세무궁화 삼천리 화려 강산대한 사람 대한으로 길이 보전하세 2. 남산 위에 저 소나무 철갑을 두른 듯 바람 서리 불변함은 우리 기상일세무궁화 삼천리 화려
+            강산 대한 사람 대한으로 길이 보전하세 3. 가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세무궁화 삼천리 화려 강산 대한 사람 대한으로 길이 보전하세
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <div class="term-summary">
+          <span>[필수] 일반규정</span>
+          <label class="term-selection yes">
+            <input type="radio" name="term-1" value="y" checked>
+            <span class="select-terms">동의합니다.</span>
+          </label>
+
+          <label class="term-selection no">
+            <input type="radio" name="term-1" value="n" checked>
+            <span class="select-terms">동의하지 않습니다.</span>
+          </label>
+        </div>
+        <!--
+                  -->
+        <div class="open-selection">
+          <span> v </span>
+        </div>
+
+        <div class="term-content none">
+          <span>
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <div class="term-summary">
+          <span>[필수] 일반규정</span>
+          <label class="term-selection yes">
+            <input type="radio" name="term-1" value="y" checked>
+            <span class="select-terms">동의합니다.</span>
+          </label>
+
+          <label class="term-selection no">
+            <input type="radio" name="term-1" value="n" checked>
+            <span class="select-terms">동의하지 않습니다.</span>
+          </label>
+        </div>
+        <!--
+                  -->
+        <div class="open-selection">
+          <span> v </span>
+        </div>
+
+        <div class="term-content none">
+          <span>
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <div class="term-summary">
+          <span>[필수] 일반규정</span>
+          <label class="term-selection yes">
+            <input type="radio" name="term-1" value="y" checked>
+            <span class="select-terms">동의합니다.</span>
+          </label>
+
+          <label class="term-selection no">
+            <input type="radio" name="term-1" value="n" checked>
+            <span class="select-terms">동의하지 않습니다.</span>
+          </label>
+        </div>
+        <!--
+                  -->
+        <div class="open-selection">
+          <span> v </span>
+        </div>
+
+        <div class="term-content none">
+          <span>
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <div class="term-summary">
+          <span>[필수] 일반규정</span>
+          <label class="term-selection yes">
+            <input type="radio" name="term-1" value="y" checked>
+            <span class="select-terms">동의합니다.</span>
+          </label>
+
+          <label class="term-selection no">
+            <input type="radio" name="term-1" value="n" checked>
+            <span class="select-terms">동의하지 않습니다.</span>
+          </label>
+        </div>
+        <!--
+                  -->
+        <div class="open-selection">
+          <span> v </span>
+        </div>
+
+        <div class="term-content none">
+          <span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-section">
+    <button id="show_pay_section" class="next" type="button">다음단계</button>
+  </section>
+</section>

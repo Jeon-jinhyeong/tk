@@ -32,42 +32,33 @@
         color: #999999;
     }
     .inquiry-form {
-        margin-top : 10px;
+        margin-top : 17px;
         margin-left : 260px;
         margin-bottom : 99px;
     }
 
     .contact {
-        width : 1399px;
-        height : 85px;
+        width: 1358px;
+        height: 79px;
         border: solid 1px #00a8ff;
         background-color: #ffffff;
-        padding-left : 20px;
-
+        padding-left: 40px;
         display: inline-block;
-        
         font-size: 24px;
-        
-        line-height: 2.08;
-        letter-spacing: -0.6px;
         color: #999999;
     }
     
     .inquiry-content {
-         
-        width: 1399px;
-        height: 472px;
+        width: 1356px;
+        height: 448px;
         margin-top: 17px;
         border: solid 1px #00a8ff;
         background-color: #ffffff;
-
-        padding-left : 20px;
-        padding-top : 5px;
-        
-        line-height: 2.08;
-        font-weight: nomal;
+        padding-left: 42px;
+        padding-top: 27px;
         font-size: 24px;
         color: #999999;
+        resize: none; 
     }
 
     ::placeholder {
@@ -98,6 +89,8 @@
     }
     
     </style>
+ 
+    <script src="/lib/mail/mail.js"></script>
  </head>
  <body style="background : url('https://cdn.zeplin.io/5c022850b6aa8378fa9f6b2a/screens/52DE81D7-2DBF-477A-B669-6F249F425CF7.png');
 background-size: 1920px; height: 1413px;">
@@ -109,9 +102,10 @@ background-size: 1920px; height: 1413px;">
         <span class="inquiry-title">문의하기</span>
         <span class="inquriy-sub">궁금한 사항을 문의해주세요 친절히 답변해드립니다.</span>
     </div>
-    <form action="#" class = "inquiry-form">
+    <form id="gform" class="inquiry-form" method="post" action="https://script.google.com/macros/s/AKfycbxHwBGVFBtRcySFnh9MD_D6Y38ykoldNUUCOkf-/exec" data-email="stompesi@gmail.com">
         <input type="text" class="contact" name="contact" placeholder="연락처" required>
-        <textarea  class="inquiry-content" name="inquiry-content" placeholder="문의 내용을 입력해주세요" required></textarea>
+        <textarea  class="inquiry-content" name="content" placeholder="문의 내용을 입력해주세요" required></textarea>
+
         <input type="submit" id="inquiry-btn" name="inquiry-btn" class = "inquiry-btn" value="문의하기">
     </form>
   </section>
