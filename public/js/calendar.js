@@ -11,6 +11,8 @@ startDateTextBox.datetimepicker({
   changeMonth: true,
   changeYear: true,
   
+  dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], //
+  monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],//
   minDate: new Date(parseInt(new Date().getTime()/1000/600)*600*1000+(600*1000)),
 
   onSelect: function (selectedDateTime){
@@ -39,7 +41,9 @@ endDateTextBox.datetimepicker({
   
   changeMonth: true,
   changeYear: true,
-
+  
+  dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],//
+  monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],//
   minDate: new Date(parseInt(new Date().getTime()/1000/600)*600*1000+(600*1000)),
 
   onSelect: function (selectedDateTime){
@@ -60,4 +64,5 @@ $(function() {
   $("#rent_time, #end_time").datetimepicker({
     minDate: new Date(parseInt(new Date().getTime()/1000/600)*600*1000+(600*1000))
   });
+
 });
