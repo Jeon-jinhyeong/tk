@@ -65,4 +65,5 @@ $(function() {
     minDate: new Date(parseInt(new Date().getTime()/1000/600)*600*1000+(600*1000))
   });
 
+  $(".ui_tpicker_time_label").text("시간");//
 });
