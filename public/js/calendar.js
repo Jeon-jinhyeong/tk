@@ -66,21 +66,20 @@ endDateTextBox.datetimepicker({
     $('#rent_time').datetimepicker("setDate", startDateTextBox.datetimepicker("getDate"));
     endDateTextBox.datetimepicker("option","maxDate",$(this).datetimepicker("getDate"));
     
-    let length = $('a.ui-state-default').length;
-    changeStartEndColor(length);
+    let arr = $('a.ui-state-default');
+    changeStartEndColor(arr);
   }
 });
 
-function changeStartEndColor(length){
-  for(let i = 0; i<length; i++){
-    let each = $('a.ui-state-default').eq(i);
-    if(each.text()==start.getDate()){
-      each.attr("style","color:red !important");
-    } else if(each.text()==end.getDate()){
-      each.attr("style","color:red !important");
-    }
+function changeStartEndColor(arr){
+    $.each(arr, function(i, value){
+      if($(value).text()==start.getDate()){
+        $(value).attr("style","color:red !important");
+      } else if($(value).text()==end.getDate()){
+        $(value).attr("style","color:red !important");
+      }
+    }); 
   }
-}
 
 $(function() {
   $("#rent_time, #end_time").datetimepicker({
