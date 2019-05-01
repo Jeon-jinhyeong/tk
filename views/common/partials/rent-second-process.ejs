@@ -6,6 +6,10 @@
   .payment .panel-body {
     margin-top: 16px;
   }
+
+  .hidden {
+    display: none;
+  }
 </style>
 <section id="pay_section" class="hidden">
   <div class="panel">
@@ -17,7 +21,7 @@
           <label for="name">이름</label>
         </div>
         <div class="input-section">
-          <input type="text" class="full-input" id="name" name="name" placeholder="Name" value="">
+          <input type="text" class="full-input" id="name" name="name" placeholder="Name" value="<%= user ? user.name : '' %>">
         </div>
       </div>
 
@@ -26,7 +30,7 @@
           <label for="email">이메일</label>
         </div>
         <div class="input-section">
-          <input type="text" class="full-input" id="email" name="email" placeholder="Email Address" value="">
+          <input type="text" class="full-input" id="email" name="email" placeholder="Email Address" value="<%= user ? user.email : '' %>">
         </div>
       </div>
 
@@ -35,7 +39,7 @@
           <label for="phone">휴대전화</label>
         </div>
         <div class="input-section">
-          <input type="text" class="full-input" id="phone" name="phone" placeholder="phone number" value="">
+          <input type="text" class="full-input" id="phone" name="phone" placeholder="phone number" value="<%= user ? user.name : '' %>">
         </div>
       </div>
     </div>
@@ -176,14 +180,15 @@
     <div class="panel-heading">결제 방식</div>
     <div class="panel-body">
       <div class="payment-type-section">
-        <span class="payment-type ">
+        <span class="payment-type" id="select_pay_by_mobile">
           휴대폰 결제
         </span>
-        <span class="payment-type active">
+        <span class="payment-type active" id="select_pay_by_card">
           카드 결제
+        </span>
       </div>
 
-      <div class="payment-select-section">
+      <div id="pay_by_mobile" class="payment-select-section">
         <div class="panel-item">
           <div class="label-section">
             <label for="ex2_input2">통신사 선택</label>
@@ -197,7 +202,8 @@
         </div>
       </div>
       <hr>
-      <div class="payment-select-section">
+
+      <div id="pay_by_card" class="payment-select-section hidden">
         <div class="panel-item">
           <div class="label-section">
             <label for="ex2_input2">카드사 선택</label>
@@ -231,4 +237,9 @@
       </div>
     </div>
   </div>
+
+  <selction>
+    <button id="show_select_car_section" type="button">이전</button>
+    <button type="submit" onclick="">예약</button>
+  </selction>
 </section>

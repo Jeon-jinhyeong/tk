@@ -33,6 +33,7 @@ $(document).ready(function() {
 
   $('#show_select_car_section, #show_pay_section').on('click', function () {
     $('#pay_section, #select_car_section').toggleClass('hidden');
+    $('#second_progress, #first_progress').toggleClass('active');
   });
 
   //TODO: 차량유형 따른 달력정보를 나타내야함
@@ -84,9 +85,15 @@ $(document).ready(function() {
     console.log('보험금액에 따른 총합 계산 해야함');
   });
 
-  //TODO: 보험금액에 따른 총합 계산 해야함
-  $('[name="payType"]').on('change', function () {
-    $('#pay_by_mobile, #pay_by_card').toggleClass('hidden');
+  $('#select_pay_by_mobile').on('click', function () {
+    debugger;
+    $('#pay_by_card').addClass('hidden');
+    $('#pay_by_mobile').removeClass('hidden');
+  });
+
+  $('#select_pay_by_card').on('click', function () {
+    $('#pay_by_card').removeClass('hidden');
+    $('#pay_by_mobile').addClass('hidden');
   });
 
   $(".open-selection").on('click', function() {
