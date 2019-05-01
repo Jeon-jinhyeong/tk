@@ -29,9 +29,12 @@ startDateTextBox.datetimepicker({
     }
     
     $('#end_time').datetimepicker("setDate", endDateTextBox.datetimepicker("getDate"));
+    endDateTextBox.datetimepicker("option","maxDate","");
   }
 });
 
+let start;
+let end;
 endDateTextBox.datetimepicker({ 
   controlType: 'select',
   oneLine: true,
@@ -45,6 +48,7 @@ endDateTextBox.datetimepicker({
   dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],//
   monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],//
   minDate: new Date(parseInt(new Date().getTime()/1000/600)*600*1000+(600*1000)),
+  
 
   onSelect: function (selectedDateTime){
     $('#end_time').datetimepicker("setDate", $(this).datetimepicker("getDate"));
@@ -56,9 +60,27 @@ endDateTextBox.datetimepicker({
       startDateTextBox.datetimepicker('setDate', testEndDate);
     }
 
+    start = startDateTextBox.datetimepicker('getDate');
+    end = $(this).datetimepicker("getDate");
+
     $('#rent_time').datetimepicker("setDate", startDateTextBox.datetimepicker("getDate"));
+    endDateTextBox.datetimepicker("option","maxDate",$(this).datetimepicker("getDate"));
+    
+    let length = $('a.ui-state-default').length;
+    changeStartEndColor(length);
   }
 });
+
+function changeStartEndColor(length){
+  for(let i = 0; i<length; i++){
+    let each = $('a.ui-state-default').eq(i);
+    if(each.text()==start.getDate()){
+      each.attr("style","color:red !important");
+    } else if(each.text()==end.getDate()){
+      each.attr("style","color:red !important");
+    }
+  }
+}
 
 $(function() {
   $("#rent_time, #end_time").datetimepicker({
