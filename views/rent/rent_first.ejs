@@ -14,6 +14,538 @@
     }
   </style>
 
+<style>
+    .container-full {
+      padding-top: 90px;
+      padding-left: 260px;
+      padding-right: 260px;
+      width: 1400px;
+
+      /*background : url(./img/test2.png);
+    background-size: 1920px;*/
+    }
+
+    .section-title {
+      font-size: 50px;
+      
+      line-height: 1.1;
+      text-align: center;
+      color: #00a8ff;
+    }
+
+    .join-form-container {
+      padding: 57px 0px;
+      width: 1000px;
+      float: left;
+      margin-right: 50px;
+    }
+
+    .panel-heading {
+      font-size: 29px;
+      line-height: 1.88;
+      text-align: left;
+      color: #333333;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      padding-left: 20px;
+      padding-right: 20px;
+      height: 58px;
+      border: solid 1px #bfbfbf;
+      background-color: #ffffff;
+      font-size: 28px;
+      color: #333333;
+
+
+      font-size: 28px;
+      
+      text-align: left;
+      color: #333333;
+
+      width: 100%;
+    }
+
+    .label-section {
+      width: 48px;
+      font-size: 28px;
+      line-height: 60px;
+      text-align: left;
+      color: #333333;
+      width: 209px;
+      margin-top: 20px;
+      float: left;
+      white-space: 19px;
+    }
+
+    .input-section {
+      display: inline-block;
+      margin-top: 18px;
+    }
+
+    .panel-item {
+      clear: both;
+    }
+
+    .panel {
+      margin-bottom: 60px;
+    }
+
+    .warnning {
+
+      font-size: 18px;
+      
+      line-height: 2.35;
+      text-align: left;
+      color: #dd0202;
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+
+      padding-left: 20px;
+      padding-right: 20px;
+      border: solid 1px #bfbfbf;
+      background-color: #ffffff;
+      font-size: 28px;
+      color: #333333;
+
+      height: 60px;
+      border: solid 1px #bfbfbf;
+
+
+      border-radius: 0;
+    }
+
+    .next {
+      width: 300px;
+      height: 80px;
+      background-color: #00a8ff;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1.47;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .form-ctl-section {
+      /*text-align: center;*/
+    }
+
+    .search-address {
+      display: inline-block;
+      width: 246px;
+      height: 60px;
+      background-color: #00a8ff;
+
+      font-size: 28px;
+      
+      line-height: 2.175;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .full-input {
+      width: 749px;
+    }
+
+    .full-select {
+      width: 791px;
+    }
+
+    .forth-input,
+    .forth-input-last {
+      width: 137.5px;
+    }
+
+    .forth-input {
+      margin-right: 20px;
+    }
+
+    .third-input,
+    .third-input-last {
+      width: 205px;
+    }
+
+    .third-input {
+      margin-right: 20px;
+    }
+
+    .date-section,
+    .date-section-last {
+      display: inline;
+      margin-right: 26px;
+    }
+
+    .date-section-last {
+      margin-right: 0px;
+    }
+
+    .date-section>input,
+    .date-section-last>input {
+      margin-right: -33px;
+
+      padding-right: 60px;
+      padding-left: 20px;
+      text-align: end;
+    }
+
+    .date-section>.third-input,
+    .date-section-last>.third-input-last {
+      width: 164px;
+    }
+
+    .date-section>input.third-input-last {
+      margin-right: 0px;
+    }
+
+    .float-label {
+      position: relative;
+      right: 20px;
+
+      font-size: 28px;
+      
+      line-height: 1.79;
+      text-align: left;
+      color: #333333;
+    }
+
+    .result-section {
+      float: left;
+      width: 350px;
+      margin-top: 70px;
+    }
+
+    h3 {
+      font-size: 24px;
+      
+      /* line-height: 2.08; */
+      text-align: left;
+      color: #ffffff;
+      background: #6b879e;
+      padding: 22px 24px;
+    }
+
+    
+
+    .process {
+      width: 466px;
+      height: 88px;
+      display: inline-block;
+      background-color: #d2d2d2;
+      font-size: 30px;
+      
+      line-height: 3;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .process.active {
+      background-color: #00a8ff !important;
+    }
+
+    .payment-select-section {
+      background-color: #f9f9f9;
+      padding: 40px;
+    }
+
+    .payment-select-section .label-section{
+      width: 184px;
+      font-size: 28px;
+      
+      line-height: 1.79;
+      text-align: left;
+      color: #333333;
+    }
+
+    .payment-select-section .full-select {
+      width: 736px;
+
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-left: 17px;
+      padding-right: 17px;
+      border: solid 1px #bfbfbf;
+      background-color: #ffffff;
+      font-size: 28px;
+      color: #333333;
+      height: 60px;
+      border: solid 1px #bfbfbf;
+      border-radius: 0;
+    }
+
+    .description {
+      font-size: 18px;
+      
+      line-height: 2.78;
+      text-align: left;
+      color: #333333;
+    }
+
+    .spend-all {
+      font-size: 28px;
+      
+      line-height: 1.79;
+      text-align: left;
+      color: #333333;
+    }
+  </style>
+
+
+  <!---->
+  <style>
+    .truck-type {
+      display: inline-block;
+      width: 320px;
+      border-radius: 8px;
+      border: solid 3px #00a8ff;
+      margin-right: 9px;
+      
+      color: #666666;
+      margin-bottom: 20px;
+    }
+    .last {
+      margin-right: 0px;
+    }
+    .truck-type.active {
+      background-color: #00a8ff !important;
+      color: #ffffff;
+    }
+
+    .truck-type img {
+      width: 100%;
+      height: 210px;
+    }
+
+    .truck-type > .title-section {
+      height: 30px;
+      font-size: 30px;
+      
+      /* line-height: 0.67; */
+      letter-spacing: -0.8px;
+      text-align: left;
+      color: #ffffff;
+      background-color: #00a8ff;
+      padding: 13px 14px;
+    }
+
+    .selection-truck {
+      margin-right: 3.6px;
+    }
+  </style>
+
+  <style>
+    .car-selection {
+      display: inline-block;
+      width: 327px;
+      margin-top: 17px;
+      margin-right: 5px;
+    }
+
+    .car-selection.last {
+      margin-right: 0px;
+    }
+
+    .car-selection input, .region-selection input {
+      visibility: hidden;
+      height: 0px;
+    }
+    
+    .panel.car {
+      margin-bottom: 36px;
+    }
+
+    .panel.region {
+      margin-bottom: 186px;
+    }
+
+    .region-selection {
+      border: 1px solid #bcb5b9;
+      width: 498px;
+      height: 107px;
+      display: inline-block;
+      font-size: 30px;
+      float: left;
+      text-align: center;
+      
+      color: white;
+    }
+
+    .region-selection.active {
+      background: #00a8ff;
+    }
+
+    .region-selection label {
+      display: inline-block;
+      margin-top: 38px;
+    }
+
+    .region .panel-body {
+      margin-top: 17px;
+    }
+
+    .date .panel-body {
+      margin-top: 16px;
+    }
+  </style>
+
+  <style>
+    .ui-datepicker {
+      width: 490px !important;
+      height: 537px !important;
+
+    }
+
+    #rent_datetimepicker, #end_datetimepicker {
+      display: inline-block !important;
+    }
+
+    #rent_time, #end_time{
+      display: none;
+    }
+
+    .select-terms {
+      font-size: 20px;
+    }
+
+    .term-summary {
+      border: 1px solid #a0a0a0;
+      height: 45px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333333;
+      padding-left: 27px;
+      padding-top: 23px;
+      display: inline-block;
+      width: 90.2%;
+    }
+
+    .term-selection {
+      float: right;
+    }
+
+    .term-selection.no {
+      margin-right: 66px;
+    }
+
+    .term-selection.yes {
+      margin-right: 45px;
+    }
+    .next-section {
+      text-align: center;
+    }
+
+    .open-selection {
+      display: inline-block;
+      border-right: 1px solid #a0a0a0;
+      width: 40px;
+      height: 45px;
+      float: right;
+      padding-top: 23px;
+      font-size: 20px;
+      padding-left: 28px;
+      border-top: 1px solid #a0a0a0;
+      border-bottom: 1px solid #a0a0a0;
+    }
+
+    .term-content {
+      height: 223px;
+      border: 1px solid #a0a0a0;
+      padding-left: 32px;
+      font-size: 20px;
+      padding-top: 33px;
+    }
+
+    .term-content.none {
+      display: none;
+    }
+
+    .panel.insurance {
+      margin-bottom: 46px;
+    }
+
+    .insurance .panel-body {
+      margin-top: 16px;
+    }
+
+
+    .ui-datepicker-year{
+      font-size : 40px;
+      text-align : left;
+
+    }
+
+    .ui-state-default {
+      font-size : 20px;
+      line-height: 50px;
+    }
+    
+    .ui-datepicker td span, .ui-datepicker td a {
+      text-align: center !important;
+    color: #00a8ff !important;
+    font-weight: bold !important;
+    border: 0 !important;
+    background: white !important;
+    }
+
+    .ui-datepicker-header {
+      background: white !important;
+      height : 83px;
+    }
+    .ui-datepicker-month {
+      border : 0px;
+      line-height : 2.0;
+      font-weight : bold;
+    }
+    .ui-datepicker-year {
+      border : 0px;
+      line-height : 2.0;
+      font-weight : bold;
+    }
+    .ui-datepicker-title {
+      font-size : 40px;
+    }
+    .ui-icon-circle-triangle-e {
+      width : 30px;
+      height : 30px;
+    }
+    .ui-widget-header {
+      border: 0px !important;
+      border-bottom: 1px solid #a0a0a0 !important;
+    }
+
+    .ui-datepicker-calendar > thead > tr > th {
+      padding-top : 44px;
+      font-size : 20px !important;
+      color : #666666 !important;
+    }
+
+    .ui-datepicker-unselectable > .ui-state-default {
+      color : #999999 !important;
+    }
+
+    .ui-datepicker-current {
+      display : none;
+    }
+    .ui-datepicker-buttonpane {
+      border:none !important;
+    }
+
+    .ui-timepicker-select {
+      height: 45px;
+      line-height: 13px;
+    }
+    .ui_tpicker_time_label {
+      margin-left: 265px;
+      font-size: 20px;
+      line-height: 2.2;
+    }
+  </style>
+
   <link rel="stylesheet" href="/lib/jquery-ui-1.12.1/jquery-ui.css">
 
   <link rel="stylesheet" type="text/css" href="/lib/jquery-ui-timepicker-addon/jquery-ui-timepicker-addon.css">
