@@ -91,4 +91,24 @@ router.post('/loginauth', loginChecker.isNotLoggedIn, (req, res, next) => {
   })(req, res, next);
 });
 
+// api/user/is_exist_id/:userId
+router.post('/is_exist_id/:userId', (req, res, next) => {	
+  const user = User.find({where: {userID: req.params.userId}});
+	if (user) {
+		return res.send(true)
+	}
+
+	return res.send(false);
+});
+
+// api/user/is_exist_email/:email
+router.post('/is_exist_email/:email', (req, res, next) => {	
+  const user = User.find({where: {email: req.params.email}});
+	if (user) {
+		return res.send(true)
+	}
+
+	return res.send(false);
+});
+
 module.exports = router;
