@@ -1,0 +1,78 @@
+.section-title {
+  margin-left: 876px;
+  margin-top: 101px;
+  width: 169px;
+  height: 47px;
+  text-align: center;
+  font-size: 50px;
+  
+  line-height: 1;
+  color: #00a8ff;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.login {
+  margin-left: 644px;
+  margin-top: 70px;
+  width: 129px;
+  height: 47px;
+  font-size: 50px;
+  
+  line-height: 1;
+  text-align: center;
+  color: #00a8ff;
+}
+
+#id, #password {
+  margin-top: 30px;
+  width: 609px;
+  height: 24px;
+  padding-left: 21px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 28px;
+  text-align: left;
+  border: solid 1px #bfbfbf;
+  background-color: #ffffff;
+}
+
+#id {
+  margin-top: 0px;
+}
+
+.sub-menu {
+  margin-left: 735px;
+  margin-top: 132px;
+}
+
+.find-id-btn, .find-password-btn, .join-btn {
+  font-size: 24px;
+  letter-spacing: -0.9px;
+  color: #666666;
+}
+
+.split {
+  margin-left: 20px;
+  margin-right: 12px;
+  margin-top: 0px;
+  width: 1px;
+  height: 16px;
+  color: #bfbfbf;
+}
+
+.login-btn-section {
+  text-align: center;
+  margin-top: 46px;
+  margin-bottom: 70px;
+}
+
+.login-btn {
+  width: 330px;
+  height: 90px;
+  background-color: #00a8ff;
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  border: 0;
+}

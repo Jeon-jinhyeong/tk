@@ -1,118 +1,44 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
 	<link rel="stylesheet" type="text/css" href="/css/trent_common.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
 
 	<style>
-		.title {
-			font-size: 100px;
-			
-			line-height: 0.5;
-			letter-spacing: -2.5px;
-			text-align: center;
-			color: #ffffff;
-		}
-
-		.rent {
-			width: 1920px;
-			height: 980px;
-		}
-
-		.icon {
-			padding-top: 273px;
-			margin-left: 486px;
-		}
-
-		img {
-			width: 105px;
-			height: 65px;
-		}
-
-		.sub-title {
-			width: 950px;
-			height: 94px;
-			margin-left: 482px;
-			margin-top: 49px;
-			padding-left : 55px;
-			line-height: 50px;
-		}
-
-		.sub-title-span {
-			font-size: 100px;
-			text-align: center;
-			letter-spacing: -2.5px;
-			color: white;
-		}
-
-
-		.call {
-			width: 657px;
-			height: 47px;
-			margin-left: 679px;
-			margin-top: 25px;
-			line-height: 50px;
-			height: 47px;
-		}
-		.call-span {
-			font-size: 50px;
-			text-align: center;
-			color: white;
-		}
-
-		.service_btn {	
-			margin-left: 573px;
-			margin-top: 74px;
-			margin-bottom: 254px;
-		}
-
-		.inquire, .rental {
-			width: 124px;
-			height: 32px;
-			display: inline-block;
-			padding-top: 28px;
-			padding-left: 122px;
-			padding-right: 120px;
-			padding-bottom: 28px;
-			
-			font-size: 34px;
-			
-			line-height: 0.9;
-			text-align: center;
-		}
-
-		.inquire {
-			margin-right : 32px;
-			color: #ffffff;
-			border: solid 3px #ffffff;
-		}
-
-		.rental {
-			color: #ffffff;
-			border: solid 3px #00a8ff;
-			background-color: #00a8ff;
+		body {
+			background : url('https://cdn.zeplin.io/5c022850b6aa8378fa9f6b2a/screens/31E02E7E-D04B-4CDB-B3CC-86875DA7489C.png');
+			background-size: 1920px;
 		}
 	</style>
-
 </head>
 
-<body style="background : url('https://cdn.zeplin.io/5c022850b6aa8378fa9f6b2a/screens/31E02E7E-D04B-4CDB-B3CC-86875DA7489C.png');
-background-size: 1920px; height: 1413px;">
+<body>
 	<% include ../common/partials/nav %>
 
 	<section class="rent">
-		<div class = "icon">
+		<div class="icon">
 			<img src="/img/test.png" alt="이미지가 없오" />
 		</div>
-		<div class = "sub-title"><span class="sub-title-span">화물트럭 렌탈 서비스</span></div>
-		<div class = "call"><span class="call-span"></span></div>
-		<div class = "service_btn">
-			<a href="/d/question"><span class = "inquire">문의하기</span></a>
-			<a href="/d/rent/first"><span class = "rental">렌탈하기</span></a>
+		
+		<div class="sub-title">
+			<span class="sub-title-span">화물트럭 렌탈 서비스</span>
+		</div>
+		
+		<div class="call">
+			<span class="call-span"></span>
+		</div>
+		
+		<div class="service_btn">
+			<a href="/d/question">
+				<span class="inquire">문의하기</span>
+			</a>
+			<a href="/d/rent/first">
+				<span class="rental">렌탈하기</span>
+			</a>
 		</div>
 	</section>
 	
 	<% include ../common/partials/footer %>
-  </body>
+</body>
 </html>

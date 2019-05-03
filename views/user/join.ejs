@@ -2,521 +2,304 @@
 <html>
   <head>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
-  
-
+  <link rel="stylesheet" type="text/css" href="/css/trent_common.css">
+  <link rel="stylesheet" type="text/css" href="/css/join.css">
   <style>
     body {
-      font-family: 'NanumSquare', sans-serif;
+      /*background : url('https://cdn.zeplin.io/5c022850b6aa8378fa9f6b2a/screens/AED12C6D-62C8-497B-8A66-CAAD289C4411.png');*/
+      background-size: 1920px;
     }
-    body, p, h1, h2, h3, h4, h5, 
-    h6, ul, ol, li, dl, dt, dd, 
-    table, th, td, form, fieldset, legend, input, 
-    textarea, button, select {
-      margin: 0;
-      padding: 0;
-    }
-
-    a { text-decoration:none }
-    a:hover { text-decoration:none !important }
   </style>
 
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
 
-<style>
-.container-full {
-  padding-top: 100px;
-  padding-left: 260px;
-  padding-right: 260px;
-  width: 1400px;
+	<script>
+			$().ready(function () {
+					$("#signupform").validate({
+							rules: {
+									name: {
+											required: true,
+											minlength: 2
+									},
+									password: {
+											required: true,
+											minlength: 8
+									},
+									email: {
+											required: true,
+											email: true
+									},
+									phone: {
+											required: true,
+											minlength: 11,
+									},
+									postcode: {
+											required: true,
+											minlength: 5
+									},
+									address: {
+											required: true
+									},
+									details: {
+											required: true
+									},
+									classification: {
+											required: true
+									},
+									numberArea: {
+											required: true
+									},
+	
+									license_number: {
+											required: true
+									},
+									// number_1: {
+									//     required: true,
+									//     minlength: 2
+									// },
+									// number_2: {
+									//     required: true,
+									//     minlength: 2
+									// },
+									// number_3: {
+									//     required: true,
+									//     minlength: 6
+									// },
+									// number_4: {
+									//     required: true,
+									//     minlength: 2
+									// },
+									issueyear: {
+											required: true,
+									},
+									issuemonth: {
+											required: true
+									},
+									issueday: {
+											required: true
+									},
+									dueyear: {
+											required: true
+									},
+									duemonth: {
+											required: true
+									},
+									dueday: {
+											required: true
+									},
+									messages: {
+											name: {
+													required: "이름을 입력해주세요",
+													minlength: "최소 2글자 이상 입력해주세요"
+											},
+											password: {
+													required: "비밀번호를 입력해주세요",
+													minlength: "최소 8자 이상 입력해주세요"
+											},
+											email: {
+													required: "이메일을 입력해주세요."
+											}
+									}
+							}
+					});
+			})
+	
+			$(function() { $("#postcodify_search_button").postcodifyPopUp({
+					function(selectedEntry) {
+							window.opener.document.getElementById("postcode").value = $("#postcode").val();
+							window.opener.document.getElementById("address1").value = $("#address").val();
+							window.open("", "_self", "");
+							window.close();
+					}
+				});
+			});
+	</script>
+	
+</head>
+<body>
+	<% include ../common/partials/nav %>
 
-  /*background : url(./img/test2.png);
-background-size: 1920px;*/
-}
+	<section class="container-full">
+			<h2 class="section-title">회원가입</h2>
+					<form action="../api/user/join" method="POST" id="signupform" class="join-form-container" role="form">
+						<div class="panel">
+							<div class="panel-heading">개인정보</div>
+				
+							<div class="panel-body">
+								<div class="panel-item">
+									<div class="label-section">
+										<label for="id">ID</label>
+									</div>
+									<div class="input-section">
+										<input type="text" class="full-input" id="id" name="id" placeholder="ID" value="">
+									</div>
+								</div>
+				
+								<div class="panel-item">
+									<div class="label-section">
+										<label for="password">패스워드</label>
+									</div>
+									<div class="input-section">
+										<input type="password" class="full-input" id="password" name="password" placeholder="Password" value="">
+									</div>
+								</div>
+				
+								<div class="panel-item">
+									<div class="label-section">
+										<label for="name">이름</label>
+									</div>
+									<div class="input-section">
+										<input type="text" class="full-input" id="name" name="name" placeholder="Name" value="">
+									</div>
+								</div>
+				
+								<div class="panel-item">
+									<div class="label-section">
+										<label for="email">이메일</label>
+									</div>
+									<div class="input-section">
+										<input type="text" class="full-input" id="email" name="email" placeholder="Email Address" value="">
+									</div>
+								</div>
+				
+								<div class="panel-item">
+									<div class="label-section">
+										<label for="phone">휴대전화</label>
+									</div>
+									<div class="input-section">
+										<input type="text" class="full-input" id="phone" name="phone" placeholder="phone number" value="">
+									</div>
+								</div>
+				
+								<div class="panel-item">
+									<div class="label-section">
+										<label for="ex2_input0">주소</label>
+									</div>
+									<div class="input-section">
+										<input type="text" name="postcode" id="postcode" class="third-input  postcodify_postcode5" value="">
+										<button id="postcodify_search_button" class="search-address" type="button">우편번호 검색</button>
+									</div>
+								</div>
+				
+								<div class="panel-item">
+									<div class="label-section">
+									</div>
+									<div class="input-section">
+										<input type="text" name="address" id="address" class="full-input postcodify_address" value="">
+									</div>
+								</div>
+				
+								<div class="panel-item">
+									<div class="label-section">
+				
+									</div>
+									<div class="input-section">
+										<input type="text" name="details" id="details" class="full-input postcodify_details" value="">
+									</div>
+								</div>
+							</div>
+						</div>
+				
+						<div class="panel">
+							<div class="panel-heading">운전면허 정보</div>
+				
+							<div class="panel-body">
+								<div class="panel-item">
+									<div class="label-section">
+										<label for="ex2_input2">면허구분</label>
+									</div>
+									<div class="input-section">
+										<select name="classification" id="classification" class="full-select">
+											<option value='국내'>국내</option>
+											<option value='국외'>국외</option>
+										</select>
+									</div>
+								</div>
+				
+								<div class="panel-item">
+									<div class="label-section">
+										<label for="license">면허종류</label>
+									</div>
+									<div class="input-section">
+										<select name="numberArea" id="numberArea" class="full-select">
+											<option value='1종보통'>1종보통</option>
+											<option value='2종보통'>2종보통</option>
+											<option value='2종자동'>2종자동</option>
+										</select>
+									</div>
+								</div>
+				
+								<div class="panel-item">
+									<div class="label-section">
+										<label for="license">면허증번호</label>
+									</div>
+									<div class="input-section" id="license_number">
+										<input type="text" name="number_1" id="number_1" class="forth-input" placeholder="지역" value="">
+										<input type="text" name="number_2" id="number_2" class="forth-input" value="">
+										<input type="text" name="number_3" id="number_3" class="forth-input" value="">
+										<input type="text" name="number_4" id="number_4" class="forth-input-last" value="">
+										<div>
+											<span class="warnning"> 2014년 07월 02일 이후 발급 면허는 숫자 코드로 지역 입력합니다.</span>
+										</div>
+									</div>
+								</div>
+				
+								<div class="panel-item">
+									<div class="label-section">
+										<label for="license">발급일</label>
+									</div>
+									<div class="input-section">
+										<div class="date-section">
+											<input type="text" class="third-input" name="issueyear" id="issueyear" value="">
+											<label class="float-label">년</label>
+										</div>
+										<div class="date-section">
+											<input type="text" class="third-input" name="issuemonth" id="issuemonth" value="">
+											<label class="float-label">월</label>
+										</div>
+										<div class="date-section-last">
+											<input type="text" class="third-input-last" name="issueday" id="issueday" value="">
+											<label class="float-label">일</label>
+										</div>
+										<div>
+											<span class="warnning"></span>
+										</div>
+									</div>
+								</div>
+				
+								<div class="panel-item">
+									<div class="label-section">
+										<label for="license">만료일</label>
+									</div>
+									<div class="input-section">
+										<div class="date-section">
+											<input type="text" class="third-input" name="dueyear" id="dueyear" value="">
+											<label class="float-label">년</label>
+										</div>
+										<div class="date-section">
+											<input type="text" class="third-input" name="duemonth" id="duemonth" value="">
+											<label class="float-label">월</label>
+										</div>
+										<div class="date-section-last">
+											<input type="text" class="third-input-last" name="dueday" id="dueday" value="">
+											<label class="float-label">일</label>
+										</div>
+										<div>
+											<span class="warnning">개인정보가 지점 대여 시 상이할 경우, 예약이 취소되거나 추가 확인이 필요할 수 있습니다.</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				
+						<div class="form-ctl-section">
+							<button id="btn-signup" class="signup" type="submit">회원가입</button>
+						</div>
+					</form>
+	</section>
 
-.section-title {
-  font-family: NanumSquareEB;
-  font-size: 50px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.1;
-  text-align: center;
-  color: #00a8ff;
-}
-
-.join-form-container {
-  padding: 57px 0px;
-  width: 1000px;
-  float: left;
-}
-
-.panel-heading {
-  font-family: NanumSquareEB;
-  font-size: 30px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.47;
-  text-align: left;
-  color: #333333;
-  font-weight: bold;
-}
-
-input {
-  padding-left: 20px;
-  padding-right: 20px;
-  height: 58px;
-  border: solid 1px #bfbfbf;
-  background-color: #ffffff;
-  font-size: 28px;
-  color: #333333;
-
-  font-family: NanumSquareR;
-  font-size: 28px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  text-align: left;
-  color: #333333;
-
-  width: 100%;
-}
-
-.label-section {
-  width: 48px;
-  font-family: NanumSquareR;
-  font-size: 28px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 60px;
-  text-align: left;
-  color: #333333;
-  width: 209px;
-  margin-top: 21px;
-  float: left;
-}
-
-.input-section {
-  display: inline-block;
-  margin-top: 18px;
-}
-
-.panel-item {
-  clear: both;
-}
-
-.panel {
-  margin-bottom: 60px;
-}
-
-.warnning {
-  font-family: NanumSquareR;
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2.35;
-  text-align: left;
-  color: #dd0202;
-}
-
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-
-  padding-left: 20px;
-  padding-right: 20px;
-  border: solid 1px #bfbfbf;
-  background-color: #ffffff;
-  font-size: 28px;
-  color: #333333;
-
-  height: 60px;
-  border: solid 1px #bfbfbf;
-
-
-  border-radius: 0;
-}
-
-.next {
-  width: 329px;
-  height: 80px;
-  background-color: #00a8ff;
-  font-family: NanumSquareEB;
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 1.47;
-  text-align: center;
-  color: #ffffff;
-}
-
-.form-ctl-section {
-  text-align: center;
-}
-
-.search-address {
-  display: inline-block;
-  width: 246px;
-  height: 60px;
-  background-color: #00a8ff;
-  font-family: NanumSquareR;
-  font-size: 28px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2.175;
-  text-align: center;
-  color: #ffffff;
-}
-
-.full-input {
-  width: 749px;
-}
-
-.full-select {
-  width: 791px;
-}
-
-.forth-input,
-.forth-input-last {
-  width: 137.5px;
-}
-
-.forth-input {
-  margin-right: 20px;
-}
-
-.third-input,
-.third-input-last {
-  width: 205px;
-}
-
-.third-input {
-  margin-right: 20px;
-}
-
-.date-section,
-.date-section-last {
-  display: inline;
-  margin-right: 26px;
-}
-
-.date-section-last {
-  margin-right: 0px;
-}
-
-.date-section>input,
-.date-section-last>input {
-  margin-right: -33px;
-
-  padding-right: 60px;
-  padding-left: 20px;
-  text-align: end;
-}
-
-.date-section>.third-input,
-.date-section-last>.third-input-last {
-  width: 164px;
-}
-
-.date-section>input.third-input-last {
-  margin-right: 0px;
-}
-
-.float-label {
-  position: relative;
-  right: 20px;
-  font-family: NanumSquareR;
-  font-size: 28px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.79;
-  text-align: left;
-  color: #333333;
-}
-
-.result-section {
-  float: left;
-  width: 350px;
-  margin-top: 57px;
-}
-
-h3 {
-  font-size: 24px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  /* line-height: 2.08; */
-  text-align: left;
-  color: #ffffff;
-  background: #6b879e;
-  padding: 22px 24px;
-}
-
-.result-label {
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2.78;
-  text-align: left;
-  color: #666666;
-  margin-right: 15px;
-}
-
-.process {
-  width: 466px;
-  height: 88px;
-  display: inline-block;
-  background-color: #d2d2d2;
-  font-size: 30px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 3;
-  text-align: center;
-  color: #ffffff;
-}
-
-.process.active {
-  background-color: #00a8ff !important;
-}
-
-.payment-type {
-  display: inline-block;
-  width: 498px;
-  height: 110px;
-  text-align: center;
-  border: 1px solid #bfbfbf;
-
-  font-size: 30px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 3.8;
-  text-align: center;
-  
-  color: #666666;
-  margin-bottom: 20px;
-}
-.payment-type.active {
-  background-color: #00a8ff !important;
-  color: #ffffff;
-}
-
-.payment-select-section {
-  background-color: #f9f9f9;
-  padding: 40px;
-}
-
-.payment-select-section .label-section{
-  width: 184px;
-  font-size: 28px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.79;
-  text-align: left;
-  color: #333333;
-}
-
-.payment-select-section .full-select {
-  width: 736px;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  padding-left: 17px;
-  padding-right: 17px;
-  border: solid 1px #bfbfbf;
-  background-color: #ffffff;
-  font-size: 28px;
-  color: #333333;
-  height: 60px;
-  border: solid 1px #bfbfbf;
-  border-radius: 0;
-}
-
-.description {
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2.78;
-  text-align: left;
-  color: #333333;
-}
-
-.spend-all {
-  font-size: 28px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.79;
-  text-align: left;
-  color: #333333;
-}
-</style>
-
-
-<!---->
-<style>
-.truck-type {
-  display: inline-block;
-  width: 320px;
-  border-radius: 8px;
-  border: solid 3px #00a8ff;
-  margin-right: 9px;
-  
-  color: #666666;
-  margin-bottom: 20px;
-}
-.last {
-  margin-right: 0px;
-}
-.truck-type.active {
-  background-color: #00a8ff !important;
-  color: #ffffff;
-}
-
-.truck-type img {
-  width: 100%;
-  height: 210px;
-}
-
-.truck-type > .title-section {
-  height: 30px;
-  font-size: 30px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  /* line-height: 0.67; */
-  letter-spacing: -0.8px;
-  text-align: left;
-  color: #ffffff;
-  background-color: #00a8ff;
-  padding: 13px 14px;
-}
-
-.selection-truck {
-  margin-right: 3.6px;
-}
-</style>
-  </head>
-
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
-<script>
-
-  $().ready(function () {
-      $("#signupform").validate({
-          rules: {
-              name: {
-                  required: true,
-                  minlength: 2
-              },
-              password: {
-                  required: true,
-                  minlength: 8
-              },
-              email: {
-                  required: true,
-                  email: true
-              },
-              phone: {
-                  required: true,
-                  minlength: 11,
-              },
-              postcode: {
-                  required: true,
-                  minlength: 5
-              },
-              address: {
-                  required: true
-              },
-              details: {
-                  required: true
-              },
-              classification: {
-                  required: true
-              },
-              numberArea: {
-                  required: true
-              },
-
-              license_number: {
-                  required: true
-              },
-              // number_1: {
-              //     required: true,
-              //     minlength: 2
-              // },
-              // number_2: {
-              //     required: true,
-              //     minlength: 2
-              // },
-              // number_3: {
-              //     required: true,
-              //     minlength: 6
-              // },
-              // number_4: {
-              //     required: true,
-              //     minlength: 2
-              // },
-              issueyear: {
-                  required: true,
-              },
-              issuemonth: {
-                  required: true
-              },
-              issueday: {
-                  required: true
-              },
-              dueyear: {
-                  required: true
-              },
-              duemonth: {
-                  required: true
-              },
-              dueday: {
-                  required: true
-              },
-              messages: {
-                  name: {
-                      required: "이름을 입력해주세요",
-                      minlength: "최소 2글자 이상 입력해주세요"
-                  },
-                  password: {
-                      required: "비밀번호를 입력해주세요",
-                      minlength: "최소 8자 이상 입력해주세요"
-                  },
-                  email: {
-                      required: "이메일을 입력해주세요."
-                  }
-              }
-          }
-      });
-  })
-
-  $(function() { $("#postcodify_search_button").postcodifyPopUp({
-      function(selectedEntry) {
-           window.opener.document.getElementById("postcode").value = $("#postcode").val();
-           window.opener.document.getElementById("address1").value = $("#address").val();
-           window.open("", "_self", "");
-           window.close();
-      }
-    });
-  });
-
-</script>
-  <!-- <body style="background : url('https://cdn.zeplin.io/5c022850b6aa8378fa9f6b2a/screens/AED12C6D-62C8-497B-8A66-CAAD289C4411.png');
-background-size: 1920px; height: 2121px;"> -->
-  <body>
-    <% include ../common/partials/nav %>
-    <% include ../common/partials/join %>
-  </body>
+	<% include ../common/partials/footer %>
+</body>
 </html>

@@ -579,13 +579,12 @@
       
       <form action="../api/user/join" method="POST" id="signupform" class="rent-form-container" role="form">
         <div class="form-ctl-section">
-          <% include ../common/partials/rent-first-process %>
-          <% include ../common/partials/rent-second-process %>
+          <% include ./components/rent-first-process %>
+          <% include ./components/rent-second-process %>
         </div>
       </form>
     
-      <% include ../common/partials/rent-result %>
-      </div>
+      <% include ./components/rent-result %>
     </section>
 
     <script src="/js/rent.js"></script>

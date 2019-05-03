@@ -14,8 +14,6 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.User = require('./user')(sequelize, Sequelize);
-db.Post = require('./post')(sequelize, Sequelize);
-db.Xlsx = require('./xlsx')(sequelize, Sequelize);
 
 //trent DB
 db.address = require('./address')(sequelize, Sequelize);
@@ -27,9 +25,7 @@ db.license = require('./license')(sequelize, Sequelize);
 
 
 // 자동으로 외래키 등록
-db.User.hasMany(db.Post);
-db.Post.belongsTo(db.User);
-db.Xlsx.belongsTo(db.User);
+// db.Xlsx.belongsTo(db.User);
 
 //trent 외래키
 db.User.hasMany(db.rent, { foreignKey: 'userID', sourceKey: 'userID' });
@@ -55,6 +51,5 @@ db.rent.belongsTo(db.insurance, { foreignKey: 'insurID', sourceKey: 'insurID' })
 
 db.deliver.hasMany(db.rent, { foreignKey: 'deliverID', sourceKey: 'deliverID' });
 db.rent.belongsTo(db.deliver, { foreignKey: 'deliverID', sourceKey: 'deliverID' });
-
 
 module.exports = db;
