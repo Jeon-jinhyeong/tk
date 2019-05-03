@@ -101,6 +101,7 @@ $(document).ready(function() {
   });
 
   $('.region-selection').on('click', function() {
-    $('.region-selection').toggleClass('active');
+    $('.region-selection').removeClass('active');
+    $(this).addClass('active');
   });
 })
