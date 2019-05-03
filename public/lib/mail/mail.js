@@ -1,3 +1,4 @@
+let isAlerted = false;
 (function() {
   function validEmail(email) { // see:
     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -84,6 +85,10 @@
       // xhr.withCredentials = true;
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function() {
+        if (isAlerted === false) {
+          alert("문의가 접수되었습니다.");
+          isAlerted = true;
+        }
         window.location.href="/d/question"
         return;
       };

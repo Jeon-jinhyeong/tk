@@ -92,7 +92,7 @@ router.post('/loginauth', loginChecker.isNotLoggedIn, (req, res, next) => {
 });
 
 // api/user/is_exist_id?
-router.get('/is_exist_id', async (req, res, next) => {	
+router.get('/is_not_exist_id', async (req, res, next) => {	
 	const user = await User.findOne({where: {userID: req.query.id}});
 
 	if (user != null) {
@@ -103,7 +103,7 @@ router.get('/is_exist_id', async (req, res, next) => {
 });
 
 // api/user/is_exist_email/:email
-router.get('/is_exist_email', async (req, res, next) => {	
+router.get('/is_not_exist_email', async (req, res, next) => {	
   const user = await User.findOne({where: {email: req.query.email}});
 	
 	if (user != null) {
