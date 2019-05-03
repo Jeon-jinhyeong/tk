@@ -12,6 +12,33 @@
 			background-size: 1920px;
 		}
 	</style>
+
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+
+	<script>
+		$(function(){
+			$('#loginForm').validate({
+				rules: {
+						id: {
+								required: true
+						},
+						password: {
+								required: true
+						}
+				},
+				messages: {
+						id: {
+							required: "아이디를 입력해주세요"
+						},
+						password: {
+							required: "비밀번호를 입력해주세요"
+						}
+				}
+			});
+		});
+	</script>
 </head>
 
 <body>
