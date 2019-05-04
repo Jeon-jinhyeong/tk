@@ -89,7 +89,7 @@ let isAlerted = false;
           alert("문의가 접수되었습니다.");
           isAlerted = true;
         }
-        window.location.href="/d/question"
+        window.location.href="/question"
         return;
       };
       // url encode form data for sending as post data

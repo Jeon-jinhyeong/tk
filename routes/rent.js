@@ -15,8 +15,6 @@ router.get('/', loginChecker.isLoggedIn, async function (req, res) {
     userId: res.locals.currentUser.dataValues.userID
   }});
 
-
-  console.log(coupons[0].name);
   res.render('rent/rent_first', {user: res.locals.currentUser.dataValues, coupons: coupons});
 });
 

@@ -1,15 +1,15 @@
 <nav class="nav" style="">
-  <h1 class="title"><a href="/d/main">TRENT</a></h1>
+  <h1 class="title"><a href="/">TRENT</a></h1>
   <div class="side-menu">
     <ul>
       <% if(isAuthenticated){ %>
-        <li><a href="/d/my">My</a></li>
+        <li><a href="/my">My</a></li>
         <li class="space">|</li>
         <li><a href="/user/logout">로그아웃</a></li>
       <% } else { %>
-        <li><a href="/d/login">로그인</a></li>
+        <li><a href="/login">로그인</a></li>
         <li class="space">|</li>
-        <li><a href="/d/join">회원가입</a></li>
+        <li><a href="/join">회원가입</a></li>
       <% } %>
     </ul>
   </div>
