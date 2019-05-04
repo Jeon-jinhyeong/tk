@@ -86,7 +86,7 @@ router.post('/loginauth', loginChecker.isNotLoggedIn, (req, res, next) => {
 				return next(loginError);
 			}
 
-			return res.redirect('/d/rent/first');
+			return res.redirect('/rent');
 		});
   })(req, res, next);
 });

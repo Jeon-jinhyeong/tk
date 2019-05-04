@@ -1,3 +1,32 @@
+
+
+Date.prototype.format = function(f) {
+  if (!this.valueOf()) return " ";
+
+  var weekName = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+  var d = this;
+   
+  return f.replace(/(yyyy|yy|MM|dd|E|hh|mm|ss|a\/p)/gi, function($1) {
+      switch ($1) {
+          case "yyyy": return d.getFullYear();
+          case "yy": return (d.getFullYear() % 1000).zf(2);
+          case "MM": return (d.getMonth() + 1).zf(2);
+          case "dd": return d.getDate().zf(2);
+          case "E": return weekName[d.getDay()];
+          case "HH": return d.getHours().zf(2);
+          case "hh": return ((h = d.getHours() % 12) ? h : 12).zf(2);
+          case "mm": return d.getMinutes().zf(2);
+          case "ss": return d.getSeconds().zf(2);
+          case "a/p": return d.getHours() < 12 ? "오전" : "오후";
+          default: return $1;
+      }
+  });
+};
+
+String.prototype.string = function(len){var s = '', i = 0; while (i++ < len) { s += this; } return s;};
+String.prototype.zf = function(len){return "0".string(len - this.length) + this;};
+Number.prototype.zf = function(len){return this.toString().zf(len);};
+
 $(document).ready(function() {
   var startDateTextBox = $('#rent_datetimepicker');
   var endDateTextBox = $('#end_datetimepicker');
@@ -60,21 +89,17 @@ $(document).ready(function() {
     $('#result_car_name').text($(this).attr('data-car-name'));
     $('#result_car_img').attr('src', `/img/car/${$(this).val()}.jpeg`);
   });
-
-  //TODO: 지점 따른 달력정보를 나타내야함
-  $('[name="region"]').on('change', function () {
-    $('#result_rent_region, #result_return_region').text("차량 장소");
-  });
   
   //TODO: 날짜에 따른 총합 계산 해야함
   $('#rent_time').on('change', function () {
-    $('#result_rent_date').text($(this).val());
+    $('#result_rent_date').text((new Date($(this).val())).format("yyyy/MM/dd HH시 mm분"));    
     renderCost();
     console.log('날짜에 따른 총합 계산 해야함');
   });
 
   $('#end_time').on('change', function () {
-    $('#result_return_rent_date').text($(this).val());
+    $('#result_return_rent_date').text((new Date($(this).val())).format("yyyy/MM/dd HH시 mm분"));
+  
     renderCost();
     console.log('날짜에 따른 총합 계산 해야함');
   });
@@ -86,14 +111,20 @@ $(document).ready(function() {
   });
 
   $('#select_pay_by_mobile').on('click', function () {
-    debugger;
     $('#pay_by_card').addClass('hidden');
     $('#pay_by_mobile').removeClass('hidden');
+
+
+    $('#select_pay_by_mobile').addClass('active');
+    $('#select_pay_by_card').removeClass('active');
   });
 
   $('#select_pay_by_card').on('click', function () {
     $('#pay_by_card').removeClass('hidden');
     $('#pay_by_mobile').addClass('hidden');
+
+    $('#select_pay_by_card').addClass('active');
+    $('#select_pay_by_mobile').removeClass('active');
   });
 
   $(".open-selection").on('click', function() {
@@ -101,7 +132,9 @@ $(document).ready(function() {
   });
 
   $('.region-selection').on('click', function() {
+    const region = $(this).data('region');
     $('.region-selection').removeClass('active');
+    $('#result_rent_region, #result_return_region').text(region);
     $(this).addClass('active');
   });
 })

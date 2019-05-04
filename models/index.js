@@ -18,6 +18,7 @@ db.User = require('./user')(sequelize, Sequelize);
 //trent DB
 db.address = require('./address')(sequelize, Sequelize);
 db.rent = require('./rent')(sequelize, Sequelize);
+db.Coupon = require('./coupon')(sequelize, Sequelize);
 db.truck = require('./truck')(sequelize, Sequelize);
 db.deliver = require('./deliver')(sequelize, Sequelize);
 db.insurance = require('./insurance')(sequelize, Sequelize);
@@ -51,5 +52,8 @@ db.rent.belongsTo(db.insurance, { foreignKey: 'insurID', sourceKey: 'insurID' })
 
 db.deliver.hasMany(db.rent, { foreignKey: 'deliverID', sourceKey: 'deliverID' });
 db.rent.belongsTo(db.deliver, { foreignKey: 'deliverID', sourceKey: 'deliverID' });
+
+// db.User.hasMany(db.coupon, { foreignKey: 'userID', sourceKey: 'userID' });
+// db.coupon.belongsTo(db.User, { foreignKey: 'user_id', sourceKey: 'userId' });
 
 module.exports = db;

@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => (
 	sequelize.define('rent', {
 		rentID: {
             allowNull: false,
-            primarykey: true,
+            primaryKey: true,
             type: DataTypes.INTEGER,
         },
 		startDate: {

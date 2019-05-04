@@ -45,10 +45,6 @@ router.get('/d/findPassword', (req,res) => { // login -> 비밀번호 찾기
 	res.render('user/find_password');
 });
 
-router.get('/d/rent/first', (req, res) => { // 제작 필요
-	res.render('rent/rent_first', {user: res.locals.currentUser});
-});
-
 router.get('/d/rent/last', (req, res) => { // 수정 필요
 	res.render('rent/rent_last');
 });
