@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
   <link rel="stylesheet" type="text/css" href="/css/trent_common.css">
-  <link rel="stylesheet" type="text/css" href="/css/findID.css">
+  <link rel="stylesheet" type="text/css" href="/css/findIdpw.css">
 </head>
     <body>
     <% include ../common/partials/nav %>
@@ -15,13 +15,18 @@
   
       <form action="/api/user/loginauth" method="POST" class="loginForm" id="loginForm">
           <div class="login">
-            <div class="id">
-              <input type="text" id="id" name="id" placeholder="이메일" value="">
+            <div class="phone">
+              <input type="text" id="phone" name="phone" placeholder="핸드폰 번호" value="">
+            </div>
+            <div class="auth-number">
+              <input type="text" id="number" name="number" placeholder="인증 번호" value="">
+              <button class="find-auth-btn" type="submit">인증번호받기</button>
             </div>
           </div>
+
           <div class="find-id-btn-section">
-					  <button class="find-id-btn" type="submit">찾기</button>
-				  </div>
+            <button class="find-id-btn" type="submit">찾기</button>
+          </div>
       </form>
     </section>
 

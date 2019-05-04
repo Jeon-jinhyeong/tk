@@ -1,7 +1,7 @@
 .section-title {
-  margin-left: 840px;
+  margin-left: 819px;
   margin-top: 101px;
-  width: 234px;
+  width: 279px;
   height: 47px;
   text-align: center;
   font-size: 50px;
@@ -22,9 +22,22 @@
   text-align: center;
 }
 
-#id, #password {
+#id, #phone {
   margin-top: 30px;
   width: 609px;
+  height: 24px;
+  padding-left: 21px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 28px;
+  text-align: left;
+  border: solid 1px #bfbfbf;
+  background-color: #ffffff;
+}
+
+#number {
+  margin-top: 30px;
+  width: 423px;
   height: 24px;
   padding-left: 21px;
   padding-top: 17px;
@@ -65,13 +78,47 @@
   margin-bottom: 70px;
 }
 
-.find-id-btn {
-  margin-top: 20px;
+.find-pw-btn-section {
+  text-align: center;
+  margin-top: 46px;
+  margin-bottom: 70px;
+}
+
+.find-pw-btn {
+  margin-top: 200px;
   margin-bottom: 11px;
   width: 330px;
   height: 90px;
   background-color: #00a8ff;
   font-size: 36px;
+  font-weight: bold;
+  color: white;
+  border: 0;
+}
+
+.find-id-btn {
+  margin-top: 170px;
+  margin-bottom: 11px;
+  width: 330px;
+  height: 90px;
+  background-color: #00a8ff;
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  border: 0;
+}
+
+.auth-number {
+  display: inline-flex;
+}
+
+.find-auth-btn {
+  margin-top: 30px;
+  margin-left: 13px;
+  width: 173px;
+  height: 60px;
+  background-color: #00a8ff;
+  font-size: 23px;
   font-weight: bold;
   color: white;
   border: 0;
