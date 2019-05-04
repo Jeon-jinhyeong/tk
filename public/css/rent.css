@@ -5,6 +5,20 @@
   width: 1400px;
 }
 
+#basic_info {
+  margin-left: -15px;
+    margin-right: -25px;
+}
+
+#rent_info {
+  margin-left: 0px;
+    margin-right: -25px;
+}
+#book_info {
+  margin-left: 0px;
+    margin-right: -25px;
+}
+
 .section-title {
   font-size: 50px;
   

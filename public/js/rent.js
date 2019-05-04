@@ -208,20 +208,19 @@ $(document).ready(function() {
     renderCost()
   });
 
-  $('.ui-icon.ui-icon-circle-triangle-e').text("");
-  $('.ui-icon.ui-icon-circle-triangle-w').text("");
-  $('.ui-icon.ui-icon-circle-triangle-e').on('change', function(){
-    $('.ui-icon.ui-icon-circle-triangle-e').text("");
-    $('.ui-icon.ui-icon-circle-triangle-w').text("");
+  $('#show_pay_section').on('click', function (){
+    $("#basic_info").attr("src", "../img/rent-stage/basic_info_disable.png");
+    $("#rent_info").attr("src", "../img/rent-stage/rent_able.png");
   });
 
-  $('.ui-icon.ui-icon-circle-triangle-e').on('mouseup', function(){
-    $('.ui-icon.ui-icon-circle-triangle-e').text("");
-    $('.ui-icon.ui-icon-circle-triangle-w').text("");
+  $('#show_select_car_section').on('click', function (){
+    $("#basic_info").attr("src", "../img/rent-stage/basic_info_able.png");
+    $("#rent_info").attr("src", "../img/rent-stage/rent_disable.png");
   });
-
-  $('.ui-icon.ui-icon-circle-triangle-w').on('mousedown', function(){
-    $('.ui-icon.ui-icon-circle-triangle-e').text("");
-    $('.ui-icon.ui-icon-circle-triangle-w').text("");
+  
+  $('#show_book_section').on('click', function (){
+    $("#basic_info").attr("src", "../img/rent-stage/basic_info_disable.png");
+    $("#book_info").attr("src", "../img/rent-stage/book_able.png");
   });
+  
 })
