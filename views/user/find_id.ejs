@@ -2,12 +2,28 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
-	<link rel="stylesheet" type="text/css" href="/css/trent_common.css">
+  <link rel="stylesheet" type="text/css" href="/css/trent_common.css">
+  <link rel="stylesheet" type="text/css" href="/css/findID.css">
 </head>
     <body>
     <% include ../common/partials/nav %>
     
-    <section class="find-id"></section>
+    <section class="find-id">
+      <div class="section-title">
+        <span>아이디 찾기</span>
+      </div>
+  
+      <form action="/api/user/loginauth" method="POST" class="loginForm" id="loginForm">
+          <div class="login">
+            <div class="id">
+              <input type="text" id="id" name="id" placeholder="이메일" value="">
+            </div>
+          </div>
+          <div class="find-id-btn-section">
+					  <button class="find-id-btn" type="submit">찾기</button>
+				  </div>
+      </form>
+    </section>
 
     <% include ../common/partials/footer %>
   </body>
