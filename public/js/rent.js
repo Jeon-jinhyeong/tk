@@ -145,7 +145,7 @@ $(document).ready(function() {
 
   $(".open-selection").on('click', function() {
     $(this).next().toggleClass('none');
-
+  
     if($(this).next().hasClass('none')) {
       $(this).find('img').attr("src","img/rent-stage/btn-arrow-open.png");
     } else {
@@ -208,7 +208,20 @@ $(document).ready(function() {
     renderCost()
   });
 
-  $('#btn-arrow-open').on('click', function(){
+  $('.ui-icon.ui-icon-circle-triangle-e').text("");
+  $('.ui-icon.ui-icon-circle-triangle-w').text("");
+  $('.ui-icon.ui-icon-circle-triangle-e').on('change', function(){
+    $('.ui-icon.ui-icon-circle-triangle-e').text("");
+    $('.ui-icon.ui-icon-circle-triangle-w').text("");
+  });
 
+  $('.ui-icon.ui-icon-circle-triangle-e').on('mouseup', function(){
+    $('.ui-icon.ui-icon-circle-triangle-e').text("");
+    $('.ui-icon.ui-icon-circle-triangle-w').text("");
+  });
+
+  $('.ui-icon.ui-icon-circle-triangle-w').on('mousedown', function(){
+    $('.ui-icon.ui-icon-circle-triangle-e').text("");
+    $('.ui-icon.ui-icon-circle-triangle-w').text("");
   });
 })

@@ -566,9 +566,64 @@ h3 {
   color: #ffffff;
 }
 
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+    top: 90% !important;
+    margin-top: -8px;
+}
+.ui-datepicker-prev span, .ui-datepicker-next span {
+  background-image: none !important;
+}
 
+.ui-icon.ui-icon-circle-triangle-e {
+  background-image: url(../img/calendar/blue-arrow-right.png) !important;   
+  position: absolute;
+    top: 40px;
+    right: 147px;
+}
 
+.ui-icon.ui-icon-circle-triangle-w {
+  background-image: url(../img/calendar/blue-arrow-left.png) !important;   
+}
 
+.ui-datepicker-header.ui-widget-header {
+  width: 468px;
+}
+
+.ui-datepicker-next span.ui-icon {
+  width: 50px; 
+  height: 69px;
+  text-indent: 0;
+  overflow: hidden;
+  border-bottom: 1px solid #a0a0a0 !important;
+  background-repeat: no-repeat;
+}
+
+.ui-datepicker-prev span.ui-icon {
+  width: 65px; 
+  height: 60px;
+  display: block;
+  text-indent: 0;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.ui-datepicker-next span {
+  background-image: "../img/calendar/blue-arrow-right.png" !important;
+      background-position: 0px 0px !important;
+}
+
+.ui-datepicker-prev span {
+  background-image: "../img/calendar/blue-arrow-left.png" !important;
+      background-position: 0px 0px !important;
+}
+
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+  color: transparent;
+}
 
 
 
