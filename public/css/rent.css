@@ -572,7 +572,7 @@ h3 {
     left: 50%;
     margin-left: -8px;
     top: 90% !important;
-    margin-top: -8px;
+    margin-top: -5px;
 }
 .ui-datepicker-prev span, .ui-datepicker-next span {
   background-image: none !important;
