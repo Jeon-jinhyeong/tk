@@ -369,7 +369,7 @@ h3 {
 
 .ui-datepicker {
   width: 490px !important;
-  height: 537px !important;
+  height: 585px !important;
 }
 
 #rent_datetimepicker, #end_datetimepicker {
@@ -630,8 +630,6 @@ h3 {
 
 
 
-
-
 .ui-datepicker-year{
   font-size : 40px;
   text-align : left;
@@ -689,7 +687,6 @@ h3 {
 }
 
 .ui-datepicker-calendar > thead > tr > th {
-  padding-top : 44px;
   font-size : 20px !important;
   color : #666666 !important;
 }
@@ -715,6 +712,10 @@ h3 {
   line-height: 2.2;
 }
 
+.ui-timepicker-select.ui-state-default.ui-corner-all{
+  font-size : 15px;
+}
+
 .ui-datepicker table {
-  min-height: 442px;
+  height : 75%;
 }
