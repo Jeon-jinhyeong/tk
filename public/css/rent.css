@@ -671,3 +671,7 @@ h3 {
   font-size: 20px;
   line-height: 2.2;
 }
+
+.ui-datepicker table {
+  min-height: 442px;
+}
