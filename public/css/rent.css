@@ -212,7 +212,7 @@ h3 {
 }
 
 .process {
-  width: 466px;
+  width: 463px;
   height: 88px;
   display: inline-block;
   background-color: #d2d2d2;
@@ -394,6 +394,7 @@ h3 {
   padding-top: 23px;
   display: inline-block;
   width: 90.2%;
+  float: left;
 }
 
 .term-selection {
@@ -411,17 +412,7 @@ h3 {
   text-align: center;
 }
 
-.open-selection {
-  display: inline-block;
-  border-right: 1px solid #a0a0a0;
-  width: 40px;
-  height: 45px;
-  padding-top: 23px;
-  font-size: 20px;
-  padding-left: 28px;
-  border-top: 1px solid #a0a0a0;
-  border-bottom: 1px solid #a0a0a0;
-}
+
 
 .term-content {
   height: 223px;
@@ -525,18 +516,15 @@ h3 {
   color: #333333;
 }
 
-
-
+#btn-arrow{
+  display: block;
+  height: 68px
+}
 
 .open-selection {
   display: inline-block;
   border-right: 1px solid #a0a0a0;
-  width: 40px;
-  height: 45px;
-  float: right;
-  padding-top: 23px;
-  font-size: 20px;
-  padding-left: 28px;
+
   border-top: 1px solid #a0a0a0;
   border-bottom: 1px solid #a0a0a0;
 }

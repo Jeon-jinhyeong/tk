@@ -145,6 +145,13 @@ $(document).ready(function() {
 
   $(".open-selection").on('click', function() {
     $(this).next().toggleClass('none');
+
+    if($(this).next().hasClass('none')) {
+      $(this).find('img').attr("src","img/rent-stage/btn-arrow-open.png");
+    } else {
+      $(this).find('img').attr("src","img/rent-stage/btn-arrow-close.png");
+    }
+    
   });
 
   $('.region-selection').on('click', function() {
@@ -199,5 +206,9 @@ $(document).ready(function() {
     
     calTotalCost()
     renderCost()
+  });
+
+  $('#btn-arrow-open').on('click', function(){
+
   });
 })
