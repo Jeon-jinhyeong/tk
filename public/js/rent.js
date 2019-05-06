@@ -154,6 +154,17 @@ $(document).ready(function() {
     
   });
 
+  $(".term-selection.yes").on('click', function(){
+      $(this).parent().find('.yes').find('img').attr("src", "img/rent-stage/btn-radio-able.png");
+      $(this).parent().find('.no').find('img').attr("src", "img/rent-stage/btn-radio-disable.png");
+  });
+
+  $(".term-selection.no").on('click', function(){
+      $(this).parent().find('.yes').find('img').attr("src", "img/rent-stage/btn-radio-disable.png");
+      $(this).parent().find('.no').find('img').attr("src", "img/rent-stage/btn-radio-able.png");
+  });
+
+
   $('.region-selection').on('click', function() {
     const region = $(this).data('region')
     $('.region-selection').removeClass('active')
