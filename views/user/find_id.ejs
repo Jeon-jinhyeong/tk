@@ -5,6 +5,23 @@
   <link rel="stylesheet" type="text/css" href="/css/trent_common.css">
   <link rel="stylesheet" type="text/css" href="/css/findIdpw.css">
 </head>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
+<script>
+      var timer = new Timer();
+      $('.auth-number #authnum').click(function () {
+        timer.start({countdown: true, startValues: {seconds: 180}});
+        $('#countdownExample .values').html(timer.getTimeValues().toString());
+        timer.addEventListener('secondsUpdated', function (e) {
+          $('#countdownExample .values').html(timer.getTimeValues().toString());
+        });
+        timer.addEventListener('targetAchieved', function (e) {
+          $('#countdownExample .values').html('만료');
+        });
+      });
+      
+</script>
     <body>
     <% include ../common/partials/nav %>
     
@@ -13,14 +30,17 @@
         <span>아이디 찾기</span>
       </div>
   
-      <form action="/api/user/loginauth" method="POST" class="loginForm" id="loginForm">
+      <form action="/api/user/smsVerification" method="POST" class="loginForm" id="loginForm">
           <div class="login">
             <div class="phone">
               <input type="text" id="phone" name="phone" placeholder="핸드폰 번호" value="">
             </div>
             <div class="auth-number">
               <input type="text" id="number" name="number" placeholder="인증 번호" value="">
-              <button class="find-auth-btn" type="submit">인증번호받기</button>
+              <div id="countdownExample" style="width: 123px;color: black;">
+                <div class="values"></div>
+              </div>
+              <button class="find-auth-btn" id="authnum" type="submit">인증번호받기</button>
             </div>
           </div>
 

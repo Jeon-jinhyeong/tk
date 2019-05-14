@@ -3,10 +3,37 @@ const rootPath = "../..";
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const axios = require('axios');
 
 const lang = require(`${rootPath}/lib/lang/ko.json`);
 const {User} = require(`${rootPath}/models`);
 const loginChecker = require(`${rootPath}/lib/loginChecker`);
+
+//핸드폰인증
+router.post('/smsVerification', (req, res) => {
+  const phoneNumber = req.body.phone;
+
+  axios({
+		method: 'POST',
+		JSON: true,
+    url: 'https://api-sens.ncloud.com/v1/sms/services/ncp:sms:kr:255808119105:trentworld/messages',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-NCP-auth-key': 'SOfcXF6Z78fZWXSND7YX',
+      'X-NCP-service-secret': '2714cca431e8492dbd41f09156f673ce'
+    },
+    data: {
+			"type": "sms",
+			"contentType": "COMM",
+    	"countryCode": "82",
+      "from": "01037649905",
+      "to": [`${phoneNumber}`],
+      "content": "TRENT 인증번호 123456입니다."
+    }
+  });
+
+  return res.redirect(req.get('referer'));
+});
 
 // 회원가입
 router.post('/join', loginChecker.isNotLoggedIn, async (req, res, next) => {
