@@ -64,7 +64,7 @@ router.post('/join', loginChecker.isNotLoggedIn, async (req, res, next) => {
 	const user = await User.find({where: {userID: id}});
 	if (user) {
 		req.flash('joinError', lang.already_exist_id);
-		return res.redirect('/d/join');
+		return res.redirect('/join');
 	}
 		
 	// 비밀번호를 12자리로 해시
@@ -94,7 +94,7 @@ router.post('/join', loginChecker.isNotLoggedIn, async (req, res, next) => {
 			dueday
 	});
 
-	return res.redirect('/d/main');
+	return res.redirect('/');
 });
 
 router.post('/loginauth', loginChecker.isNotLoggedIn, (req, res, next) => {
@@ -105,7 +105,7 @@ router.post('/loginauth', loginChecker.isNotLoggedIn, (req, res, next) => {
 
 		if (!user) {
 			req.flash('loginError', info.message);
-			return res.redirect('/d/login');
+			return res.redirect('/login');
 		}
 		
 		return req.login(user, (loginError) => {
@@ -113,7 +113,7 @@ router.post('/loginauth', loginChecker.isNotLoggedIn, (req, res, next) => {
 				return next(loginError);
 			}
 
-			return res.redirect('/d/rent/first');
+			return res.redirect('/rent');
 		});
   })(req, res, next);
 });

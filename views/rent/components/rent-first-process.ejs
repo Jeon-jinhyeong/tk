@@ -28,15 +28,13 @@
   <section class="panel region">
     <div class="panel-heading">지점선택</div>
     <div class="panel-body">
-      <div class="region-selection active">
+      <div class="region-selection active" data-region="사당">
         <label>
           <span>사당</span>
           <input type="radio" name="region" value="0" checked>
         </label>
-      </div>
-      <!--
-                -->
-      <div class="region-selection">
+      </div><!--
+   --><div class="region-selection" data-region="차량 장소">
         <label>
           <span>딜리버리 서비스</span>
           <input type="radio" name="region" value="1">
@@ -64,19 +62,19 @@
       <div>
         <div class="term-summary">
           <span>[필수] 일반규정</span>
-          <label class="term-selection yes">
-            <input type="radio" name="term-1" value="y" checked>
+          <label class="term-selection yes change">
+            <img src="../../../img/rent-stage/btn-radio-able.png"/>
             <span class="select-terms">동의합니다.</span>
           </label>
 
           <label class="term-selection no">
-            <input type="radio" name="term-1" value="n" checked>
+            <img src="../../../img/rent-stage/btn-radio-disable.png"/>
             <span class="select-terms">동의하지 않습니다.</span>
           </label>
         </div>
         
         <div class="open-selection">
-          <span> v </span>
+            <span id="btn-arrow"><img src="img/rent-stage/btn-arrow-close.png" class="btn-arrow-open"/></span>
         </div>
 
         <div class="term-content">

@@ -1,3 +1,7 @@
+<% function numberWithCommas(x) {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+%>
 <style>
   .panel.coupon {
     margin-bottom: 30px;
@@ -21,7 +25,7 @@
           <label for="name">이름</label>
         </div>
         <div class="input-section">
-          <input type="text" class="full-input" id="name" name="name" placeholder="Name" value="<%= user ? user.name : '' %>">
+          <input type="text" class="full-input" id="name" name="name" readonly value="<%= user.name %>">
         </div>
       </div>
 
@@ -30,7 +34,7 @@
           <label for="email">이메일</label>
         </div>
         <div class="input-section">
-          <input type="text" class="full-input" id="email" name="email" placeholder="Email Address" value="<%= user ? user.email : '' %>">
+          <input type="text" class="full-input" id="email" name="email" readonly value="<%= user.email %>">
         </div>
       </div>
 
@@ -39,7 +43,7 @@
           <label for="phone">휴대전화</label>
         </div>
         <div class="input-section">
-          <input type="text" class="full-input" id="phone" name="phone" placeholder="phone number" value="<%= user ? user.name : '' %>">
+          <input type="text" class="full-input" id="phone" name="phone" readonly value="<%= user.phone %>">
         </div>
       </div>
     </div>
@@ -54,10 +58,7 @@
           <label for="ex2_input2">면허구분</label>
         </div>
         <div class="input-section">
-          <select name="classification" id="classification" class="full-select">
-            <option value='국내'>국내</option>
-            <option value='국외'>국외</option>
-          </select>
+          <input type="text" class="full-input" id="classification" name="classification" readonly value="<%= user.classification %>">
         </div>
       </div>
 
@@ -66,11 +67,7 @@
           <label for="license">면허종류</label>
         </div>
         <div class="input-section">
-          <select name="numberArea" id="numberArea" class="full-select">
-            <option value='1종보통'>1종보통</option>
-            <option value='2종보통'>2종보통</option>
-            <option value='2종자동'>2종자동</option>
-          </select>
+          <input type="text" class="full-input" id="numberArea" name="numberArea" readonly value="<%= user.classification %>">
         </div>
       </div>
 
@@ -79,10 +76,10 @@
           <label for="license">면허증번호</label>
         </div>
         <div class="input-section">
-          <input type="text" name="number_1" id="number_1" class="forth-input" placeholder="지역" value="" style="width: 100px;">
-          <input type="text" name="number_2" id="number_2" class="forth-input" value="" style="width: 150px;">
-          <input type="text" name="number_3" id="number_3" class="forth-input" value="" style="width: 150px;">
-          <input type="text" name="number_4" id="number_4" class="forth-input-last" value="" style="width: 150px;">
+          <input type="text" name="number_1" id="number_1" class="forth-input" readonly placeholder="지역" value="<%= user.number_1 %>" style="width: 100px;">
+          <input type="text" name="number_2" id="number_2" class="forth-input" readonly value="<%= user.number_2 %>" style="width: 150px;">
+          <input type="text" name="number_3" id="number_3" class="forth-input" readonly value="<%= user.number_3 %>" style="width: 150px;">
+          <input type="text" name="number_4" id="number_4" class="forth-input-last" readonly value="<%= user.number_4 %>" style="width: 150px;">
           <div>
             <span class="warnning"> 2014년 07월 02일 이후 발급 면허는 숫자 코드로 지역 입력합니다.</span>
           </div>
@@ -95,15 +92,15 @@
         </div>
         <div class="input-section">
           <div class="date-section">
-            <input type="text" class="third-input" name="issueyear" id="issueyear" value="">
+            <input type="text" class="third-input" name="issueyear" id="issueyear" readonly value="<%= user.issueyear %>">
             <label class="float-label">년</label>
           </div>
           <div class="date-section">
-            <input type="text" class="third-input" name="issuemonth" id="issuemonth" value="">
+            <input type="text" class="third-input" name="issuemonth" id="issuemonth" readonly value="<%= user.issuemonth %>">
             <label class="float-label">월</label>
           </div>
           <div class="date-section-last">
-            <input type="text" class="third-input-last" name="issueday" id="issueday" value="">
+            <input type="text" class="third-input-last" name="issueday" id="issueday" readonly value="<%= user.issueday %>">
             <label class="float-label">일</label>
           </div>
           <div>
@@ -118,15 +115,15 @@
         </div>
         <div class="input-section">
           <div class="date-section">
-            <input type="text" class="third-input" name="dueyear" id="dueyear" value="">
+            <input type="text" class="third-input" name="dueyear" id="dueyear" readonly value="<%= user.dueyear %>">
             <label class="float-label">년</label>
           </div>
           <div class="date-section">
-            <input type="text" class="third-input" name="duemonth" id="duemonth" value="">
+            <input type="text" class="third-input" name="duemonth" id="duemonth" readonly value="<%= user.duemonth %>">
             <label class="float-label">월</label>
           </div>
           <div class="date-section-last">
-            <input type="text" class="third-input-last" name="dueday" id="dueday" value="">
+            <input type="text" class="third-input-last" name="dueday" id="dueday" readonly value="<%= user.dueday %>">
             <label class="float-label">일</label>
           </div>
           <div>
@@ -148,8 +145,11 @@
             <label for="ex2_input2">보유쿠폰</label>
           </div>
           <div class="input-section">
-            <select name="classification" id="classification" class="full-select">
-              <option value='국내'>설문조사 10% 할인 쿠폰</option>
+            <select id="select_coupon" class="full-select">
+              <option value='' data-type="0" data-amount="0" selected>선택</option>
+              <% for(let i = 0 ; i < coupons.length ; i++) { %>
+	              <option value='<%= coupons[i].couponId %>' data-type="<%= coupons[i].type %>" data-amount="<%= coupons[i].amount %>"><%= coupons[i].name %></option>
+              <% } %>
             </select>
           </div>
         </div>
@@ -160,10 +160,9 @@
           </div>
           <div class="input-section">
             <div class="date-section">
-              <input type="text" class="third-input" name="issueyear" id="issueyear" value="">
-              <label class="float-label">원</label>
-
-              <span class="spend-all">전액사용 (20,000원)</span>
+              <input type="number" class="third-input" name="usePoint" id="use_point" value="">
+              <label class="float-label">원</label> &nbsp;&nbsp;
+              <span class="spend-all" id="maximum_point" data-point="<%= user.point %>">(<%= numberWithCommas(user.point) %>원)</span>
             </div>
             <div>
               <span class="description">
@@ -180,10 +179,10 @@
     <div class="panel-heading">결제 방식</div>
     <div class="panel-body">
       <div class="payment-type-section">
-        <span class="payment-type" id="select_pay_by_mobile">
+        <span class="payment-type active" id="select_pay_by_mobile">
           휴대폰 결제
         </span>
-        <span class="payment-type active" id="select_pay_by_card">
+        <span class="payment-type" id="select_pay_by_card">
           카드 결제
         </span>
       </div>
@@ -240,6 +239,6 @@
 
   <selction class="next-section">
     <button id="show_select_car_section" class="privious" type="button">이전</button>
-    <button type="submit" class="next" onclick="">예약</button>
+    <button id="show_book_section" type="submit" class="next"  onclick="">예약</button>
   </selction>
 </section>
