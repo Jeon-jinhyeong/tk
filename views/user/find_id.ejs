@@ -8,7 +8,30 @@
 
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
+
+<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
 <script>
+      $(function(){
+        $('#loginForm').validate({
+          rules: {
+            phone: {
+              required : true
+            },
+            number: {
+              required : true
+            }
+          },
+          messages: {
+            phone: {
+              required : "핸드폰번호를 입력해 주세요"
+            },
+            number: {
+              required : "인증번호를 입력해 주세요"
+            }
+          }
+        });
+      });
       var timer = new Timer();
       $('.auth-number #authnum').click(function () {
         timer.start({countdown: true, startValues: {seconds: 180}});
