@@ -16,7 +16,8 @@
         $('#loginForm').validate({
           rules: {
             phone: {
-              required : true
+              required : true,
+               minlength : 10
             },
             number: {
               required : true
@@ -24,7 +25,8 @@
           },
           messages: {
             phone: {
-              required : "핸드폰번호를 입력해 주세요"
+              required : "핸드폰번호를 입력해 주세요",
+              minlength : "핸드폰 번호는 최소 10자리여야 합니다."
             },
             number: {
               required : "인증번호를 입력해 주세요"
