@@ -57,6 +57,13 @@
   background-color: #ffffff;
 }
 
+.id {
+  width : 200px;
+}
+
+.phone {
+  width : 230px;
+}
 #id {
   margin-top: 0px;
 }
