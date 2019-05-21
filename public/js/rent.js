@@ -62,8 +62,12 @@ $(document).ready(function() {
   }
 
   $('#show_select_car_section, #show_pay_section').on('click', function () {
-    $('#pay_section, #select_car_section').toggleClass('hidden');
-    $('#second_progress, #first_progress').toggleClass('active');
+    if($('#show_pay_section').data('state')=='agree'){
+      $('#pay_section, #select_car_section').toggleClass('hidden');
+      $('#second_progress, #first_progress').toggleClass('active');
+    } else {
+      alert("약관에 동의해주세요");
+    }
   });
 
   //TODO: 차량유형 따른 달력정보를 나타내야함
@@ -157,11 +161,15 @@ $(document).ready(function() {
   $(".term-selection.yes").on('click', function(){
       $(this).parent().find('.yes').find('img').attr("src", "img/rent-stage/btn-radio-able.png");
       $(this).parent().find('.no').find('img').attr("src", "img/rent-stage/btn-radio-disable.png");
+      
+      $('#show_pay_section').data("state","agree");
   });
 
   $(".term-selection.no").on('click', function(){
       $(this).parent().find('.yes').find('img').attr("src", "img/rent-stage/btn-radio-disable.png");
       $(this).parent().find('.no').find('img').attr("src", "img/rent-stage/btn-radio-able.png");
+
+      $('#show_pay_section').data("state","disagree");
   });
 
 
